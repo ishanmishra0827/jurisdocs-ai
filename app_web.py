@@ -203,7 +203,19 @@ def build_rag_chain(pdf_path: str):
     loader = PyPDFLoader(pdf_path)
     documents = loader.load()
 
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=150)
+    # Statutes reference their own subsections constantly (e.g. Sec. 24.005(f)
+    # answered by 24.005(f-3)), so blind character-count chunking can slice a
+    # section apart from the subsection that actually answers a question about
+    # it. Splitting preferentially on "Sec.A" boundaries first keeps whole
+    # statutory sections together as single chunks wherever possible, only
+    # falling back to paragraph/sentence splits if a section itself is too
+    # long. chunk_size is raised accordingly since sections vary a lot in
+    # length.
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=1800,
+        chunk_overlap=300,
+        separators=["\nSec.A", "\n\n", "\n", ". ", " ", ""],
+    )
     chunks = text_splitter.split_documents(documents)
 
     # Embed text and construct local, in-memory ChromaDB (no persist_directory
@@ -211,7 +223,13 @@ def build_rag_chain(pdf_path: str):
     # the life of this session).
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
     vector_store = Chroma.from_documents(chunks, embeddings)
-    retriever = vector_store.as_retriever(search_kwargs={"k": 3})
+    # k=5 with MMR (rather than pure similarity) pulls in more chunks while
+    # actively avoiding near-duplicates, so a question has a better chance of
+    # actually surfacing the specific subsection that answers it.
+    retriever = vector_store.as_retriever(
+        search_type="mmr",
+        search_kwargs={"k": 5, "fetch_k": 15},
+    )
 
     # mistralai/Mistral-7B-Instruct-v0.3 has been pulled entirely from
     # Hugging Face's serverless Inference Providers. Qwen2.5-7B-Instruct is
