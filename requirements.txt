@@ -6,3 +6,4 @@ langchain-huggingface
 huggingface_hub
 pypdf
 sentence-transformers
+pysqlite3-binary
