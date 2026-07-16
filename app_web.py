@@ -130,7 +130,7 @@ with st.sidebar:
                 </a>
             </div>
         </div>
-    """, unsafe_allow_html=True) # <-- FIXED PARAMETER HERE TOO!
+    """, unsafe_allow_html=True)
 
 # --- 4. MAIN LAYOUT AND RAG CODE ---
 st.title("⚖️ JurisDocs AI")
@@ -160,9 +160,10 @@ if uploaded_file is not None:
     
     st.success("Legal database initialized. Ready for query!")
     
-    # Initialize the LLM (Mistral 7B)
+    # Initialize the LLM (Mistral 7B) with explicit task routing to prevent conversational model mapping errors
     llm = HuggingFaceEndpoint(
         repo_id="mistralai/Mistral-7B-Instruct-v0.3",
+        task="text-generation",
         temperature=0.5,
         max_new_tokens=512
     )
