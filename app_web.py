@@ -1,5 +1,6 @@
 import streamlit as st
 import os
+import base64
 
 # --- 1. PYSQLITE3 BYPASS (MUST RUN FIRST BEFORE ANY OTHER IMPORTS) ---
 try:
@@ -18,6 +19,60 @@ from langchain_classic.chains import create_history_aware_retriever, create_retr
 from langchain_classic.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.messages import HumanMessage, AIMessage
+
+# Sample lease PDF, embedded directly as base64 so the "try it now" button
+# never depends on a separate asset file existing in the repo.
+SAMPLE_PDF_B64 = (
+    "JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0Yx"
+    "IDIgMCBSIC9GMiAzIDAgUgo+PgplbmRvYmoKMiAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYSAvRW5jb2RpbmcgL1dpbkFu"
+    "c2lFbmNvZGluZyAvTmFtZSAvRjEgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iagozIDAgb2JqCjw8Ci9CYXNl"
+    "Rm9udCAvSGVsdmV0aWNhLUJvbGQgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YyIC9TdWJ0eXBlIC9UeXBlMSAv"
+    "VHlwZSAvRm9udAo+PgplbmRvYmoKNCAwIG9iago8PAovQ29udGVudHMgOSAwIFIgL01lZGlhQm94IFsgMCAwIDYxMiA3OTIgXSAv"
+    "UGFyZW50IDggMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdl"
+    "QyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIC9UcmFucyA8PAoKPj4gCiAgL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjUgMCBvYmoKPDwK"
+    "L0NvbnRlbnRzIDEwIDAgUiAvTWVkaWFCb3ggWyAwIDAgNjEyIDc5MiBdIC9QYXJlbnQgOCAwIFIgL1Jlc291cmNlcyA8PAovRm9u"
+    "dCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5z"
+    "IDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKNiAwIG9iago8PAovUGFnZU1vZGUgL1VzZU5vbmUgL1BhZ2VzIDggMCBS"
+    "IC9UeXBlIC9DYXRhbG9nCj4+CmVuZG9iago3IDAgb2JqCjw8Ci9BdXRob3IgKFwoYW5vbnltb3VzXCkpIC9DcmVhdGlvbkRhdGUg"
+    "KEQ6MjAyNjA3MTYwNjUxNDkrMDAnMDAnKSAvQ3JlYXRvciAoXCh1bnNwZWNpZmllZFwpKSAvS2V5d29yZHMgKCkgL01vZERhdGUg"
+    "KEQ6MjAyNjA3MTYwNjUxNDkrMDAnMDAnKSAvUHJvZHVjZXIgKFJlcG9ydExhYiBQREYgTGlicmFyeSAtIFwob3BlbnNvdXJjZVwp"
+    "KSAKICAvU3ViamVjdCAoXCh1bnNwZWNpZmllZFwpKSAvVGl0bGUgKFwoYW5vbnltb3VzXCkpIC9UcmFwcGVkIC9GYWxzZQo+Pgpl"
+    "bmRvYmoKOCAwIG9iago8PAovQ291bnQgMiAvS2lkcyBbIDQgMCBSIDUgMCBSIF0gL1R5cGUgL1BhZ2VzCj4+CmVuZG9iago5IDAg"
+    "b2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDE2NzAKPj4Kc3RyZWFtCkdhdG07"
+    "OWxKY1UmQUBzQiUiXFAjJENNTComJ0lIaEcpSEtEbEdhN2Q2UzltMCxdLTcuUS8vOE9wIi9yXztOdF9EViQhSkhDZkItRlJHJT1I"
+    "aE1icS9qIVA9ZFpdYU5YOG9LMzkuOEQ5czpjc1xrUGc4SkI0byc3Nm1yazl1QlJGZTMtLm42ZXJVQUFqOk4vI0VnRFghb19HM0dm"
+    "PVI3O2k9SUcsQm80M0knMW9KZiw8TlpfLGNnNWMhYGJTVCROMFJuQS9oTS4kPSlUTWNNcGU2Xm0uX1BFcSZNWzFVRGBOcU0rN0k9"
+    "QE48a1dzLFoydTdubkxnPyVkUVpwZUdiKmYvTCNkSDshTVFEK14vMF4mTiwkb2RRYEA4VElRNlNVIktZS1A9RS1OZy5aLVpSb0lE"
+    "KDZ0X2RiSztlX1EuS1Y+KylAcTVBWCw5RUlcPWd0Z1BBJG5TZVA9XkpPOGVYaFg0Pk8pKFpROWAxImo7RmlJOmpxVyljKEstKDkz"
+    "K2BTLEkoSXJTQlhPbGdNTi9vO1dcKy45ZzNjRDldcXA/TzIoXjFINzkiUV1CbDBJVDdySitIXWhbbTZWTShSbmROTlskQElgJCFj"
+    "WmJDKTxIdEFbX0NwaUMxOzRsLUduJjxdYF5fTi1aYEs0TCYmXlNWSDFubTM4ZytQOSFcU09wbFc1Yj1SakF1YSJOKDdqUWBxI0ZR"
+    "LlQ3QjMtcjdgUDY4TjNBZ3EncCFKJylfa14pNjZPbj8sOWpDQz8kZzxJcE0kVDYqOV5wTEEyYkElQypMKkYqYTgyXUQ/cjY9MUAm"
+    "TUtKMGk0SWNobC9Jc0txXERubmg2Vy9QblYpQWdfOUBKMmk0JjlqV1AoIy5yOEAtRlVkYDhyT2RcJ2AnJiFSMiEmZ2ZtLTsvSFlg"
+    "VE5LbDZvKVZYLFRNOXJBKWNCZlNMcykvRGc5ODonWj05RlAmVWRiWDZRcFwpUGx1ZS5sY0s2QkxPKDVSSkEmYmFscDRjRydaIjZZ"
+    "OUFwY0ZkKUtoaE9ePiZxaEAmTVpSKlc0Kjw8ZDEjKj9jKDJUcSkpSGJaQUg5QEQ8KmlFRyJbWTVtblNLa2lAK05IRFteNmsnUmA2"
+    "Uy43bVxVdWQoJ25wNS5sRlhwSWIqN1ZGLTFIOlgsVGtaa1hgUCFHI1tHVUZNP00hVVEnSStXPW0pQjYxZnJAJUlkP0Z1VzhkamQj"
+    "MW42WGBnajRyIkJWNzRlRT5BXG5FbFAnTnIucjwoXnRyNFxPI3VBJ0s/KzMrV11BZVFIcVNObG1LZURbZ11DIUg2W2lTc2NML1ZM"
+    "V3Q7SFRqT3JkL1BCMm4rMik7Mz9lXFYkOXFxRWk0X2hgMWpLRCVaNC9mQDZcNDFRPEtQUS1cKjdCVWQoMm0rNVYjZUFFWUloYnNk"
+    "PGoqZzkrWGQ/I2g3VixoMWAoPCxbNUZLQ2lLUDZJYVVTKTVNXERqc0ZqRlxLV3VjdWsoLiZEOj1rIVY2amBQNyMvdVdXKGVrNSw7"
+    "RkApJGZWLThJNGhIJD81ZmhyT2kyaXJsJTtjVTdyZy1cVTdEQnFSNig2W0ZvPT5DYy9LWCJCQmYrPTRFXGlLUWNiUXVwRzJUXUpg"
+    "SDgwRFY7WFVJczhiO11kYWtqSDtcYiZNPVsxQmVYPy05UiokPDBdImVAQTZpbF82I3BHaipQNF9wJE1saTpnbypfM3FibjZfQUYo"
+    "IzpzLkslb15KS2prP0tcMG1gJyZHJGNjOlk3UEg5NXBpTjw/aidsK0svMEhrbEwmPjcuOFtVVStXXWg/aSNdJCIqYFpbNUxUTTlO"
+    "RE46PjxgaGBYL0giWW5oOV4rQmlYaWokLlMydGxASCVkMihJYiUrPE0lWHNAbXImMF02VUlGImVeTmhJJ0xEcEw1SiFxLV4nSFxO"
+    "b181K0k0RVQxXWtjImVvZEtjSiVxYGFoWGVlW0oxVDY6Z2ZDX1xxVmgzZShASywxZDtrSEtfKCcnVikzNW1FQi5vWnBnJFk2OUxm"
+    "LXVZWz4mbDApOy9FQU1XVHArTHJILW9IMSptcS8mLEFSRmVSRylibkddI0t1XTghKkBSNy1udTEzZFo9Ljg4XUxZJi49Tj9KKUds"
+    "RFleRzNHPmpgKVh0YGgjcTpeP1AicWtgaG8kSG11QEJNYVFCSVlUaVopYGNaN0twYWYzZ1U3JzQlSCEqRDFiMFhGTEhLQCtnKWkl"
+    "KnM1OmRyckFSbyJBU34+ZW5kc3RyZWFtCmVuZG9iagoxMCAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRl"
+    "RGVjb2RlIF0gL0xlbmd0aCAyMTIKPj4Kc3RyZWFtCkdhdFVsWW4iVykkcTBpO2BKcVowbEVtQSZMaylINF9FM1dnV0JgOz08Vl8s"
+    "PDgwcE05JGIjLTReM15aTSY1LzRaYHU4JjdWSFgrOW4tUD1LLjYsQSY8TUxyalpUNjVSTW1VUlVtVlBgZk9iJCllZjtWV1A1ST9e"
+    "QFJCXkRpNWE2LCgyK1Qka2BbSj0hXERHcEBxZkNrOEdBa1lOJVlIVkM/YmhqWU8+XG1kJiRXSi81NCQwJmonTydQL3RJLkBKJnFg"
+    "YSxJcnEkSFQnQFUwKWYwTH4+ZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgMTEKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDYx"
+    "IDAwMDAwIG4gCjAwMDAwMDAxMDIgMDAwMDAgbiAKMDAwMDAwMDIwOSAwMDAwMCBuIAowMDAwMDAwMzIxIDAwMDAwIG4gCjAwMDAw"
+    "MDA1MTQgMDAwMDAgbiAKMDAwMDAwMDcwOCAwMDAwMCBuIAowMDAwMDAwNzc2IDAwMDAwIG4gCjAwMDAwMDEwNTYgMDAwMDAgbiAK"
+    "MDAwMDAwMTEyMSAwMDAwMCBuIAowMDAwMDAyODgyIDAwMDAwIG4gCnRyYWlsZXIKPDwKL0lEIApbPGQ0MjlhMzdhMTA1MzJkNTE5"
+    "NzFhZGI3ZTAyMzYxZGY5PjxkNDI5YTM3YTEwNTMyZDUxOTcxYWRiN2UwMjM2MWRmOT5dCiUgUmVwb3J0TGFiIGdlbmVyYXRlZCBQ"
+    "REYgZG9jdW1lbnQgLS0gZGlnZXN0IChvcGVuc291cmNlKQoKL0luZm8gNyAwIFIKL1Jvb3QgNiAwIFIKL1NpemUgMTEKPj4Kc3Rh"
+    "cnR4cmVmCjMxODUKJSVFT0YK"
+)
 
 # --- 2. THEME & HEADER CONFIGURATION ---
 st.set_page_config(
@@ -134,7 +189,7 @@ st.markdown("""
 
 # --- 3. SIDEBAR & IDENTITY ---
 with st.sidebar:
-    st.image("https://img.icons8.com/ios-filled/100/D4AF37/gavel.png", width=70)
+    st.markdown("<div style='font-size: 48px; line-height: 1;'>⚖️</div>", unsafe_allow_html=True)
     st.title("JurisDocs AI")
     st.subheader("Legal RAG Engine")
     st.write("---")
@@ -157,7 +212,7 @@ with st.sidebar:
         "Documents are processed in memory for this session only and are "
         "never permanently stored. [Details below.](#privacy)"
     )
-    st.caption("Build tag: `regex-splitter-v2`")
+    st.caption("Build tag: `embedded-pdf-v3`")
     st.write("---")
 
     # Premium Engineering Signature
@@ -311,17 +366,13 @@ if st.session_state.rag_chain is None:
             "(fictional, for testing only) and upload it below to see JurisDocs AI in action."
         )
     with col2:
-        try:
-            with open("assets/sample_legal_document.pdf", "rb") as f:
-                st.download_button(
-                    label="⬇️ Download Sample PDF",
-                    data=f.read(),
-                    file_name="sample_legal_document.pdf",
-                    mime="application/pdf",
-                    use_container_width=True,
-                )
-        except FileNotFoundError:
-            st.caption("(Sample PDF not found — add assets/sample_legal_document.pdf to the repo.)")
+        st.download_button(
+            label="⬇️ Download Sample PDF",
+            data=base64.b64decode(SAMPLE_PDF_B64),
+            file_name="sample_legal_document.pdf",
+            mime="application/pdf",
+            use_container_width=True,
+        )
 
     st.write("")
     st.markdown('<a name="privacy"></a>', unsafe_allow_html=True)
