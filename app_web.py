@@ -18,7 +18,7 @@ from langchain_classic.chains import RetrievalQA
 
 # --- 2. THEME & HEADER CONFIGURATION ---
 st.set_page_config(
-    page_title="JurisDocs AI - Texas Legal RAG",
+    page_title="JurisDocs AI - Legal RAG Engine",
     page_icon="⚖️",
     layout="wide"
 )
@@ -26,53 +26,80 @@ st.set_page_config(
 # Dark Gold & Charcoal Premium Theme Injection
 st.markdown("""
     <style>
-    /* Global Background and Fonts */
+    /* Global Page Styling */
     .stApp {
-        background-color: #111111;
-        color: #E5E5E5;
+        background: radial-gradient(circle at top left, #121212, #080808) !important;
+        color: #E2E8F0 !important;
+        font-family: 'Helvetica Neue', Inter, sans-serif;
     }
     
-    /* Main Headers */
-    h1, h2, h3 {
-        color: #D4AF37 !important; /* Metallic Gold */
-        font-family: 'Georgia', serif;
+    /* Elegant Title Typography */
+    h1 {
+        background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA7C11 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Playfair Display', Georgia, serif;
+        font-weight: 800 !important;
+        letter-spacing: -0.5px;
     }
     
-    /* Custom Sidebar Styling */
+    h2, h3, h4, h5 {
+        color: #E5C158 !important; /* Soft Champagne Gold */
+        font-family: 'Playfair Display', Georgia, serif;
+        font-weight: 600 !important;
+    }
+    
+    /* Clean, Borderless Sidebar Customization */
     [data-testid="stSidebar"] {
-        background-color: #1A1A1A !important;
-        border-right: 1px solid #2D2D2D;
+        background-color: #0E0E0E !important;
+        border-right: 1px solid #1C1C1C;
     }
     
-    /* Premium Border Accents for Uploaders & Containers */
+    /* Sleek Border Accents for Uploaders */
     div[data-testid="stFileUploader"] {
-        border: 2px dashed #D4AF37 !important;
-        background-color: #1A1A1A;
-        border-radius: 8px;
-        padding: 10px;
+        border: 1px dashed #C5A059 !important;
+        background-color: #141414;
+        border-radius: 12px;
+        padding: 18px;
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.6);
     }
     
-    /* Elegant Button Customization */
-    .stButton>button {
-        background-color: #D4AF37 !important;
-        color: #111111 !important;
-        border-radius: 6px !important;
-        font-weight: bold !important;
-        border: none !important;
+    /* Beautiful Input Fields */
+    div[data-testid="stTextInput"] input {
+        background-color: #141414 !important;
+        border: 1px solid #2A2A2A !important;
+        color: #F8FAFC !important;
+        border-radius: 8px !important;
         transition: all 0.3s ease;
     }
+    div[data-testid="stTextInput"] input:focus {
+        border-color: #D4AF37 !important;
+        box-shadow: 0 0 8px rgba(212, 175, 55, 0.15) !important;
+    }
+    
+    /* Premium Button Style (Rich Metallic look) */
+    .stButton>button {
+        background: linear-gradient(135deg, #D4AF37 0%, #C5A059 100%) !important;
+        color: #080808 !important;
+        border-radius: 8px !important;
+        font-weight: 700 !important;
+        border: none !important;
+        padding: 10px 24px !important;
+        letter-spacing: 0.5px;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
     .stButton>button:hover {
-        background-color: #AA7C11 !important;
-        box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
     }
     </style>
 """, unsafe_allow_html=True)
 
 # --- 3. SIDEBAR & IDENTITY ---
 with st.sidebar:
-    st.image("https://img.icons8.com/ios-filled/100/D4AF37/gavel.png", width=80)
+    st.image("https://img.icons8.com/ios-filled/100/D4AF37/gavel.png", width=70)
     st.title("JurisDocs AI")
-    st.subheader("Texas Legal RAG Engine")
+    st.subheader("Legal RAG Engine")
     st.write("---")
     
     # Secure API Keys Check
@@ -92,21 +119,21 @@ with st.sidebar:
     # Premium Engineering Signature
     st.markdown("""
         <div style="text-align: center; margin-top: 50px;">
-            <p style="font-size: 11px; color: #888888; margin-bottom: 2px;">SYSTEM ARCHITECTURE BY</p>
-            <p style="font-size: 14px; font-weight: bold; color: #D4AF37; margin-bottom: 12px; font-family: 'Georgia', serif; letter-spacing: 1px;">ISHAN MISHRA</p>
+            <p style="font-size: 10px; color: #666666; margin-bottom: 2px; letter-spacing: 1.5px;">SYSTEM ARCHITECTURE BY</p>
+            <p style="font-size: 14px; font-weight: bold; color: #D4AF37; margin-bottom: 12px; font-family: 'Georgia', serif; letter-spacing: 2px;">ISHAN MISHRA</p>
             <div style="display: flex; justify-content: center; gap: 15px;">
                 <a href="https://github.com/ishanmishra0827" target="_blank">
-                    <img src="https://img.icons8.com/ios-glyphs/24/D4AF37/github.png" width="20"/>
+                    <img src="https://img.icons8.com/ios-glyphs/24/C5A059/github.png" width="18"/>
                 </a>
                 <a href="https://linkedin.com/in/ishanmishra0827" target="_blank">
-                    <img src="https://img.icons8.com/ios-glyphs/24/D4AF37/linkedin.png" width="20"/>
+                    <img src="https://img.icons8.com/ios-glyphs/24/C5A059/linkedin.png" width="18"/>
                 </a>
             </div>
         </div>
-""", unsafe_allow_html=True)
+    """, unsafe_style_with_html=True)
 
 # --- 4. MAIN LAYOUT AND RAG CODE ---
-st.title("⚖️ Texas JurisDocs AI")
+st.title("⚖️ JurisDocs AI")
 st.markdown("##### *Empowering legal document parsing through local Retrieval-Augmented Generation (RAG)*")
 st.write("---")
 
@@ -133,14 +160,14 @@ if uploaded_file is not None:
     
     st.success("Legal database initialized. Ready for legal query!")
     
-    # Initialize the LLM (Mistral 7B) natively without direct Token parameters to prevent text_generation() type errors
+    # Initialize the LLM (Mistral 7B)
     llm = HuggingFaceEndpoint(
         repo_id="mistralai/Mistral-7B-Instruct-v0.3",
         temperature=0.5,
         max_new_tokens=512
     )
     
-    # Establish retrieval QA chain using fallback langchain-classic
+    # Establish retrieval QA chain
     qa_chain = RetrievalQA.from_chain_type(
         llm=llm,
         chain_type="stuff",
