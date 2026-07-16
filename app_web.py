@@ -66,7 +66,7 @@ st.markdown("""
         box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
     }
     </style>
-""", unsafe_style_with_html=True)
+""", unsafe_allow_html=True)
 
 # --- 3. SIDEBAR & IDENTITY ---
 with st.sidebar:
@@ -103,7 +103,7 @@ with st.sidebar:
                 </a>
             </div>
         </div>
-    """, unsafe_style_with_html=True)
+""", unsafe_allow_html=True)
 
 # --- 4. MAIN LAYOUT AND RAG CODE ---
 st.title("⚖️ Texas JurisDocs AI")
