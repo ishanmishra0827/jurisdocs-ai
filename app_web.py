@@ -130,7 +130,7 @@ with st.sidebar:
                 </a>
             </div>
         </div>
-    """, unsafe_style_with_html=True)
+    """, unsafe_allow_html=True) # <-- FIXED PARAMETER HERE TOO!
 
 # --- 4. MAIN LAYOUT AND RAG CODE ---
 st.title("⚖️ JurisDocs AI")
@@ -144,7 +144,7 @@ if uploaded_file is not None:
     with open("temp_doc.pdf", "wb") as f:
         f.write(uploaded_file.getbuffer())
         
-    st.info("Document uploaded successfully! Compiling semantic database...")
+    st.info("Document uploaded successfully! Compiling database...")
 
     # Load and Split PDF
     loader = PyPDFLoader("temp_doc.pdf")
@@ -158,7 +158,7 @@ if uploaded_file is not None:
     vector_store = Chroma.from_documents(chunks, embeddings)
     retriever = vector_store.as_retriever(search_kwargs={"k": 3})
     
-    st.success("Legal database initialized. Ready for legal query!")
+    st.success("Legal database initialized. Ready for query!")
     
     # Initialize the LLM (Mistral 7B)
     llm = HuggingFaceEndpoint(
