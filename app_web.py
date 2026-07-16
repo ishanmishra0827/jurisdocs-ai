@@ -206,15 +206,20 @@ def build_rag_chain(pdf_path: str):
     # Statutes reference their own subsections constantly (e.g. Sec. 24.005(f)
     # answered by 24.005(f-3)), so blind character-count chunking can slice a
     # section apart from the subsection that actually answers a question about
-    # it. Splitting preferentially on "Sec.A" boundaries first keeps whole
-    # statutory sections together as single chunks wherever possible, only
+    # it. Splitting preferentially on statutory section headers first keeps
+    # whole sections together as single chunks wherever possible, only
     # falling back to paragraph/sentence splits if a section itself is too
-    # long. chunk_size is raised accordingly since sections vary a lot in
+    # long. This MUST be a regex (is_separator_regex=True): pypdf's actual
+    # extracted spacing around "Sec." varies ("Sec. 24.005", "Sec. A 24.005",
+    # etc. depending on the source PDF's internal character spacing), so a
+    # literal string separator silently never matches and this step becomes
+    # a no-op. chunk_size is raised accordingly since sections vary a lot in
     # length.
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=1800,
         chunk_overlap=300,
-        separators=["\nSec.A", "\n\n", "\n", ". ", " ", ""],
+        separators=[r"\nSec\.\s*A?\s*\d+\.\d+", "\n\n", "\n", ". ", " ", ""],
+        is_separator_regex=True,
     )
     chunks = text_splitter.split_documents(documents)
 
