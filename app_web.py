@@ -1,156 +1,223 @@
 import os
+import io
 import streamlit as st
+import pysqlite3 as sqlite3
+import sys
+# Hack to make Chromadb/Langchain use the newer SQLite on Streamlit Cloud
+sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
+
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_core.vectorstores import InMemoryVectorStore
 from langchain_huggingface import HuggingFaceEmbeddings
-from huggingface_hub import InferenceClient
+from langchain_community.vectorstores import Chroma
+from langchain_huggingface import HuggingFaceEndpoint
+from langchain.chains import RetrievalQA
+from chromadb.config import Settings
+import shutil
 
-# Set up page configurations
+# --- SECRETS CONFIGURATION ---
+try:
+    HF_TOKEN = st.secrets["HF_TOKEN"]
+except Exception:
+    st.error("Error: HF_TOKEN not found in Streamlit Secrets! Please add your token under Advanced Settings.")
+    st.stop()
+
+# --- THEME/STYLING CONFIG ---
 st.set_page_config(page_title="JurisDocs AI", page_icon="⚖️", layout="wide")
 
-# Custom Midnight Legal Tech Styling
-st.markdown("""
+PRIMARY_COLOR = "#E0A96D" # Warm Gold
+BG_COLOR = "#1C1F26"      # Rich Charcoal/Navy
+
+# Advanced CSS injection for complete theme overhaul
+st.markdown(f"""
     <style>
-        /* Main background and font */
-        .stApp {
-            background-color: #0B132B;
+        /* Main background and app alignment */
+        .stApp {{
+            background-color: {BG_COLOR};
             color: #F4F5F6;
-        }
-        /* Sidebar styling */
-        section[data-testid="stSidebar"] {
-            background-color: #1C2541 !important;
-        }
-        /* Titles & Headers */
-        h1 {
-            color: #E0A96D !important; /* Elegant Gold */
+        }}
+        /* Customize standard headers */
+        h1, h2, h3 {{
+            color: {PRIMARY_COLOR} !important;
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-weight: 700;
-        }
-        h2, h3 {
-            color: #5BC0BE !important; /* Sleek Teal */
-        }
-        /* Custom card container for results */
-        .legal-card {
-            background-color: #1C2541;
-            padding: 20px;
+        }}
+        /* Style the chat input box */
+        .stChatInput {{
+            border-radius: 20px;
+            border: 1px solid {PRIMARY_COLOR};
+        }}
+        /* Style the main upload card */
+        .stFileUploader {{
+            border: 2px dashed {PRIMARY_COLOR};
             border-radius: 10px;
-            border-left: 5px solid #E0A96D;
-            margin-bottom: 20px;
-        }
+            padding: 20px;
+        }}
+        /* Sidebar customization */
+        [data-testid="stSidebar"] {{
+            background-color: #121419;
+            border-right: 1px solid #333;
+        }}
     </style>
 """, unsafe_allow_html=True)
 
-# Hugging Face API Token (Loaded securely from Streamlit Secrets)
-HF_TOKEN = st.secrets["HF_TOKEN"]
 
-# Initialize Semantic Embeddings & HF Client
-@st.cache_resource
-def load_resources():
-    embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-large-en-v1.5")
-    client = InferenceClient(token=HF_TOKEN)
-    return embeddings, client
+# --- INITIALIZATION FUNCTIONS ---
 
-embeddings, client = load_resources()
-
-# ==========================================
-# UI Layout
-# ==========================================
-st.title("⚖️ JurisDocs AI")
-st.write("Upload your legal documents in the sidebar, and let AI analyze, summarize, and cite them instantly.")
-
-# Sidebar for PDF Uploads
-with st.sidebar:
-    st.markdown("<h2 style='color:#E0A96D !important;'>1. Document Locker</h2>", unsafe_allow_html=True)
-    uploaded_files = st.file_uploader(
-        "Upload legal PDFs", 
-        type="pdf", 
-        accept_multiple_files=True
+@st.cache_resource(show_spinner=False)
+def get_ai_chains():
+    """Initializes and caches the Embedding model and LLM."""
+    
+    # 1. Initialize Vector Brain (BAAI/bge-large for elite context capture)
+    embeddings = HuggingFaceEmbeddings(
+        model_name="BAAI/bge-large-en-v1.5",
+        encode_kwargs={'normalize_embeddings': True}
     )
     
-    st.markdown("---")
-    st.write("🚀 Powered by Qwen-2.5 & LangChain")
+    # 2. Initialize LLM (Mistral-7B for advanced legal reasoning)
+    llm = HuggingFaceEndpoint(
+        repo_id="mistralai/Mistral-7B-Instruct-v0.2",
+        temperature=0.1,  # Low temperature = precision, no hallucination
+        max_new_tokens=1024,
+        huggingfacehub_api_token=HF_TOKEN,
+        model_kwargs={"prompt_template": "[INST]Context: {context} Question: {question} [/INST]"}
+    )
+    
+    return embeddings, llm
 
-# Save uploaded files to a temp directory and process them
-documents_to_index = []
-TEMP_DIR = "./temp_documents"
-os.makedirs(TEMP_DIR, exist_ok=True)
+# --- DOC PROCESSING ENGINE ---
 
-if uploaded_files:
-    for uploaded_file in uploaded_files:
-        temp_path = os.path.join(TEMP_DIR, uploaded_file.name)
-        with open(temp_path, "wb") as f:
+CHROMA_DB_PATH = "./chroma_db_locker"
+
+def process_and_index_document(uploaded_file, embeddings_model):
+    """Saves PDF, loads it, splits into chunks, and stores in vector DB."""
+    
+    # 1. Clean out the old 'Document Locker' to start fresh
+    if os.path.exists(CHROMA_DB_PATH):
+        shutil.rmtree(CHROMA_DB_PATH)
+    os.makedirs(CHROMA_DB_PATH, exist_ok=True)
+    
+    temp_filename = f"temp_{uploaded_file.name}"
+    
+    with st.spinner("⏳ Locating document and mapping legal text..."):
+        # Save uploaded file locally so PyPDF can read it
+        with open(temp_filename, "wb") as f:
             f.write(uploaded_file.getbuffer())
         
-        try:
-            loader = PyPDFLoader(temp_path)
-            documents_to_index.extend(loader.load())
-        except Exception as e:
-            st.error(f"Error loading {uploaded_file.name}: {e}")
-            
-    st.sidebar.success(f"Successfully loaded {len(uploaded_files)} PDF(s)!")
-
-# ==========================================
-# RAG Processing
-# ==========================================
-if documents_to_index:
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-    split_docs = text_splitter.split_documents(documents_to_index)
-    
-    @st.cache_resource(show_spinner="Indexing your legal documents...")
-    def build_vector_store(_docs):
-        return InMemoryVectorStore.from_documents(_docs, embeddings)
+        # Load and split the PDF
+        loader = PyPDFLoader(temp_filename)
+        pages = loader.load()
         
-    vector_store = build_vector_store(split_docs)
+        # Split text (smart chunking preserving paragraphs)
+        text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=1000, 
+            chunk_overlap=150, 
+            separators=["\n\n", "\n", " ", ""]
+        )
+        docs = text_splitter.split_documents(pages)
+        
+        # Add a placeholder 'filename' meta tag
+        for doc in docs:
+            doc.metadata["source_name"] = uploaded_file.name
+
+        # Create and store the vectors in Chroma
+        vector_db = Chroma.from_documents(
+            documents=docs,
+            embedding=embeddings_model,
+            persist_directory=CHROMA_DB_PATH
+        )
+        vector_db.persist()
+
+    # Cleanup temp file
+    if os.path.exists(temp_filename):
+        os.remove(temp_filename)
+        
+    return vector_db
+
+
+# --- MAIN UI ---
+
+def main():
+    embeddings_model, llm_model = get_ai_chains()
     
-    st.markdown("<h2 style='color:#E0A96D !important;'>2. Search & Analysis</h2>", unsafe_allow_html=True)
-    user_query = st.text_input("Enter your question here (e.g., 'What are the notice requirements?'):")
+    # Persistent app state
+    if 'vector_store' not in st.session_state:
+        st.session_state.vector_store = None
+
+    # --- SIDEBAR & CREDITS ---
+    with st.sidebar:
+        st.title("⚖️ JurisDocs AI")
+        st.subheader("Your Intelligent Legal Locker")
+        st.markdown("""
+            This advanced RAG assistant uses:
+            * **Mistral 7B** LLM
+            * **BGE-Large** Embeddings
+            * **ChromaDB** Vector Storage
+            
+            1. Upload a Legal PDF
+            2. Ask questions below!
+        """)
+        st.markdown("---")
+        
+        # --- NEW PROFESSIONAL DEVELOPER FOOTER ---
+        st.markdown(f"""
+            <div style='text-align: center; color: {PRIMARY_COLOR}; font-size: 0.9em; font-family: sans-serif;'>
+                <strong>Engineered by Ishan Mishra</strong><br/>
+                <span style='color: #F4F5F6; font-size: 0.85em; opacity: 0.9;'>RAG Legal Assistant</span><br/>
+                <a href="https://github.com/ishanmishra0827" target="_blank" style="color: {PRIMARY_COLOR}; text-decoration: none; font-weight: bold;">GitHub</a> | <a href="https://www.linkedin.com/in/ishan-mishra/" target="_blank" style="color: {PRIMARY_COLOR}; text-decoration: none; font-weight: bold;">LinkedIn</a>
+            </div>
+        """, unsafe_allow_html=True)
+
+
+    # --- MAIN CONTENT ---
+    st.header("1. Step 1: Upload Statutory Document")
     
-    if user_query:
-        with st.spinner("Analyzing legal contexts and generating answer..."):
-            results = vector_store.similarity_search_with_score(user_query, k=3)
+    uploaded_file = st.file_uploader(
+        "Securely drop your legal PDF (Statute, Case, or Contract)", 
+        type="pdf",
+        help="JurisDocs AI will parse this text and create an intelligent searchable index."
+    )
+
+    if uploaded_file:
+        # Avoid processing identical file twice
+        if st.session_state.vector_store is None:
+             st.session_state.vector_store = process_and_index_document(uploaded_file, embeddings_model)
+             st.success(f"✅ Success! '**{uploaded_file.name}**' is locked and indexed.")
+        
+        # Reveal Chat Interface once indexed
+        st.markdown("---")
+        st.header("2. Step 2: Query the Locker")
+
+        # Define QA Chain (Retrieve context, then synthesize answer)
+        qa_chain = RetrievalQA.from_chain_type(
+            llm=llm_model,
+            chain_type="stuff",
+            retriever=st.session_state.vector_store.as_retriever(search_kwargs={"k": 5}),
+            return_source_documents=True # Get page citations
+        )
+
+        user_query = st.chat_input("Ex: What is the required notice period for commercial evictions?")
+
+        if user_query:
+            with st.spinner("Analyzing legal context..."):
+                response = qa_chain.invoke({"query": user_query})
+                ans = response["result"]
+                source_docs = response["source_documents"]
             
-            valid_contexts = []
-            for doc, score in results:
-                source_page = doc.metadata.get("page", 0) + 1
-                source_file = os.path.basename(doc.metadata.get("source", "Uploaded PDF"))
-                valid_contexts.append(f"Source: {source_file} (Page {source_page}):\n{doc.page_content}")
+            # Format and Display the AI Response
+            st.markdown(f"### JurisDocs AI Response")
+            st.write(ans)
             
-            context_str = "\n\n---\n\n".join(valid_contexts)
-            
-            system_prompt = f"""You are an elite, highly precise legal research assistant. Your sole task is to analyze the provided legal contexts and answer the user's query.
-
-CRITICAL INSTRUCTIONS FOR ACCURACY:
-1. EXCLUSIVE RELIANCE: You must formulate your answer ONLY using the facts explicitly stated in the "Retrieved Context" section below. Do not assume, extrapolate, or bring in outside legal knowledge.
-2. STRICT CITATION: For every legal rule, timeline, requirement, or right you describe in your answer, you MUST explicitly cite the specific source document and page number.
-3. ABSENCE OF INFORMATION: If the provided context does not contain sufficient, direct information to answer the user's query, you must state exactly: "Information not found in public files."
-
-### Retrieved Context:
-{context_str}
-
-### User Query:
-{user_query}
-
-### Legal Response & Verification:"""
-
-            try:
-                completion = client.chat.completions.create(
-                    model="Qwen/Qwen2.5-7B-Instruct",
-                    messages=[{"role": "user", "content": system_prompt}],
-                    max_tokens=1024,
-                    temperature=0.1
-                )
-                response_text = completion.choices[0].message.content
-                
-                # Render results in the custom card UI
-                st.markdown("<h3 style='color:#E0A96D !important;'>⚖️ AI Legal Analysis</h3>", unsafe_allow_html=True)
-                st.markdown(f'<div class="legal-card">{response_text}</div>', unsafe_allow_html=True)
-                
-                with st.expander("View Raw Retrieved Sources (Citations)"):
-                    for ctx in valid_contexts:
-                        st.text(ctx)
+            # Formatted Citations
+            if source_docs:
+                with st.expander("📌 View Statutory Citations"):
+                    st.markdown("#### Evidence Found in Document:")
+                    for idx, doc in enumerate(source_docs):
+                        filename = doc.metadata.get("source_name", "pr.24.pdf")
+                        page_num = doc.metadata.get("page", 0) + 1 # Convert 0-index
+                        st.markdown(f"> **Source**: {filename} (Page {page_num})")
+                        st.text(doc.page_content[:500] + "...") # Show snippet
                         st.markdown("---")
-            except Exception as e:
-                st.error(f"Error contacting AI: {e}")
-else:
-    st.info("👈 Please drag and drop or upload one or more legal PDFs in the sidebar to get started!")
+
+if __name__ == "__main__":
+    main()
