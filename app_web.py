@@ -11,7 +11,8 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEndpoint
-from langchain.chains import RetrievalQA
+# NEW LINE (Line 14)
+from langchain_classic.chains import RetrievalQA
 from chromadb.config import Settings
 import shutil
 
