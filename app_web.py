@@ -41,8 +41,8 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Hugging Face API Token
-HF_TOKEN = "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"
+# Hugging Face API Token (Loaded securely from Streamlit Secrets)
+HF_TOKEN = st.secrets["HF_TOKEN"]
 
 # Initialize Semantic Embeddings & HF Client
 @st.cache_resource
