@@ -12,7 +12,7 @@ except ImportError:
 import chromadb
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_huggingface import HuggingFaceEmbeddings, HuggingFaceEndpoint
+from langchain_huggingface import HuggingFaceEmbeddings, HuggingFaceEndpoint, ChatHuggingFace
 from langchain_community.vectorstores import Chroma
 from langchain_classic.chains import RetrievalQA
 
@@ -160,13 +160,21 @@ if uploaded_file is not None:
     
     st.success("Legal database initialized. Ready for query!")
     
-    # Initialize the LLM (Mistral 7B) with explicit task routing to prevent conversational model mapping errors
-    llm = HuggingFaceEndpoint(
+    # --- FIX ---
+    # Hugging Face's Inference Providers now route most instruct models
+    # (including Mistral-7B-Instruct-v0.3) through the "conversational" task
+    # only. The raw HuggingFaceEndpoint.text_generation() call used to work
+    # for this, but the routing layer now rejects it before it reaches the
+    # model, which is what produced the redacted ValueError from
+    # _prepare_mapping_info. Wrapping the endpoint in ChatHuggingFace makes
+    # LangChain call the chat/conversational endpoint instead, which is
+    # actually supported for this model.
+    base_llm = HuggingFaceEndpoint(
         repo_id="mistralai/Mistral-7B-Instruct-v0.3",
-        task="text-generation",
         temperature=0.5,
-        max_new_tokens=512
+        max_new_tokens=512,
     )
+    llm = ChatHuggingFace(llm=base_llm)
     
     # Establish retrieval QA chain
     qa_chain = RetrievalQA.from_chain_type(
@@ -181,16 +189,19 @@ if uploaded_file is not None:
     
     if user_query:
         with st.spinner("Analyzing document structure & statutes..."):
-            response = qa_chain.invoke({"query": user_query})
-            
-            st.markdown("### 🏛️ Legal Analysis:")
-            st.write(response["result"])
-            
-            # Display source citations nicely
-            with st.expander("📌 View Statutory Citations"):
-                for idx, doc in enumerate(response["source_documents"]):
-                    st.markdown(f"**Citation {idx + 1} (Page {doc.metadata.get('page', 'Unknown') + 1}):**")
-                    st.info(doc.page_content)
+            try:
+                response = qa_chain.invoke({"query": user_query})
+
+                st.markdown("### 🏛️ Legal Analysis:")
+                st.write(response["result"])
+
+                # Display source citations nicely
+                with st.expander("📌 View Statutory Citations"):
+                    for idx, doc in enumerate(response["source_documents"]):
+                        st.markdown(f"**Citation {idx + 1} (Page {doc.metadata.get('page', 'Unknown') + 1}):**")
+                        st.info(doc.page_content)
+            except Exception as e:
+                st.error(f"Something went wrong generating a response: {e}")
 
 else:
     st.info("Please upload a PDF document in the dashboard above to initiate analysis.")
