@@ -157,6 +157,7 @@ with st.sidebar:
         "Documents are processed in memory for this session only and are "
         "never permanently stored. [Details below.](#privacy)"
     )
+    st.caption("Build tag: `regex-splitter-v2`")
     st.write("---")
 
     # Premium Engineering Signature
