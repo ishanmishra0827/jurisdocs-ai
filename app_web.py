@@ -161,16 +161,17 @@ if uploaded_file is not None:
     st.success("Legal database initialized. Ready for query!")
     
     # --- FIX ---
-    # Hugging Face's Inference Providers now route most instruct models
-    # (including Mistral-7B-Instruct-v0.3) through the "conversational" task
-    # only. The raw HuggingFaceEndpoint.text_generation() call used to work
-    # for this, but the routing layer now rejects it before it reaches the
-    # model, which is what produced the redacted ValueError from
-    # _prepare_mapping_info. Wrapping the endpoint in ChatHuggingFace makes
-    # LangChain call the chat/conversational endpoint instead, which is
-    # actually supported for this model.
+    # mistralai/Mistral-7B-Instruct-v0.3 has been pulled entirely from
+    # Hugging Face's serverless Inference Providers (as of this writing its
+    # own model page says "This model isn't deployed by any Inference
+    # Provider"). No amount of task= tweaking fixes that — it simply isn't
+    # servable anymore. Qwen2.5-7B-Instruct below IS currently live on
+    # Inference Providers (via the "together" provider) and is not gated,
+    # so no extra Hugging Face license-acceptance step is needed. Wrapping
+    # in ChatHuggingFace makes LangChain call the chat/conversational
+    # endpoint, which is what's actually supported for hosted chat models.
     base_llm = HuggingFaceEndpoint(
-        repo_id="mistralai/Mistral-7B-Instruct-v0.3",
+        repo_id="Qwen/Qwen2.5-7B-Instruct",
         temperature=0.5,
         max_new_tokens=512,
     )
