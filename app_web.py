@@ -144,6 +144,15 @@ with st.sidebar:
 st.title("⚖️ JurisDocs AI")
 st.markdown("##### *Empowering legal document parsing through local Retrieval-Augmented Generation (RAG)*")
 
+# How to Use Instructions Expander
+with st.expander("📖 How to Use JurisDocs AI", expanded=True):
+    st.markdown("""
+    1. **Upload a Legal Document:** Choose a statutory code, contract, or lease agreement in **PDF** format below.
+    2. **Wait for DB Compilation:** The RAG pipeline automatically chunks, embeds, and indexes your document into a secure RAM vector store.
+    3. **Query the Engine:** Type a targeted legal question (e.g., notice requirements, specific section clauses, or statutory penalties).
+    4. **Inspect Source Citations:** Review the AI analysis along with exact page-level text citations retrieved directly from your file.
+    """)
+
 # Privacy & Compliance Expander
 with st.expander("🔒 Privacy & Compliance Notice"):
     st.markdown("""
