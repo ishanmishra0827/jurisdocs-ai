@@ -186,10 +186,9 @@ if uploaded_file is not None:
     
     st.success("Legal database initialized. Ready for query!")
     
-    # Initialize Base LLM
+    # Initialize Base LLM with highly available serverless model
     base_llm = HuggingFaceEndpoint(
-        repo_id="mistralai/Mistral-7B-Instruct-v0.3",
-        task="text-generation",
+        repo_id="Qwen/Qwen2.5-7B-Instruct",
         temperature=0.1,
         max_new_tokens=512
     )
@@ -197,7 +196,7 @@ if uploaded_file is not None:
     # Wrap base model with ChatHuggingFace to handle conversational task formatting
     llm = ChatHuggingFace(llm=base_llm)
     
-    # Define system prompt for the QA behavior
+    # Define system prompt for QA behavior
     system_prompt = (
         "You are an expert legal assistant. Use the following pieces of retrieved context "
         "to answer the question. If you don't know the answer or if the context doesn't mention "
