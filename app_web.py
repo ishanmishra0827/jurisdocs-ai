@@ -1,5 +1,6 @@
 import streamlit as st
 import os
+import uuid
 
 # --- 1. PYSQLITE3 BYPASS (MUST RUN FIRST BEFORE ANY OTHER IMPORTS) ---
 try:
@@ -100,13 +101,14 @@ with st.sidebar:
         st.warning("HF_TOKEN missing in Secrets! Please update advanced settings.")
         st.stop()
 
-    # Set HF Token directly to system environment so client grabs it natively
     os.environ["HUGGINGFACEHUB_API_TOKEN"] = HF_TOKEN
     os.environ["HF_TOKEN"] = HF_TOKEN
 
     st.write("---")
     if st.button("🗑️ Clear Chat History"):
         st.session_state["messages"] = []
+        if "collection_name" in st.session_state:
+            del st.session_state["collection_name"]
         st.rerun()
 
     st.write("---")
@@ -160,8 +162,10 @@ if uploaded_file is not None:
     # Save file locally to feed PyPDFLoader
     with open("temp_doc.pdf", "wb") as f:
         f.write(uploaded_file.getbuffer())
-        
-    st.info("Document loaded. Indexing RAM vector store...")
+
+    # Create a fresh unique collection for ChromaDB every file upload session
+    if "collection_name" not in st.session_state:
+        st.session_state["collection_name"] = f"session_{uuid.uuid4().hex[:8]}"
 
     # Load and Split PDF
     loader = PyPDFLoader("temp_doc.pdf")
@@ -170,9 +174,13 @@ if uploaded_file is not None:
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1500, chunk_overlap=250)
     chunks = text_splitter.split_documents(documents)
     
-    # Embed text and construct local ChromaDB
+    # Embed text and construct unique local ChromaDB collection
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-    vector_store = Chroma.from_documents(chunks, embeddings)
+    vector_store = Chroma.from_documents(
+        documents=chunks, 
+        embedding=embeddings,
+        collection_name=st.session_state["collection_name"]
+    )
     retriever = vector_store.as_retriever(search_kwargs={"k": 5})
     
     st.success("Legal database active. Ask questions below!")
@@ -213,11 +221,9 @@ if uploaded_file is not None:
 
     # Chat Input interface
     if user_query := st.chat_input("Ask a legal question based on this document..."):
-        # Display user message and append to history
         st.chat_message("user").markdown(user_query)
         st.session_state["messages"].append({"role": "user", "content": user_query})
 
-        # Process query through RAG pipeline
         with st.spinner("Analyzing document structure & statutes..."):
             response = rag_chain.invoke({"input": user_query})
             answer = response["answer"]
@@ -230,7 +236,6 @@ if uploaded_file is not None:
                 for doc in response["context"]
             ]
 
-            # Display Assistant Response
             with st.chat_message("assistant"):
                 st.markdown(f"### 🏛️ Legal Analysis:\n{answer}")
                 with st.expander("📌 View Statutory Citations"):
@@ -238,7 +243,6 @@ if uploaded_file is not None:
                         st.markdown(f"**Citation {idx + 1} (Page {citation['page']}):**")
                         st.info(citation["content"])
 
-            # Save assistant response & citations to history
             st.session_state["messages"].append({
                 "role": "assistant",
                 "content": f"### 🏛️ Legal Analysis:\n{answer}",
