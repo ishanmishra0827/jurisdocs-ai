@@ -72,33 +72,15 @@ st.markdown("""
         box-shadow: inset 0 2px 4px rgba(0,0,0,0.6);
     }
     
-    /* Beautiful Input Fields */
-    div[data-testid="stTextInput"] input {
+    /* Streamlit Chat Inputs & Containers */
+    div[data-testid="stChatInput"] input {
         background-color: #141414 !important;
         border: 1px solid #2A2A2A !important;
         color: #F8FAFC !important;
         border-radius: 8px !important;
-        transition: all 0.3s ease;
     }
-    div[data-testid="stTextInput"] input:focus {
+    div[data-testid="stChatInput"] input:focus {
         border-color: #D4AF37 !important;
-        box-shadow: 0 0 8px rgba(212, 175, 55, 0.15) !important;
-    }
-    
-    /* Premium Button Style (Rich Metallic look) */
-    .stButton>button {
-        background: linear-gradient(135deg, #D4AF37 0%, #C5A059 100%) !important;
-        color: #080808 !important;
-        border-radius: 8px !important;
-        font-weight: 700 !important;
-        border: none !important;
-        padding: 10px 24px !important;
-        letter-spacing: 0.5px;
-        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .stButton>button:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
     }
     </style>
 """, unsafe_allow_html=True)
@@ -123,10 +105,15 @@ with st.sidebar:
     os.environ["HF_TOKEN"] = HF_TOKEN
 
     st.write("---")
+    if st.button("🗑️ Clear Chat History"):
+        st.session_state["messages"] = []
+        st.rerun()
+
+    st.write("---")
     
     # Premium Engineering Signature
     st.markdown("""
-        <div style="text-align: center; margin-top: 50px;">
+        <div style="text-align: center; margin-top: 30px;">
             <p style="font-size: 10px; color: #666666; margin-bottom: 2px; letter-spacing: 1.5px;">SYSTEM ARCHITECTURE BY</p>
             <p style="font-size: 14px; font-weight: bold; color: #D4AF37; margin-bottom: 12px; font-family: 'Georgia', serif; letter-spacing: 2px;">ISHAN MISHRA</p>
             <div style="display: flex; justify-content: center; gap: 15px;">
@@ -145,7 +132,7 @@ st.title("⚖️ JurisDocs AI")
 st.markdown("##### *Empowering legal document parsing through local Retrieval-Augmented Generation (RAG)*")
 
 # How to Use Instructions Expander
-with st.expander("📖 How to Use JurisDocs AI", expanded=True):
+with st.expander("📖 How to Use JurisDocs AI", expanded=False):
     st.markdown("""
     1. **Upload a Legal Document:** Choose a statutory code, contract, or lease agreement in **PDF** format below.
     2. **Wait for DB Compilation:** The RAG pipeline automatically chunks, embeds, and indexes your document into a secure RAM vector store.
@@ -154,7 +141,7 @@ with st.expander("📖 How to Use JurisDocs AI", expanded=True):
     """)
 
 # Privacy & Compliance Expander
-with st.expander("🔒 Privacy & Compliance Notice"):
+with st.expander("🔒 Privacy & Compliance Notice", expanded=False):
     st.markdown("""
     * **Zero Storage:** Uploaded PDFs are processed temporarily in memory. Files are instantly deleted from disk after text extraction.
     * **RAM-Only Indexing:** The document search index exists strictly in RAM and vanishes when your session ends. Nothing is written to a persistent database.
@@ -163,16 +150,20 @@ with st.expander("🔒 Privacy & Compliance Notice"):
 
 st.write("---")
 
+# Initialize Chat Memory State
+if "messages" not in st.session_state:
+    st.session_state["messages"] = []
+
 uploaded_file = st.file_uploader("Upload Statutory Document / Case File (PDF)", type=["pdf"])
 
 if uploaded_file is not None:
-    # Save the file locally to feed PyPDFLoader
+    # Save file locally to feed PyPDFLoader
     with open("temp_doc.pdf", "wb") as f:
         f.write(uploaded_file.getbuffer())
         
-    st.info("Document uploaded successfully! Compiling database...")
+    st.info("Document loaded. Indexing RAM vector store...")
 
-    # Load and Split PDF (Optimized chunk size for legal retrieval)
+    # Load and Split PDF
     loader = PyPDFLoader("temp_doc.pdf")
     documents = loader.load()
     
@@ -184,19 +175,17 @@ if uploaded_file is not None:
     vector_store = Chroma.from_documents(chunks, embeddings)
     retriever = vector_store.as_retriever(search_kwargs={"k": 5})
     
-    st.success("Legal database initialized. Ready for query!")
-    
-    # Initialize Base LLM with highly available serverless model
+    st.success("Legal database active. Ask questions below!")
+    st.write("---")
+
+    # Initialize Base LLM
     base_llm = HuggingFaceEndpoint(
         repo_id="Qwen/Qwen2.5-7B-Instruct",
         temperature=0.1,
         max_new_tokens=512
     )
-    
-    # Wrap base model with ChatHuggingFace to handle conversational task formatting
     llm = ChatHuggingFace(llm=base_llm)
     
-    # Define system prompt for QA behavior
     system_prompt = (
         "You are an expert legal assistant. Use the following pieces of retrieved context "
         "to answer the question. If you don't know the answer or if the context doesn't mention "
@@ -209,25 +198,52 @@ if uploaded_file is not None:
         ("human", "{input}"),
     ])
     
-    # Establish modern retrieval and document chains
     question_answer_chain = create_stuff_documents_chain(llm, prompt)
     rag_chain = create_retrieval_chain(retriever, question_answer_chain)
-    
-    st.write("---")
-    user_query = st.text_input("Ask a legal question based on this document:")
-    
-    if user_query:
+
+    # Render previous conversation history from session state
+    for msg in st.session_state["messages"]:
+        with st.chat_message(msg["role"]):
+            st.markdown(msg["content"])
+            if "citations" in msg:
+                with st.expander("📌 View Statutory Citations"):
+                    for idx, citation in enumerate(msg["citations"]):
+                        st.markdown(f"**Citation {idx + 1} (Page {citation['page']}):**")
+                        st.info(citation["content"])
+
+    # Chat Input interface
+    if user_query := st.chat_input("Ask a legal question based on this document..."):
+        # Display user message and append to history
+        st.chat_message("user").markdown(user_query)
+        st.session_state["messages"].append({"role": "user", "content": user_query})
+
+        # Process query through RAG pipeline
         with st.spinner("Analyzing document structure & statutes..."):
             response = rag_chain.invoke({"input": user_query})
+            answer = response["answer"]
             
-            st.markdown("### 🏛️ Legal Analysis:")
-            st.write(response["answer"])
-            
-            # Display source citations cleanly
-            with st.expander("📌 View Statutory Citations"):
-                for idx, doc in enumerate(response["context"]):
-                    st.markdown(f"**Citation {idx + 1} (Page {doc.metadata.get('page', 'Unknown') + 1}):**")
-                    st.info(doc.page_content)
+            citations = [
+                {
+                    "page": doc.metadata.get("page", "Unknown") + 1,
+                    "content": doc.page_content
+                }
+                for doc in response["context"]
+            ]
+
+            # Display Assistant Response
+            with st.chat_message("assistant"):
+                st.markdown(f"### 🏛️ Legal Analysis:\n{answer}")
+                with st.expander("📌 View Statutory Citations"):
+                    for idx, citation in enumerate(citations):
+                        st.markdown(f"**Citation {idx + 1} (Page {citation['page']}):**")
+                        st.info(citation["content"])
+
+            # Save assistant response & citations to history
+            st.session_state["messages"].append({
+                "role": "assistant",
+                "content": f"### 🏛️ Legal Analysis:\n{answer}",
+                "citations": citations
+            })
 
 else:
     st.info("Please upload a PDF document in the dashboard above to initiate analysis.")
