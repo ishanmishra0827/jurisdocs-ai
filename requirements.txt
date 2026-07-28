@@ -9,3 +9,4 @@ pypdf
 sentence-transformers
 pysqlite3-binary
 chromadb
+rank_bm25
