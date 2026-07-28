@@ -1,0 +1,111 @@
+# =====================================================================
+# JurisDocs AI — evaluation question bank
+#
+# ⚠️  EVERY ENTRY BELOW IS A TEMPLATE AND MUST BE VERIFIED AGAINST THE
+#     STATUTE TEXT BEFORE THE NUMBERS IT PRODUCES MEAN ANYTHING.
+#
+# The expected values here were written from general knowledge of the Texas
+# Property Code, not from reading your PDFs. An eval bank with unverified
+# ground truth is worse than no eval bank: it produces confident numbers that
+# measure nothing. Open the statute, confirm each section, subsection, and
+# figure, then delete this warning.
+#
+# Target: 30-50 questions before quoting an accuracy figure to anyone.
+# Weight toward what tenants actually ask, and toward answers where being
+# wrong costs someone their housing: notice periods, filing deadlines,
+# dollar amounts, and who bears which burden.
+#
+# ---------------------------------------------------------------------
+# SCHEMA
+#   id                     unique slug
+#   question               exactly what a user would type
+#   expect_sections        section numbers that MUST reach the context window
+#   expect_context_regex   text that must appear in retrieved context;
+#                          this is how you test subsection-level retrieval
+#   require_answer_regex   facts the answer must contain
+#   forbid_answer_regex    wrong answers that must never appear — usually the
+#                          plausible-but-wrong figure the model might guess
+#   expect_subsection      e.g. "24.005(b)" — soft check unless strict
+#   strict_subsection      true to make the subsection citation a hard failure
+#   expect_refusal         true when the honest answer is "not in this document"
+# ---------------------------------------------------------------------
+
+- id: notice_tenant_at_will
+  question: "What is the minimum written notice period a landlord must give a tenant-at-will to vacate before filing a forcible detainer suit under Section 24.005?"
+  expect_sections: ["24.005"]
+  expect_context_regex:
+    - "tenant at will or by sufferance"
+  require_answer_regex:
+    - "\\b(three|3)\\b"
+    - "day"
+  forbid_answer_regex:
+    - "\\b(thirty|30)\\s*days?"
+    - "\\b(ten|10)\\s*days?"
+  expect_subsection: "24.005(b)"
+  strict_subsection: false
+
+- id: notice_written_lease
+  question: "How much written notice to vacate must a landlord give a tenant under a written lease who is holding over?"
+  expect_sections: ["24.005"]
+  require_answer_regex:
+    - "\\b(three|3)\\b"
+  expect_subsection: "24.005(a)"
+
+- id: attorney_fees_landlord_entitlement
+  # VERIFIED against pr.24.pdf: 24.006(b) governs when a prevailing landlord
+  # recovers fees — notice under (a), or a written lease so providing.
+  question: "Under what specific conditions can a prevailing landlord recover attorney's fees under Section 24.006?"
+  expect_sections: ["24.006"]
+  expect_context_regex:
+    - "attorney"
+  require_answer_regex:
+    - "written lease"
+    - "notice"
+  expect_subsection: "24.006(b)"
+
+- id: attorney_fees_notice_mechanics
+  # Separate question because the 10-day / 11th-day mechanics live in 24.006(a),
+  # not (b). Bundling both into one question made a correct answer score as wrong.
+  question: "How must a landlord deliver the written demand to vacate to preserve a claim for attorney's fees, and how far in advance?"
+  expect_sections: ["24.006"]
+  require_answer_regex:
+    - "\\b(10|ten)\\b"
+    - "registered|certified"
+  expect_subsection: "24.006(a)"
+
+# --- Adversarial cases -----------------------------------------------
+# These matter more than the straightforward ones. A tool that answers well
+# but hallucinates under pressure is not deployable, and only adversarial
+# questions surface that.
+
+- id: wrong_section_utilities
+  # Section 24.008 does not govern utility interruption. If your corpus is
+  # Chapter 24 only, the correct behavior is to decline. Once Chapter 92 is
+  # indexed, change expect_refusal to false and require the redirect to 92.008.
+  question: "What liability or consequences does a landlord face under Section 24.008 if they unlawfully disconnect a tenant's utilities?"
+  expect_sections: ["24.008"]
+  expect_refusal: true
+  forbid_answer_regex:
+    - "\\$1,?000"
+    - "one month's rent"
+
+- id: nonexistent_section
+  question: "What does Section 24.999 require regarding tenant notification?"
+  expect_refusal: true
+  forbid_answer_regex:
+    - "requires|must|shall"
+
+- id: fabricated_deadline_premise
+  question: "Since landlords have 45 days to return a security deposit under Chapter 24, what happens if they miss it?"
+  # Chapter 24 is eviction procedure; security deposits live in Chapter 92.
+  # The premise is wrong and the model must not validate it.
+  expect_refusal: true
+  forbid_answer_regex:
+    - "\\b45\\b"
+
+- id: no_citation_paraphrase
+  # Tests retrieval when the user never uses statutory vocabulary — the case
+  # dense embeddings exist to handle.
+  question: "My landlord changed the locks while I was at work. What can I do?"
+  expect_context_regex:
+    - "lock|possession|entry"

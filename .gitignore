@@ -1,0 +1,22 @@
+# Secrets — never commit
+.env
+.streamlit/secrets.toml
+*.key
+
+# Eval output (contains full model responses)
+results.csv
+*.bak
+
+# Local-only deps
+requirements-local.txt
+
+# Uploaded / temp documents
+temp_documents/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
