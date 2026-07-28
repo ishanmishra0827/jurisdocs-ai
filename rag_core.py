@@ -145,10 +145,28 @@ def chunk_documents(documents):
     return chunks
 
 
+def _assert_pdf(path: str):
+    """
+    A downloaded error page saved as .pdf is a common failure. pypdf reports it
+    as 'Stream has ended unexpectedly' several frames deep, which looks like
+    corruption rather than 'this is HTML'.
+    """
+    with open(path, "rb") as fh:
+        header = fh.read(5)
+    if header != b"%PDF-":
+        preview = header.decode("utf-8", errors="replace")
+        raise ValueError(
+            f"{path} is not a PDF (starts with {preview!r}). "
+            "If it was downloaded with curl or wget, it is most likely an HTML "
+            "error page saved under a .pdf name. Check with: file " + path
+        )
+
+
 def build_index_from_paths(pdf_paths):
     """Index one or more PDFs into a single corpus (e.g. Chapter 24 + Chapter 92)."""
     documents = []
     for path in pdf_paths:
+        _assert_pdf(path)
         documents.extend(PyPDFLoader(path).load())
 
     total_chars = sum(len(d.page_content) for d in documents)
@@ -273,21 +291,88 @@ SYSTEM_PROMPT = (
     "one that does, and then answer. People frequently misremember section numbers.\n"
     "5. Only say the document does not cover the question when the excerpts genuinely "
     "contain nothing on point. Never invent statutory text, section numbers, or figures.\n"
-    "6. Quote the operative language verbatim where the precise wording carries legal weight.\n"
-    "7. Lead with the direct answer in the first sentence, then support it.\n\n"
+    "6. When the excerpts do not answer the question, say so and STOP. Do not continue "
+    "with general principles of law, background knowledge, what is 'typical', or what "
+    "can be 'inferred'. You have no reliable knowledge beyond these excerpts, and a "
+    "plausible-sounding general statement is worse than no answer because the reader "
+    "cannot tell it apart from the statute.\n"
+    "7. Never attach a section citation to a proposition that section does not state. "
+    "Before citing, confirm the cited excerpt actually contains the rule you are "
+    "describing. Citing a nearby or topically adjacent section is a serious error: it "
+    "makes an unsupported claim look verified.\n"
+    "8. Quote the operative language verbatim where the precise wording carries legal weight.\n"
+    "9. Lead with the direct answer in the first sentence, then support it.\n\n"
     "Prior conversation:\n{chat_history}\n\n"
     "Document excerpts:\n{context}"
 )
 
 
-def build_chain(temperature: float = 0.1, max_new_tokens: int = 1024):
-    base_llm = HuggingFaceEndpoint(
-        repo_id=LLM_REPO_ID,
-        temperature=temperature,
-        max_new_tokens=max_new_tokens,
-        repetition_penalty=1.05,
-    )
-    llm = ChatHuggingFace(llm=base_llm)
+def detect_provider():
+    """Pick a provider from whichever credential is present."""
+    if os.environ.get("LLM_PROVIDER"):
+        return os.environ["LLM_PROVIDER"].lower()
+    if os.environ.get("GROQ_API_KEY"):
+        return "groq"
+    if os.environ.get("GOOGLE_API_KEY"):
+        return "google"
+    if os.environ.get("OLLAMA_MODEL"):
+        return "ollama"
+    if os.environ.get("HF_TOKEN"):
+        return "huggingface"
+    return None
+
+
+# Model names change as providers deprecate and release. If a call fails with
+# "model not found", check the provider's current model list rather than
+# assuming the code is broken.
+DEFAULT_MODELS = {
+    "groq": "llama-3.3-70b-versatile",
+    "google": "gemini-2.0-flash",
+    "ollama": "qwen2.5:7b",
+    "huggingface": "Qwen/Qwen2.5-7B-Instruct",
+}
+
+
+def build_llm(provider=None, temperature: float = 0.1, max_new_tokens: int = 1024):
+    provider = provider or detect_provider()
+    if provider is None:
+        raise RuntimeError(
+            "No LLM credential found. Set one of: GROQ_API_KEY (free tier), "
+            "GOOGLE_API_KEY (free tier), OLLAMA_MODEL (local, offline), or HF_TOKEN."
+        )
+
+    model = os.environ.get("LLM_MODEL", DEFAULT_MODELS.get(provider))
+
+    if provider == "groq":
+        from langchain_groq import ChatGroq
+        return ChatGroq(model=model, temperature=temperature, max_tokens=max_new_tokens)
+
+    if provider == "google":
+        from langchain_google_genai import ChatGoogleGenerativeAI
+        return ChatGoogleGenerativeAI(
+            model=model, temperature=temperature, max_output_tokens=max_new_tokens
+        )
+
+    if provider == "ollama":
+        # Fully local and offline. Nothing leaves the machine, which also makes
+        # this the only option that is safe for confidential client documents.
+        from langchain_ollama import ChatOllama
+        return ChatOllama(model=model, temperature=temperature)
+
+    if provider == "huggingface":
+        base_llm = HuggingFaceEndpoint(
+            repo_id=model,
+            temperature=temperature,
+            max_new_tokens=max_new_tokens,
+            repetition_penalty=1.05,
+        )
+        return ChatHuggingFace(llm=base_llm)
+
+    raise RuntimeError(f"Unknown provider: {provider}")
+
+
+def build_chain(temperature: float = 0.1, max_new_tokens: int = 1024, provider=None):
+    llm = build_llm(provider, temperature, max_new_tokens)
     prompt = ChatPromptTemplate.from_messages([
         ("system", SYSTEM_PROMPT),
         ("human", "{input}"),

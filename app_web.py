@@ -75,15 +75,19 @@ with st.sidebar:
     st.subheader("Legal RAG Engine")
     st.write("---")
 
-    if "HF_TOKEN" in st.secrets:
-        HF_TOKEN = st.secrets["HF_TOKEN"]
-        st.success("HuggingFace API Token Connected")
-    else:
-        st.warning("HF_TOKEN missing in Secrets! Please update advanced settings.")
-        st.stop()
+    # Any one of these works. Groq and Google have free tiers; Ollama runs local.
+    for key in ("GROQ_API_KEY", "GOOGLE_API_KEY", "HF_TOKEN", "LLM_PROVIDER", "LLM_MODEL"):
+        if key in st.secrets:
+            os.environ[key] = st.secrets[key]
 
-    os.environ["HUGGINGFACEHUB_API_TOKEN"] = HF_TOKEN
-    os.environ["HF_TOKEN"] = HF_TOKEN
+    provider = rag_core.detect_provider()
+    if provider is None:
+        st.error(
+            "No LLM credential in Secrets. Add one of GROQ_API_KEY, "
+            "GOOGLE_API_KEY, or HF_TOKEN."
+        )
+        st.stop()
+    st.success(f"Provider: {provider}")
 
     st.write("---")
     show_debug = st.toggle("Show retrieval diagnostics", value=False)

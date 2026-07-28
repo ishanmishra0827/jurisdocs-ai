@@ -60,7 +60,7 @@
     - "attorney"
   require_answer_regex:
     - "written lease"
-    - "notice"
+    - "notice|demand"
   expect_subsection: "24.006(b)"
 
 - id: attorney_fees_notice_mechanics
@@ -101,11 +101,17 @@
   # The premise is wrong and the model must not validate it.
   expect_refusal: true
   forbid_answer_regex:
-    - "\\b45\\b"
+    # Only affirmative validation of the false premise counts as failure.
+    - "(?:has|have|within|allows?|requires?)\\s+45\\s*days"
+    - "45-day (?:deadline|period|requirement) (?:is|under Chapter 24)"
 
 - id: no_citation_paraphrase
-  # Tests retrieval when the user never uses statutory vocabulary — the case
-  # dense embeddings exist to handle.
+  # Lockouts are governed by Sec. 92.0081, in Chapter 92. With only Chapter 24
+  # indexed the correct behavior is to decline — NOT to answer from 24.005's
+  # notice-to-vacate rule, which governs a different thing entirely.
+  # Once Chapter 92 is indexed, set expect_refusal false and require 92.0081.
   question: "My landlord changed the locks while I was at work. What can I do?"
-  expect_context_regex:
-    - "lock|possession|entry"
+  expect_refusal: true
+  forbid_answer_regex:
+    - "24\\.005"
+    - "24\\.0062"

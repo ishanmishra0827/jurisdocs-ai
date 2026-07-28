@@ -32,6 +32,7 @@ import csv
 import os
 import re
 import sys
+import time
 from collections import defaultdict
 
 import yaml
@@ -52,7 +53,61 @@ REFUSAL_MARKERS = [
     r"outside the scope",
     r"not covered by",
     r"appears? to be (?:no|incorrect|a misstatement)",
+    r"cannot provide legal advice",
+    r"(?:can't|cannot|not able to) (?:provide|give|offer) (?:legal )?advice",
+    r"(?:consult|speak with|contact) (?:a|an|your) (?:lawyer|attorney|legal)",
+    r"tenant rights organization",
 ]
+
+# The model's most dangerous habit: correctly noting the document is silent, then
+# continuing anyway with general legal knowledge anchored to a real-but-unrelated
+# section number. The refusal reads as compliant, so refusal-detection alone
+# scores it as a pass. These patterns catch the continuation.
+EXTRADOC_MARKERS = [
+    r"general principles",
+    r"generally speaking",
+    r"in general,",
+    r"typically,?\s",
+    r"usually,?\s",
+    r"it can be inferred",
+    r"can be inferred that",
+    r"common law",
+    r"under (?:Texas|state|federal) law(?:,| generally)",
+    r"other relevant (?:statutes|laws|provisions)",
+    r"may be considered",
+]
+
+
+def is_rate_limit(exc) -> bool:
+    text = str(exc).lower()
+    return "429" in text or "rate limit" in text or "ratelimit" in type(exc).__name__.lower()
+
+
+def suggested_wait(exc, fallback: float) -> float:
+    """Providers usually say how long to wait. Use their number when present."""
+    match = re.search(r"try again in ([\d.]+)\s*(m|s)", str(exc), re.IGNORECASE)
+    if match:
+        value = float(match.group(1))
+        return value * 60 if match.group(2).lower() == "m" else value + 1
+    return fallback
+
+
+def call_with_retry(fn, retries: int = 5, base_delay: float = 8.0):
+    """
+    Free tiers rate-limit aggressively. Without backoff a 24-call run dies after
+    the first handful and reports the rest as errors, which tells you nothing
+    about the model.
+    """
+    for attempt in range(retries):
+        try:
+            return fn()
+        except Exception as exc:
+            if not is_rate_limit(exc) or attempt == retries - 1:
+                raise
+            wait = suggested_wait(exc, base_delay * (2 ** attempt))
+            print(f"         rate limited — waiting {wait:.0f}s "
+                  f"(attempt {attempt + 1}/{retries})")
+            time.sleep(wait)
 
 
 def matches_any(patterns, text):
@@ -95,6 +150,14 @@ def score_answer(question, result):
     if question.get("expect_refusal"):
         if not refused:
             failures.append("expected a refusal, model answered instead")
+        # A refusal that keeps talking is not a refusal. This is the check that
+        # catches "the document doesn't say, but generally... (Sec. 24.0062)".
+        for pattern in EXTRADOC_MARKERS:
+            if re.search(pattern, answer, re.IGNORECASE):
+                failures.append(
+                    f"refused then supplied extra-document knowledge (/{pattern}/)"
+                )
+                break
     else:
         if refused:
             failures.append("model refused on an answerable question")
@@ -107,11 +170,13 @@ def score_answer(question, result):
         if re.search(pattern, answer, re.IGNORECASE):
             failures.append(f"answer contains forbidden /{pattern}/")
 
-    # Citation precision: every section the model cites must be one we expected
-    # or one that was actually retrieved. Anything else is fabricated.
-    allowed = set(question.get("expect_sections", [])) | set(
-        s for s in result["retrieved_sections"] if s
-    )
+    # Citation precision: every section the model cites must be one we expected,
+    # one that was actually retrieved, or one the user named in the question.
+    # A refusal that says "Section 24.999 does not appear in this document" is
+    # correct behavior, not a fabricated citation.
+    allowed = set(question.get("expect_sections", []))
+    allowed |= set(s for s in result["retrieved_sections"] if s)
+    allowed |= set(rag_core.extract_section_numbers(question["question"]))
     fabricated = cited - allowed
     if fabricated:
         failures.append(f"fabricated citation(s): {sorted(fabricated)}")
@@ -120,8 +185,16 @@ def score_answer(question, result):
     # the hardest thing to get right; set strict_subsection: true to enforce.
     expected_sub = question.get("expect_subsection")
     if expected_sub:
-        escaped = re.escape(expected_sub)
-        if not re.search(escaped, answer):
+        # Accept either "24.006(b)" or the prose form "Subsection (b)". Both
+        # point the reader to the right provision; only the format differs.
+        parts = re.match(r"([\d.]+)\(([a-z])\)", expected_sub)
+        if parts:
+            section, letter = parts.groups()
+            pattern = (rf"(?:{re.escape(section)}\s*\(\s*{letter}\s*\)"
+                       rf"|[Ss]ubsection\s*\(\s*{letter}\s*\))")
+        else:
+            pattern = re.escape(expected_sub)
+        if not re.search(pattern, answer):
             msg = f"did not cite subsection {expected_sub}"
             if question.get("strict_subsection"):
                 failures.append(msg)
@@ -140,6 +213,8 @@ def main():
     parser.add_argument("--retrieval-only", action="store_true")
     parser.add_argument("--out", default=None, help="write per-run results to CSV")
     parser.add_argument("--verbose", action="store_true")
+    parser.add_argument("--delay", type=float, default=3.0,
+                        help="seconds between calls; raise if rate limited")
     args = parser.parse_args()
 
     for path in args.pdf:
@@ -164,26 +239,41 @@ def main():
 
     chain = None
     if not args.retrieval_only:
-        token = os.environ.get("HF_TOKEN", "")
-        if not token:
-            sys.exit("HF_TOKEN not set. Export it, or pass --retrieval-only.")
-        if token in ("hf_your_token", "hf_...", "hf_your_token_here"):
-            sys.exit(f"HF_TOKEN is set to the placeholder '{token}'. "
-                     "Export your real HuggingFace token.")
-        os.environ.setdefault("HUGGINGFACEHUB_API_TOKEN", token)
+        provider = rag_core.detect_provider()
+        if provider is None:
+            sys.exit(
+                "No LLM credential found. Set one of:\n"
+                "  export GROQ_API_KEY=...    # free tier, console.groq.com\n"
+                "  export GOOGLE_API_KEY=...  # free tier, aistudio.google.com\n"
+                "  export OLLAMA_MODEL=qwen2.5:7b   # local, offline, unlimited\n"
+                "  export HF_TOKEN=...\n"
+                "Or pass --retrieval-only to skip the answer layer."
+            )
+
+        placeholders = ("hf_your_token", "hf_...", "your_key_here", "hf_your_token_here")
+        for var in ("GROQ_API_KEY", "GOOGLE_API_KEY", "HF_TOKEN"):
+            if os.environ.get(var, "") in placeholders and os.environ.get(var):
+                sys.exit(f"{var} is set to a placeholder value. Use your real key.")
+
+        if provider == "huggingface":
+            os.environ.setdefault("HUGGINGFACEHUB_API_TOKEN", os.environ.get("HF_TOKEN", ""))
+
+        model = os.environ.get("LLM_MODEL", rag_core.DEFAULT_MODELS.get(provider))
+        print(f"Provider: {provider} / {model}")
         chain = rag_core.build_chain()
 
-        # Preflight: one throwaway call. Without this, an auth failure produces
-        # 100% "failures" that look like model errors, and you spend an evening
-        # debugging a pipeline that was fine.
+        # Preflight: one throwaway call. Without this, an auth or billing failure
+        # produces 100% "failures" that look like model errors, and you spend an
+        # evening debugging a pipeline that was fine.
         print("Preflight: testing inference endpoint...")
         try:
-            chain.invoke({"input": "Reply with OK.", "context": "none", "chat_history": "none"})
+            call_with_retry(lambda: chain.invoke(
+                {"input": "Reply with OK.", "context": "none", "chat_history": "none"}))
             print("  endpoint reachable\n")
         except Exception as exc:
             sys.exit(f"\nInference endpoint unreachable — aborting before scoring.\n"
                      f"  {type(exc).__name__}: {exc}\n\n"
-                     "Check that HF_TOKEN is valid and has Inference API permission.")
+                     "Check the credential is valid and has quota remaining.")
 
     rows = []
     errors = 0
@@ -202,8 +292,12 @@ def main():
                 }
             else:
                 try:
-                    result = rag_core.answer_question(index, chain, question["question"])
+                    result = call_with_retry(
+                        lambda: rag_core.answer_question(index, chain, question["question"])
+                    )
                     result["error"] = None
+                    if args.delay:
+                        time.sleep(args.delay)
                 except Exception as exc:
                     result = {
                         "answer": "",
