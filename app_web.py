@@ -16,6 +16,15 @@ except ImportError:
 import chromadb
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.retrievers import BM25Retriever
+
+# BM25Retriever imports fine on its own, but raises ImportError at construction
+# time if the `rank_bm25` package is absent. Probe for it here so the app can
+# degrade to exact-match + semantic retrieval instead of crashing on upload.
+try:
+    import rank_bm25  # noqa: F401
+    BM25_AVAILABLE = True
+except ImportError:
+    BM25_AVAILABLE = False
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings, HuggingFaceEndpoint, ChatHuggingFace
 from langchain_community.vectorstores import Chroma
@@ -185,11 +194,13 @@ def build_index(doc_id: str, _file_bytes: bytes):
     )
     dense_retriever = vector_store.as_retriever(search_kwargs={"k": 8})
 
-    keyword_retriever = BM25Retriever.from_documents(
-        chunks,
-        preprocess_func=bm25_preprocess,
-    )
-    keyword_retriever.k = 8
+    keyword_retriever = None
+    if BM25_AVAILABLE:
+        keyword_retriever = BM25Retriever.from_documents(
+            chunks,
+            preprocess_func=bm25_preprocess,
+        )
+        keyword_retriever.k = 8
 
     return {
         "chunks": chunks,
@@ -200,18 +211,50 @@ def build_index(doc_id: str, _file_bytes: bytes):
     }
 
 
-def hybrid_retrieve(index, query: str, top_k: int = 6):
+def is_toc_chunk(text: str) -> bool:
     """
-    Three retrieval passes, merged and de-duplicated:
+    Table-of-contents lines cite dozens of section numbers with no substantive
+    text. They match citation queries strongly and are worthless as context, so
+    they get dropped before ranking.
+    """
+    return text.count("...") >= 3 or text.count(". . .") >= 2
 
-      1. EXACT  - literal string match on any statutory number in the query.
-                  Deterministic and always ranked first. This is the pass that
-                  fixes the "Section 24.008" failure outright.
-      2. BM25   - keyword/lexical match. Catches legal terms of art
-                  ("constructive eviction", "writ of possession") that dense
-                  embeddings blur together.
-      3. DENSE  - semantic match. Catches paraphrased questions where the user
-                  never uses the document's own vocabulary.
+
+def gather_sections(index, nums):
+    """
+    Split candidates into two tiers:
+
+      body     - chunks that ARE part of the cited section. A long section like
+                 24.005 runs (a) through (i) across several chunks; all of them
+                 belong in context together, because the subsection answering the
+                 question is often not the first one.
+      mentions - chunks from elsewhere that merely cross-reference the number.
+                 Useful, but never at the expense of the section's own text.
+    """
+    body, mentions = [], []
+    for chunk in index["chunks"]:
+        if is_toc_chunk(chunk.page_content):
+            continue
+        if chunk.metadata.get("section", "") in nums:
+            body.append(chunk)
+        elif any(n in chunk.page_content for n in nums):
+            mentions.append(chunk)
+    return body, mentions
+
+
+def hybrid_retrieve(index, query: str, top_k: int = 8):
+    """
+    Four retrieval passes, merged and de-duplicated:
+
+      1. SECTION - full assembly of any section cited in the query, in document
+                   order. Deterministic, and the only pass that reliably delivers
+                   every subsection of a long statute.
+      2. MENTION - cross-references to that section from elsewhere in the corpus.
+      3. BM25    - keyword/lexical match. Catches legal terms of art
+                   ("constructive eviction", "writ of possession") that dense
+                   embeddings blur together.
+      4. DENSE   - semantic match. Catches paraphrased questions where the user
+                   never uses the document's own vocabulary.
 
     Dense-only retrieval is the wrong tool for citation lookup: MiniLM maps
     "24.008" and "24.005" to nearly identical vectors, so the nearest neighbour
@@ -226,34 +269,42 @@ def hybrid_retrieve(index, query: str, top_k: int = 6):
             seen.add(key)
             ordered.append(doc)
 
-    # Pass 1 - exact citation match
+    # Passes 1 and 2 - cited sections, whole and in order
     query_sections = extract_section_numbers(query)
     if query_sections:
-        for num in query_sections:
-            for chunk in index["chunks"]:
-                if num in chunk.page_content or num == chunk.metadata.get("section"):
-                    add(chunk)
+        body, mentions = gather_sections(index, query_sections)
+        for doc in body[:12]:
+            add(doc)
+        for doc in mentions[:2]:
+            add(doc)
 
-    # Pass 2 - lexical. Expand the query with every way a statute gets written,
+    # Whatever the cited section contributed is protected from truncation below.
+    reserved = len(ordered)
+
+    # Pass 3 - lexical. Expand the query with every way a statute gets written,
     # so BM25 can hit whichever convention this particular PDF uses.
     expanded = query
     for num in query_sections:
         expanded += f" Sec. {num} Section {num} § {num} {num}"
 
-    try:
-        for doc in index["keyword"].invoke(expanded):
-            add(doc)
-    except Exception:
-        pass
+    if index["keyword"] is not None:
+        try:
+            for doc in index["keyword"].invoke(expanded):
+                add(doc)
+        except Exception:
+            pass
 
-    # Pass 3 - semantic
+    # Pass 4 - semantic
     try:
         for doc in index["dense"].invoke(query):
             add(doc)
     except Exception:
         pass
 
-    return ordered[:top_k], query_sections
+    # Never truncate away the cited section itself. If the section assembled into
+    # 9 chunks, all 9 survive and the semantic hits fill whatever room is left.
+    limit = max(top_k, reserved + 2)
+    return ordered[:limit], query_sections
 
 
 def format_context(docs):
@@ -288,6 +339,13 @@ with st.sidebar:
 
     st.write("---")
     show_debug = st.toggle("Show retrieval diagnostics", value=False)
+
+    if not BM25_AVAILABLE:
+        st.warning(
+            "Keyword retrieval is offline — `rank_bm25` is not installed. "
+            "Exact-citation and semantic search still work, but recall on legal "
+            "terms of art will be weaker. Add `rank_bm25` to requirements.txt."
+        )
 
     if st.button("🗑️ Clear Chat History"):
         st.session_state["messages"] = []
@@ -382,12 +440,18 @@ SYSTEM_PROMPT = (
     "2. If the excerpts contain the relevant provision, answer it fully — set out the "
     "elements, the remedies, the damages formula, and any notice or timing requirements "
     "spelled out in the text.\n"
-    "3. If the excerpts address the topic but under a different section number than the "
+    "3. Statutory sections are divided into subsections — (a), (b), (c) and so on — "
+    "and different subsections routinely govern different classes of person or "
+    "situation. Read every subsection in the excerpts before concluding that a "
+    "scenario is uncovered. If subsection (a) addresses one category and the question "
+    "concerns another, keep reading: the answer is usually in a later subsection.\n"
+    "4. If the excerpts address the topic but under a different section number than the "
     "one asked about, say so explicitly and answer from the section that does govern it. "
     "Do not refuse merely because the exact number the user typed does not appear.\n"
-    "4. Only say the document does not cover the question when the excerpts genuinely "
+    "5. Only say the document does not cover the question when the excerpts genuinely "
     "contain nothing on point. Never invent statutory text, section numbers, or figures.\n"
-    "5. Quote the operative language verbatim where the precise wording carries legal weight.\n\n"
+    "6. Quote the operative language verbatim where the precise wording carries legal weight.\n"
+    "7. Lead with the direct answer in the first sentence, then support it.\n\n"
     "Prior conversation:\n{chat_history}\n\n"
     "Document excerpts:\n{context}"
 )
@@ -421,7 +485,7 @@ if user_query := st.chat_input("Ask a legal question based on this document...")
     st.session_state["messages"].append({"role": "user", "content": user_query})
 
     with st.spinner("Analyzing document structure & statutes..."):
-        docs, query_sections = hybrid_retrieve(index, user_query, top_k=6)
+        docs, query_sections = hybrid_retrieve(index, user_query, top_k=8)
 
         history_turns = st.session_state["messages"][-7:-1]
         chat_history = "\n".join(
