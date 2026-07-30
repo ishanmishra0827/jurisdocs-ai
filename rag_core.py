@@ -196,13 +196,24 @@ def build_index_from_paths(pdf_paths):
 
 
 def build_index_from_bytes(file_bytes: bytes):
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:
-        tmp.write(file_bytes)
-        tmp_path = tmp.name
+    return build_index_from_byte_list([file_bytes])
+
+
+def build_index_from_byte_list(byte_list):
+    """Index several uploaded PDFs as one corpus."""
+    paths = []
     try:
-        return build_index_from_paths([tmp_path])
+        for blob in byte_list:
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:
+                tmp.write(blob)
+                paths.append(tmp.name)
+        return build_index_from_paths(paths)
     finally:
-        os.unlink(tmp_path)
+        for path in paths:
+            try:
+                os.unlink(path)
+            except OSError:
+                pass
 
 
 def gather_sections(index, nums):

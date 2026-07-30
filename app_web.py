@@ -59,8 +59,8 @@ st.markdown("""
 # Streamlit-side caching only. All retrieval logic lives in rag_core so the
 # evaluation harness exercises the identical code path.
 @st.cache_resource(show_spinner=False)
-def build_index(doc_id: str, _file_bytes: bytes):
-    return rag_core.build_index_from_bytes(_file_bytes)
+def build_index(doc_id: str, _blobs):
+    return rag_core.build_index_from_byte_list(_blobs)
 
 
 @st.cache_resource(show_spinner=False)
@@ -151,17 +151,26 @@ st.write("---")
 if "messages" not in st.session_state:
     st.session_state["messages"] = []
 
-uploaded_file = st.file_uploader("Upload Statutory Document / Case File (PDF)", type=["pdf"])
+uploaded_files = st.file_uploader(
+    "Upload Statutory Documents / Case Files (PDF) — you can select more than one",
+    type=["pdf"],
+    accept_multiple_files=True,
+)
 
-if uploaded_file is None:
-    st.info("Please upload a PDF document in the dashboard above to initiate analysis.")
+if not uploaded_files:
+    st.info(
+        "Upload one or more PDFs above to begin. Landlord-tenant questions usually "
+        "need both Property Code Chapter 24 (eviction procedure) and Chapter 92 "
+        "(residential tenancies) — upload both so questions aren't declined simply "
+        "because the governing chapter is missing."
+    )
     st.stop()
 
-file_bytes = uploaded_file.getvalue()
-doc_id = hashlib.sha256(file_bytes).hexdigest()[:16]
+blobs = [f.getvalue() for f in uploaded_files]
+doc_id = hashlib.sha256(b"".join(blobs)).hexdigest()[:16]
 
-with st.spinner("Compiling statutory index (runs once per document)..."):
-    index = build_index(doc_id, file_bytes)
+with st.spinner(f"Compiling statutory index from {len(blobs)} document(s)..."):
+    index = build_index(doc_id, blobs)
 
 if index["total_chars"] < 500:
     st.error(
