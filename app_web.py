@@ -64,7 +64,7 @@ def build_index(doc_id: str, _blobs):
 
 
 @st.cache_resource(show_spinner=False)
-def get_chain():
+def get_chain(model_key: str):
     return rag_core.build_chain()
 
 
@@ -87,7 +87,9 @@ with st.sidebar:
             "GOOGLE_API_KEY, or HF_TOKEN."
         )
         st.stop()
+    active_model = os.environ.get("LLM_MODEL") or rag_core.DEFAULT_MODELS.get(provider, "unknown")
     st.success(f"Provider: {provider}")
+    st.caption(f"Model: {active_model}")
 
     st.write("---")
     show_debug = st.toggle("Show retrieval diagnostics", value=False)
@@ -185,7 +187,7 @@ st.success(
 )
 st.write("---")
 
-chain = get_chain()
+chain = get_chain(active_model)
 
 
 def render_citations(citations):
