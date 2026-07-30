@@ -141,8 +141,9 @@ with st.expander("⚠️ Accuracy & Verification", expanded=False):
 with st.expander("🔒 Privacy Notice", expanded=False):
     st.markdown("""
     * **No persistent storage:** Uploaded PDFs are processed in memory and the temporary file is deleted after text extraction. The search index exists only in RAM and is discarded when the session ends.
-    * **Third-party processing:** Document excerpts and your questions are transmitted to the HuggingFace Inference API for generation. They leave this application. Do not upload confidential client material without reviewing HuggingFace's data policy and your own obligations.
-    * **Training:** HuggingFace states inference data is not used for training. That is their policy commitment, not a guarantee enforced by this application's architecture.
+    * **Third-party processing:** Your questions and excerpts of the uploaded document are transmitted to a third-party inference provider (currently Groq) to generate each answer. They leave this application.
+    * **Confidential material:** Do not upload documents containing client names, addresses, case details, or other identifying information without reviewing that provider's terms against your own confidentiality obligations. This application also supports fully local inference, where no data leaves the machine.
+    * **Not legal advice:** This is a document research aid. It retrieves and summarizes statutory text; it does not verify its own output and is not a substitute for a licensed attorney.
     """)
 
 st.write("---")
