@@ -237,6 +237,13 @@ def hybrid_retrieve(index, query: str, top_k: int = 8):
             add(doc)
         for doc in mentions[:2]:
             add(doc)
+    else:
+        # No section cited, so there is no anchor and no reserved budget. These
+        # queries need MORE breadth, not less — a tenant asking "how long to get
+        # my deposit back" is competing against every chunk that mentions
+        # "security deposit". Without this, paraphrase queries got a smaller
+        # context window than queries that already named the section.
+        top_k = max(top_k, 14)
 
     reserved = len(ordered)
 
