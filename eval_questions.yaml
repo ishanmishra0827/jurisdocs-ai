@@ -115,3 +115,14 @@
   forbid_answer_regex:
     - "24\\.005"
     - "24\\.0062"
+
+- id: retaliation_rent_increase
+  question: "Can my landlord raise my rent because I complained to the city about code violations?"
+  expect_sections: ["92.331"]
+  expect_context_regex:
+    - "increasing the tenant"
+  require_answer_regex:
+    - "rent"
+  forbid_answer_regex:
+    - "does not (?:explicitly )?mention rent"
+    - "document does not address"
