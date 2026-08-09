@@ -119,16 +119,29 @@ def chunk_documents(documents):
     raw_chunks = splitter.split_documents(documents)
 
     chunks = []
-    current_section = None
+    carried = None
     for chunk in raw_chunks:
         headings = extract_headings(chunk.page_content)
+
+        # Every section whose text appears in this chunk: the one carried in from
+        # the previous chunk, plus any that begin here. A chunk holding the tail
+        # of 92.331 and the heading of 92.332 covers BOTH. Labelling it only
+        # 92.332 makes the 92.331(b) text unreachable when completing 92.331 —
+        # and a model shown 92.331(a) without (b) will report that (b)'s
+        # prohibitions do not exist.
+        covered = []
+        if carried:
+            covered.append(carried)
+        for heading in headings:
+            if heading not in covered:
+                covered.append(heading)
+
         if headings:
-            # The last heading governs the tail of the chunk, which is what
-            # continues into whatever follows.
-            current_section = headings[-1]
+            carried = headings[-1]
 
         chunk.metadata["headings"] = ", ".join(headings)
-        chunk.metadata["section"] = current_section or ""
+        chunk.metadata["covered"] = ", ".join(covered)
+        chunk.metadata["section"] = covered[0] if covered else ""
         chunk.metadata["mentions"] = ", ".join(
             extract_section_numbers(chunk.page_content)
         )
@@ -136,7 +149,7 @@ def chunk_documents(documents):
         page = chunk.metadata.get("page")
         chunk.metadata["page_label"] = page + 1 if isinstance(page, int) else "?"
 
-        label = ", ".join(headings) if headings else (current_section or "")
+        label = ", ".join(covered)
         if label and label not in chunk.page_content[:60]:
             chunk.page_content = f"[Sec. {label}]\n{chunk.page_content}"
 
@@ -200,7 +213,16 @@ def build_index_from_bytes(file_bytes: bytes):
 
 
 def build_index_from_byte_list(byte_list):
-    """Index several uploaded PDFs as one corpus."""
+    """
+    Index several uploaded PDFs as one corpus.
+
+    Splitting landlord-tenant law across separate uploads creates artificial
+    failures: eviction notice periods are in Chapter 24, deposits and repairs in
+    Chapter 92. Ask a Chapter 24 question of a Chapter 92 upload and the model is
+    handed a pile of adjacent-but-wrong text and asked to work out that the answer
+    is absent. It improvises. Indexing both together removes the problem at its
+    source rather than trying to prompt around it.
+    """
     paths = []
     try:
         for blob in byte_list:
@@ -222,13 +244,80 @@ def gather_sections(index, nums):
     for chunk in index["chunks"]:
         if is_toc_chunk(chunk.page_content):
             continue
-        declared = {h.strip() for h in chunk.metadata.get("headings", "").split(",") if h.strip()}
+        declared = {h.strip() for h in chunk.metadata.get("covered", "").split(",") if h.strip()}
         declared.add(chunk.metadata.get("section", ""))
         if target & declared:
             body.append(chunk)
         elif any(n in chunk.page_content for n in nums):
             mentions.append(chunk)
     return body, mentions
+
+
+def complete_top_sections(index, ordered, max_sections: int = 14, max_added: int = 10):
+    """
+    Pull in the rest of any section that was only partially retrieved.
+
+    Statutes split across chunks: 92.331(a) lists protected tenant activity,
+    92.331(b) lists what the landlord may not do in response. Show a model (a)
+    without (b) and it will report that (b)'s prohibitions do not exist — worse
+    than refusing, because the reader cannot tell.
+
+    Completion covers every section present in the results, not just the top
+    one or two: the governing section frequently ranks fourth or fifth behind
+    chunks that merely share vocabulary. Additions are handed out round-robin so
+    one long section cannot consume the whole budget.
+
+    Chunk boundaries land mid-section, so most chunks span two sections and the
+    candidate list runs to a dozen or more. The addition budget has to be of the
+    same order — with a small budget, round-robin exhausts it on boundary
+    artifacts before reaching the section that actually governs the question.
+    The initial retrieval is trimmed to compensate, keeping total context flat.
+    """
+    if not ordered:
+        return ordered
+
+    # Build candidates from `covered`, not `section`. A chunk that continues
+    # 92.301 and then opens 92.331 has primary section 92.301 — so keying off the
+    # primary alone makes 92.331 invisible to completion even though its text is
+    # sitting right there in the results.
+    ranked = []
+    for doc in ordered:
+        for sec in doc.metadata.get("covered", "").split(","):
+            sec = sec.strip()
+            if sec and sec not in ranked:
+                ranked.append(sec)
+    ranked = ranked[:max_sections]
+    if not ranked:
+        return ordered
+
+    have = {doc.page_content[:300] for doc in ordered}
+
+    pending = {sec: [] for sec in ranked}
+    for chunk in index["chunks"]:
+        key = chunk.page_content[:300]
+        if key in have or is_toc_chunk(chunk.page_content):
+            continue
+        covered = {c.strip() for c in chunk.metadata.get("covered", "").split(",") if c.strip()}
+        for sec in ranked:
+            if sec in covered:
+                pending[sec].append(chunk)
+                break
+
+    additions = []
+    while len(additions) < max_added and any(pending[s] for s in ranked):
+        for sec in ranked:
+            if not pending[sec]:
+                continue
+            chunk = pending[sec].pop(0)
+            key = chunk.page_content[:300]
+            if key in have:
+                continue
+            have.add(key)
+            additions.append(chunk)
+            if len(additions) >= max_added:
+                break
+
+    return ordered + additions
 
 
 def hybrid_retrieve(index, query: str, top_k: int = 8):
@@ -254,7 +343,7 @@ def hybrid_retrieve(index, query: str, top_k: int = 8):
         # my deposit back" is competing against every chunk that mentions
         # "security deposit". Without this, paraphrase queries got a smaller
         # context window than queries that already named the section.
-        top_k = max(top_k, 14)
+        top_k = max(top_k, 10)
 
     reserved = len(ordered)
 
@@ -276,7 +365,11 @@ def hybrid_retrieve(index, query: str, top_k: int = 8):
         pass
 
     limit = max(top_k, reserved + 4)
-    return ordered[:limit], query_sections
+    selected = ordered[:limit]
+
+    # Fill in any partially-retrieved section before handing context to the model.
+    selected = complete_top_sections(index, selected)
+    return selected, query_sections
 
 
 def format_context(docs):
