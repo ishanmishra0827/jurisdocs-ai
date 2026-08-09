@@ -153,6 +153,9 @@ def chunk_documents(documents):
         if label and label not in chunk.page_content[:60]:
             chunk.page_content = f"[Sec. {label}]\n{chunk.page_content}"
 
+        # Position in the corpus, used to restore reading order before context
+        # is handed to the model.
+        chunk.metadata["order"] = len(chunks)
         chunks.append(chunk)
 
     return chunks
@@ -369,6 +372,16 @@ def hybrid_retrieve(index, query: str, top_k: int = 8):
 
     # Fill in any partially-retrieved section before handing context to the model.
     selected = complete_top_sections(index, selected)
+
+    # Restore document order.
+    #
+    # Relevance order shreds statutory structure. 92.331(a) can land at source 4
+    # and 92.331(b) at source 17, with a dozen unrelated sections between them —
+    # and (b) opens mid-enumeration, so in isolation it reads as an orphaned
+    # numbered list rather than the list of prohibited retaliation. The model
+    # then reports that (b)'s prohibitions are absent. Sorting by position puts a
+    # section's parts back together and lets the statute read as written.
+    selected = sorted(selected, key=lambda d: d.metadata.get("order", 0))
     return selected, query_sections
 
 
@@ -387,7 +400,7 @@ SYSTEM_PROMPT = (
     "You are a legal research assistant analyzing the statutory excerpts provided "
     "below. Answer ONLY from those excerpts. You have no reliable knowledge of law "
     "beyond them.\n\n"
-    "First decide which case applies, then follow it exactly.\n\n"
+    "First decide which case applies, then follow it exactly. Decide before you begin writing, and do not mix cases: if your answer ends up citing a provision that resolves the question, this was CASE A all along — delete any opening sentence saying the document does not address it and lead with the answer instead. An answer that opens by denying coverage and then supplies the rule contradicts itself, and the reader believes the first sentence.\n\n"
     "CASE A — The excerpts contain the provision that governs the question.\n"
     "  Answer it. Lead with the direct answer in your first sentence. Cite the "
     "governing section AND subsection with page, e.g. '(Sec. 92.103(a), p. 57)'. "
