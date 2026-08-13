@@ -1,0 +1,2808 @@
+[
+  {
+    "name": "English Language Arts: Core Courses English I",
+    "codes": [
+      "EN100A/B"
+    ],
+    "grade": "9",
+    "page": 38,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "English I build off of previously learned skills. Students will read assorted texts in multiple genres, and will compose literary and informational texts. Additionally, students will use inquiry and research to locate relevant sources and to evaluate, synthesize, and present ideas and information."
+  },
+  {
+    "name": "Honors English I",
+    "codes": [
+      "EN110A/B"
+    ],
+    "grade": "9",
+    "page": 38,
+    "credit": "1.0",
+    "gpa": "Honors",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "In this Honors course, students cover the same standards as the English I course but with greater depth and complexity. Students will read assorted texts in multiple genres, and will compose literary and informational texts. Additionally, students will use inquiry and research to locate relevant sources and to evaluate, synthesize, and present ideas and information."
+  },
+  {
+    "name": "GT Humanities I",
+    "codes": [
+      "GTHU1A/B"
+    ],
+    "grade": "9",
+    "page": 38,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "PISD GT Identification",
+    "corequisite": "",
+    "description": "Humanities I GT is a course that provides students receiving gifted services with opportunities not available through on-level or advanced classes. This course combines Honors English I with AP World History, starting a two-year interdisciplinary spiral. The content is a historical study of the commonalities of the fine arts, including literature, the visual arts, architecture, and music. Humanities I focuses on the period up to the Renaissance. Students will learn and practice the craft of writing through various products, including AP style writing. Literature from a variety of world traditions will also be a key focus. Completion of this course fulfills the English I graduation requirement. Students should not enroll concurrently in English I. Humanities does not fulfill the fine arts requirement for graduation."
+  },
+  {
+    "name": "English for Speakers of Other Languages (ESOL) I",
+    "codes": [
+      "EN150A/B"
+    ],
+    "grade": "9",
+    "page": 38,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "LPAC Recommendation",
+    "corequisite": "",
+    "description": "ESOL I is a linguistically accommodated English I course for beginner and intermediate level Emergent Bilingual students receiving ESL services. The course is aligned to the English I TEKS and designed to provide differentiation, scaffolds, and targeted teaching strategies for English learners. Students will acquire academic language and develop listening, speaking, reading, and writing skills in English. Completion of this course fulfills the state English I graduation requirement-students should NOT enroll concurrently in ESOL I and English I 38"
+  },
+  {
+    "name": "English II",
+    "codes": [
+      "EN200A/B"
+    ],
+    "grade": "10",
+    "page": 39,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "English I or equivalent",
+    "corequisite": "",
+    "description": "This course builds on skills from English I. Students will read assorted texts in multiple genres with an emphasis on world literature. Additionally, students will compose literary and informational texts and will use inquiry and research to locate relevant sources and to evaluate, synthesize, and present ideas and information. Completion of this course also fulfills the state requirement indicating proficiency in the major components of Speech."
+  },
+  {
+    "name": "Honors English II",
+    "codes": [
+      "EN210A/B"
+    ],
+    "grade": "10",
+    "page": 39,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "English I or equivalent",
+    "corequisite": "",
+    "description": "In this Honors course, students cover the same standards as the English 2 course but with greater depth and complexity. Students will read assorted texts in multiple genres with an emphasis on world literature. Additionally, students will compose literary and informational texts and will use inquiry and research to locate relevant sources and to evaluate, synthesize, and present ideas and information. Completion of this course also fulfills the state requirement indicating proficiency in the major components of speech."
+  },
+  {
+    "name": "English for Speakers of Other Languages (ESOL) II",
+    "codes": [
+      "EN250A/B"
+    ],
+    "grade": "10",
+    "page": 39,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "LPAC recommendation",
+    "corequisite": "",
+    "description": "ESOL II is a linguistically accommodated English II course for beginner and intermediate level Emergent Bilingual students receiving ESL services. The course is aligned to the English II TEKS and designed to provide differentiation, scaffolds, and targeted teaching strategies for English learners. Students will acquire academic language and develop listening, speaking, reading, and writing skills in English. Completion of this course fulfills the state English II graduation requirement-students should NOT enroll concurrently in ESOL II and English II. Completion of this course also fulfills the state requirement indicating proficiency in the major components of speech."
+  },
+  {
+    "name": "English III",
+    "codes": [
+      "EN300A/B"
+    ],
+    "grade": "11",
+    "page": 39,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "English II or equivalent",
+    "corequisite": "",
+    "description": "This course builds on skills from previous years. Students will read assorted texts in multiple genres with an emphasis on American literature. Additionally, students will compose literary and informational texts and will use inquiry and research to locate relevant sources and to evaluate, synthesize, and present ideas and information. 39"
+  },
+  {
+    "name": "AP English III",
+    "codes": [
+      "EN320A/B"
+    ],
+    "grade": "11",
+    "page": 40,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "English II or equivalent",
+    "corequisite": "",
+    "description": "Advanced Placement English Language and Composition (AP Lang) engages students in becoming skilled readers of complex prose written in a variety of rhetorical contexts while providing students opportunities to compose prose of sufficient complexity commensurate with a college freshman. Students will read critically, think analytically, and communicate clearly. This course includes AP preparation, test taking strategies, and outside readings."
+  },
+  {
+    "name": "GT American Studies: AP English III",
+    "codes": [
+      "GTEN3A/B"
+    ],
+    "grade": "11",
+    "page": 40,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "PISD GT Identification",
+    "corequisite": "Concurrent enrollment in GT American Studies: AP US History",
+    "description": "American Studies is a one-year, double-blocked course that combines the Advanced Placement US History (APUSH) and Advanced Placement English Language and Composition (APLANG) courses with the study of American humanities and culture. As the next step after 9th/10th grade Humanities in the Prosper ISD Gifted and Talented program, it focuses on the philosophical underpinnings of American writing and thought, along with an understanding of the historical climate associated with that writing. The materials used by the teachers result in cognition on many levels; lecture, inquiry, group activities, and computer assignments address different learning styles. Discussion participation, careful writing and critical reading are significant elements for this course, along with the implementation of Gifted and Talented strategies."
+  },
+  {
+    "name": "English IV",
+    "codes": [
+      "EN400A/B"
+    ],
+    "grade": "12",
+    "page": 40,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "English III or AP English III",
+    "corequisite": "",
+    "description": "This course builds on skills from previous years. Students will read assorted texts in multiple genres with an emphasis on British literature. Additionally, students will compose literary and informational texts and will use inquiry and research to locate relevant sources and to evaluate, synthesize, and present ideas and information."
+  },
+  {
+    "name": "AP English IV",
+    "codes": [
+      "EN420A/B"
+    ],
+    "grade": "12",
+    "page": 40,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "English III or AP English III",
+    "corequisite": "",
+    "description": "Advanced Placement Literature and Composition (APLit) engages students in the critical analysis of imaginative literature, deepening their understanding of a work's structure, style, and themes. Writing instruction includes developing and organizing ideas in clear, coherent, and persuasive language, characteristics commensurate with the stylistic maturity of a college sophomore. This course includes AP preparation, test taking strategies and outside readings. 40"
+  },
+  {
+    "name": "Dual Credit Composition I (English IIIA or IVA): ENGL 1301",
+    "codes": [
+      "EN3210",
+      "EN431A"
+    ],
+    "grade": "11-12",
+    "page": 41,
+    "credit": "0.5",
+    "gpa": "AP/DC",
+    "prerequisite": "College acceptance",
+    "corequisite": "You must also take EN3220/EN431B (ENGL 1302)",
+    "description": "This course takes the place of English 3 or 4, depending on which year it is taken. This is a college freshman English course divided into two semesters focusing on an intensive study of and practice in writing processes, from invention and researching to drafting, revising, and editing, both individually and collaboratively. Emphasis on effective rhetorical choices, including audience, purpose, arrangement, and style. Focus on writing the academic essay as a vehicle for learning, communicating, and critical analysis. \u25cf 3 college credit hours \u25cf College acceptance and registration required."
+  },
+  {
+    "name": "Dual Credit Composition II (English IIIB or IVB): ENGL 1302",
+    "codes": [
+      "EN3220",
+      "EN431B"
+    ],
+    "grade": "11-12",
+    "page": 41,
+    "credit": "0.5",
+    "gpa": "AP/DC",
+    "prerequisite": "College acceptance",
+    "corequisite": "You must also take EN3210/EN431A (ENGL 1301)",
+    "description": "This course takes the place of English 3 or 4, depending on which year it is taken. This is a college freshman English course divided into two semesters focusing on intensive study of and practice in the strategies and techniques for developing research-based expository and persuasive texts. Emphasis on effective and ethical rhetorical inquiry, including primary and secondary research methods; critical reading of verbal, visual, and multimedia texts; systematic evaluation, synthesis, and documentation of information sources; and critical thinking about evidence and conclusions. \u25cf 3 college credit hours \u25cf College acceptance and registration required."
+  },
+  {
+    "name": "Dual Credit British Literature (English IVA) : ENGL 2322",
+    "codes": [
+      "EN430A"
+    ],
+    "grade": "12",
+    "page": 41,
+    "credit": ".5",
+    "gpa": "AP/DC",
+    "prerequisite": "ENGL 1302",
+    "corequisite": "You must also take ENGL 2323 in the spring semester",
+    "description": ". A survey of the development of British literature from the Anglo-Saxon period to the Eighteenth Century. Students will study works of prose, poetry, drama, and fiction in relation to their historical, linguistic, and cultural contexts. \u25cf 3 college credit hours \u25cf College acceptance and registration required. 41"
+  },
+  {
+    "name": "Dual Credit British Literature (English IVB) : ENGL 2323",
+    "codes": [
+      "EN430B"
+    ],
+    "grade": "12",
+    "page": 42,
+    "credit": "0.5",
+    "gpa": "AP/DC",
+    "prerequisite": "ENGL 2322",
+    "corequisite": "You must also take ENGL 2322 in the fall semester",
+    "description": "A survey of world literature from the seventeenth century to the present. Students will study works of prose, poetry, drama, and fiction in relation to their historical and cultural contexts. Texts will be selected from a diverse group of authors and traditions. \u25cf 3 college credit hours \u25cf College acceptance and registration required."
+  },
+  {
+    "name": "English Language Arts: Electives Personal and Academic Skills (PASS)",
+    "codes": [
+      "PASSA/B"
+    ],
+    "grade": "9",
+    "page": 42,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Counselor Approval",
+    "corequisite": "",
+    "description": "Personal and Academic Skills (PASS) ELAR is a comprehensive support program designed to ensure student success in English I and beyond. The program integrates literacy skills and executive functioning skills while actively building student confidence. Through the combination of targeted ELAR instruction, problem-solving skills, and growth mindset development, PASS ELAR creates a strong foundation for students' ongoing achievement in ELAR."
+  },
+  {
+    "name": "College Prep English",
+    "codes": [
+      "EN4CPA/B"
+    ],
+    "grade": "12",
+    "page": 42,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Counselor Approval",
+    "corequisite": "",
+    "description": "College and Career Ready English is developed in conjunction with Collin College to prepare students for college level English. Students enrolled in this course will also receive instruction in the standards aligned to the Texas Success Initiative and are expected to complete the TSIA2 exam in English during the spring of their senior year. Students will develop critical reading, analytical writing, and evidence-based reasoning skills essential for success in college-level coursework. Successful completion of this course earns a Texas Success Initiative (TSI) exemption at Collin College for two years after graduation. *Students who have met TSI criteria in English cannot be enrolled in this course."
+  },
+  {
+    "name": "Creative Writing",
+    "codes": [
+      "CREAWA/B"
+    ],
+    "grade": "11-12",
+    "page": 42,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This course, which serves as an elective, is a rigorous composition course where students hone their writing skills in a variety of forms and genres through a writing workshop environment. The course has two sections with each section lasting one semester: creative writing and publication. The creative writing semester emphasizes the use of the writing process and the effective application of the conventions of language along with self- and peer-evaluation and goal-setting. The 42 publication semester works with students on the business of writing- how to find your audience, the rewrite process, and the process of publishing a work. The students will create and publish a school literary journal to showcase their learning in addition to submitting works to various contests and magazines."
+  },
+  {
+    "name": "Debate I",
+    "codes": [
+      "DEBA1A/B"
+    ],
+    "grade": "9-12",
+    "page": 43,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "Students will learn the basics of Lincoln Douglas, Congress, Cross Examination, and Public Forum debates. Students will be introduced to major theories of philosophy and the fundamentals of government policymaking. Students involved in the class will be required to work all Prosper UIL and TFA Academic and Speech/Debate tournaments and attend and compete in multiple tournaments at other locations throughout the year. Advanced research and writing are part of the course which will greatly benefit students in high school, college, and beyond."
+  },
+  {
+    "name": "Debate II",
+    "codes": [
+      "DEBA2A/B"
+    ],
+    "grade": "10-12",
+    "page": 43,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "Debate I",
+    "corequisite": "",
+    "description": "This class is an intensive study and participation in the art of speech and debate. Students involved in the class will be required to work all Prosper UIL and TFA Academic and Speech/Debate tournaments and to attend and compete in multiple tournaments at other locations throughout the year. Advanced research and writing are part of the course which will greatly benefit students in high school, college, and beyond. 43 Mathematics 44 Mathematics Core Classes",
+    "grouped_with": "Debate IV"
+  },
+  {
+    "name": "Debate III",
+    "codes": [
+      "DEBA3A/B"
+    ],
+    "grade": "11-12",
+    "page": 43,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "Debate I",
+    "corequisite": "",
+    "description": "This class is an intensive study and participation in the art of speech and debate. Students involved in the class will be required to work all Prosper UIL and TFA Academic and Speech/Debate tournaments and to attend and compete in multiple tournaments at other locations throughout the year. Advanced research and writing are part of the course which will greatly benefit students in high school, college, and beyond. 43 Mathematics 44 Mathematics Core Classes",
+    "grouped_with": "Debate IV"
+  },
+  {
+    "name": "Debate IV",
+    "codes": [
+      "DEBA4A/B"
+    ],
+    "grade": "12",
+    "page": 43,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "Debate I",
+    "corequisite": "",
+    "description": "This class is an intensive study and participation in the art of speech and debate. Students involved in the class will be required to work all Prosper UIL and TFA Academic and Speech/Debate tournaments and to attend and compete in multiple tournaments at other locations throughout the year. Advanced research and writing are part of the course which will greatly benefit students in high school, college, and beyond. 43 Mathematics 44 Mathematics Core Classes"
+  },
+  {
+    "name": "Algebra I",
+    "codes": [
+      "MA100A/B"
+    ],
+    "grade": "9",
+    "page": 45,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Math 8",
+    "corequisite": "",
+    "description": "This course is designed to transfer understanding of properties and operations of the real number system, as well as proportionality, to the use of algebraic expressions, equations, and inequalities. Students use the graphs of linear, quadratic, and exponential functions, and their equations, to solve problems using concrete manipulatives, calculator and computer technology, and algebraic thinking and problem solving."
+  },
+  {
+    "name": "Honors Algebra I",
+    "codes": [
+      "MA110A/B"
+    ],
+    "grade": "9",
+    "page": 45,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "Math 8",
+    "corequisite": "",
+    "description": "This course addresses all of the concepts presented in the Algebra I class described above with a great emphasis on depth and complexity and moving quickly through foundational knowledge to application of the standards."
+  },
+  {
+    "name": "Geometry",
+    "codes": [
+      "MA200A/B"
+    ],
+    "grade": "9-10",
+    "page": 45,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Algebra I",
+    "corequisite": "",
+    "description": "Geometry is designed to develop an understanding of the basic structure of plane and spatial geometry. Students will develop the ability to analyze geometric relationships, make and verify conjectures, apply logical reasoning to justify and prove mathematical statements, and use a variety of representations to describe geometric relationships and solve problems. This course allows students to apply algebraic skills in a logical and concrete manner. Students will take the Texas Success Initiative Assessment as a part of this course."
+  },
+  {
+    "name": "Honors Geometry",
+    "codes": [
+      "MA210A/B"
+    ],
+    "grade": "9-10",
+    "page": 45,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "Algebra I",
+    "corequisite": "",
+    "description": "This course addresses all of the concepts presented in the Geometry class described above with a great emphasis on depth and complexity and moving quickly through foundational knowledge to application of the standards. Students will take the Texas Success Initiative Assessment as a part of this course."
+  },
+  {
+    "name": "GT Geometry",
+    "codes": [
+      "MA212A/B"
+    ],
+    "grade": "9",
+    "page": 45,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "Algebra I",
+    "corequisite": "",
+    "description": ", GT Identification This course offers identified GT students the opportunity to work with GT peers in a Geometry class. It contains all the concepts presented in the Geometry course with a great emphasis on depth and complexity and moving quickly through foundational knowledge to application of the standards. Students will learn to appreciate the moral, social, and ethical questions arising from the work of mathematicians and the application of mathematics. Students will take the Texas Success Initiative Assessment as a part of this course. 45"
+  },
+  {
+    "name": "Algebraic Reasoning",
+    "codes": [
+      "MA3ARA/B"
+    ],
+    "grade": "11",
+    "page": 46,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Algebra I",
+    "corequisite": "",
+    "description": "Designed to prepare students for Algebra II and future studies, this course builds on Algebra I to enhance algebraic reasoning and process skills. Students will broaden their knowledge of numerous functions (linear, quadratic, exponential, logarithmic, etc.) through analysis and application. Explorations include data modeling using software and measurement tools to build college and workforce readiness. This course should be taken after Geometry and before Algebra II. Note: Algebraic Reasoning may be taken concurrently with Geometry."
+  },
+  {
+    "name": "Algebra II",
+    "codes": [
+      "MA300A/B"
+    ],
+    "grade": "10-12",
+    "page": 46,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Algebra I",
+    "corequisite": "",
+    "description": "Recommended Prerequisite: Geometry Students will build on the knowledge and skills for mathematics learned in Algebra I to broaden their knowledge of quadratic functions, exponential functions, and systems of equations. They will expand their knowledge of functions to include logarithmic, radical, polynomial, absolute value, rational functions, and their related equations. Students will connect functions to their inverses and associated equations and solutions in both mathematical and real-world situations. In addition, students will extend their knowledge of data analysis and numeric and algebraic methods."
+  },
+  {
+    "name": "Honors Algebra II",
+    "codes": [
+      "MA310A/B"
+    ],
+    "grade": "9-12",
+    "page": 46,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "Algebra I",
+    "corequisite": "",
+    "description": "Recommended Prerequisite: Geometry This course addresses all of the concepts presented in the Algebra 2 class described above with a great emphasis on depth and complexity and moving quickly through foundational knowledge to application of the standards."
+  },
+  {
+    "name": "College Prep Math",
+    "codes": [
+      "MA4CPA/B"
+    ],
+    "grade": "12",
+    "page": 46,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Algebra II",
+    "corequisite": "",
+    "description": "College Prep Math is designed in conjunction with Collin College to cover the content of the Collin College developmental (remedial, non-credit) math courses. Topics include a study of relations, functions, inequalities, algebraic expressions and equations (linear, polynomial, radical, rational), with a special emphasis on linear and quadratic expressions and equations. Students enrolled in this course are expected to complete the TSIA2 exam.. This course fulfills students' requirement for a fourth mathematics credit under the Foundation Plan or Distinguished Level of Achievement Plan. Successful completion of this course earns a Texas Success Initiative (TSI) exemption at Collin College for two years after graduation. *Students who have met TSI criteria in math cannot enroll in this course. 46"
+  },
+  {
+    "name": "Advanced Quantitative Reasoning (AQR)",
+    "codes": [
+      "MA4QRA/B"
+    ],
+    "grade": "12",
+    "page": 47,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Geometry and Algebra II",
+    "corequisite": "",
+    "description": "Students will develop and apply the skills necessary for college, careers, and life. Course content consists primarily of applications of high school mathematics concepts. Students will develop and apply reasoning, planning, and communication, to make decisions and solve problems in situations involving numerical reasoning, probability, statistical analysis, finance, mathematical selection, and modeling with algebra, geometry, trigonometry, and discrete mathematics."
+  },
+  {
+    "name": "Statistics",
+    "codes": [
+      "MA4STA/B"
+    ],
+    "grade": "11-12",
+    "page": 47,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Algebra I",
+    "corequisite": "",
+    "description": "Recommended Prerequisites: Geometry and Algebra II Taking statistics in high school equips students with essential skills for analyzing and interpreting data, fostering critical thinking and problem-solving abilities. By applying these skills to real-world contexts like business, health sciences, and social studies, students gain a deeper understanding of trends, probabilities, and predictions that shape various fields. Statistics also empowers students to critically evaluate information from media, politics, and scientific reports, promoting informed citizenship. It lays a strong foundation for college majors where data analysis is crucial, such as business, psychology, and data science. Additionally, statistics supports personal decision-making in areas like finance and risk assessment, preparing students for success in an increasingly data-driven world."
+  },
+  {
+    "name": "AP Statistics",
+    "codes": [
+      "MA4ASA/B"
+    ],
+    "grade": "10-12",
+    "page": 47,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "Algebra I, Geometry and Algebra II",
+    "corequisite": "",
+    "description": "AP Statistics provides students with advanced skills in data analysis, interpretation, and critical thinking, preparing them to tackle real-world problems with confidence. This course helps students understand and apply statistical concepts in fields like business, health sciences, and social studies, allowing them to analyze trends, assess probabilities, and make informed predictions. Students planning to take a science course in their senior year will benefit greatly from taking AP Statistics in their junior year. Students with the appropriate mathematical background are encouraged to take both AP Statistics and AP Calculus in high school."
+  },
+  {
+    "name": "Precalculus",
+    "codes": [
+      "MA400A/B"
+    ],
+    "grade": "11-12",
+    "page": 47,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Algebra I, Geometry and Algebra II",
+    "corequisite": "",
+    "description": "This course is designed to strengthen and enhance conceptual understanding and mathematical reasoning used when modeling and solving mathematical and real-world problems. Students systematically work with functions and their multiple representations. The study of Precalculus deepens students' mathematical understanding and fluency with algebra and trigonometry and extends their ability to make connections and apply concepts and procedures at higher levels. Students develop mathematical ideas, multiple strategies for analyzing complex situations, use technology to build understanding, make connections between representations, and provide support in solving problems. 47"
+  },
+  {
+    "name": "AP Precalculus",
+    "codes": [
+      "MA422A/B"
+    ],
+    "grade": "10-12",
+    "page": 48,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "Algebra I, Geometry and Algebra II",
+    "corequisite": "",
+    "description": "AP Precalculus centers on functions modeling dynamic phenomena. This research-based exploration of functions is designed to better prepare students for college-level calculus and provide grounding for other mathematics and science courses. In this course, students study a broad spectrum of function types that are foundational for careers in mathematics, physics, biology, health science, social science, and data science. Furthermore, as AP Precalculus may be the last mathematics course of a student's secondary education, the course is structured to provide a coherent capstone experience. AP Calculus AB MA420A/B : 11-12 : AP/DC Prerequisites: Precalculus or AP Precalculus AP Calculus AB is designed to introduce students to the four major topics in calculus: functions and graphs, limits and continuity, differential calculus and integral calculus. At the end of this course, students can take the Advanced Placement examination for an opportunity to earn college credit in Calculus. Upon completion of AP Calculus AB, students who are not pursuing a STEM field in college are recommended to take AP Statistics. For recommendations to take Calculus AB or Calculus BC, please see the program pathway chart."
+  },
+  {
+    "name": "AP Calculus BC",
+    "codes": [
+      "MA421A/B"
+    ],
+    "grade": "11-12",
+    "page": 48,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "AP Precalc",
+    "corequisite": "MATH 1342 Elementary Statistical Methods (Spring Semester)",
+    "description": "AP Calculus BC is a full-year course in the calculus of functions of a single variable. Calculus BC covers all the topics in Calculus AB, but is more extensive. Students cover the additional topics of vector functions, polar coordinates, and Epsilon-delta proofs. The course represents college-level mathematics for which most colleges grant advanced placement and/or credit in Calculus. For Calculus AB or Calculus BC recommendations, please see program pathway chart. Dual : MATH 1314 MA435A : 11-12 : AP/DC Prerequisite: Geometry and Algebra II Recommended recommended. A graphing calculator may be required. 48 : 0.5 : Geometry and Algebra II Recommended Corequisite: MATH 1314 College Algebra (Fall Semester) \u25cf 3 college credit hours \u25cf College acceptance and registration required."
+  },
+  {
+    "name": "Dual Credit Mathematics for Business and Social Sciences: MATH 1324",
+    "codes": [
+      "MA4222"
+    ],
+    "grade": "11-12",
+    "page": 49,
+    "credit": "0.5",
+    "gpa": "AP/DC",
+    "prerequisite": "Geometry and Algebra II",
+    "corequisite": "MATH 1325 Calculus for Business and Social Sciences (Spring Semester)",
+    "description": "Recommended"
+  },
+  {
+    "name": "Dual Credit Calculus for Business and Social Sciences: MATH 1325",
+    "codes": [
+      "MA4223"
+    ],
+    "grade": "11-12",
+    "page": 49,
+    "credit": "0.5",
+    "gpa": "AP/DC",
+    "prerequisite": "Geometry and Algebra II",
+    "corequisite": "MATH 1324 Math for Business and Social Sciences (Fall Semester)",
+    "description": "Recommended"
+  },
+  {
+    "name": "Dual Credit Calculus III: MATH 2415",
+    "codes": [
+      "MA4220"
+    ],
+    "grade": "12",
+    "page": 50,
+    "credit": "0.5",
+    "gpa": "AP/DC",
+    "prerequisite": "AP score of 4 or 5 on Calculus (BC)",
+    "corequisite": "MATH 2320 Differential Equations (Spring Semester)",
+    "description": ""
+  },
+  {
+    "name": "Dual Credit Differential Equations: MATH 2320",
+    "codes": [
+      "MA4221"
+    ],
+    "grade": "12",
+    "page": 50,
+    "credit": "0.5",
+    "gpa": "AP/DC",
+    "prerequisite": "AP score of 4 or 5 on Calculus (BC)",
+    "corequisite": "MATH 2415 Calculus III (Fall Semester)",
+    "description": "Differential Equations focuses on linear equations, systems of equations, equations with variable coefficients, existence and uniqueness of solutions, series solutions, singular points, transform methods, and boundary value problems; application of differential equations to real-world problems. \u25cf 3 college credit hours \u25cf college acceptance and registration required CTE Courses for Math A MA520A/B"
+  },
+  {
+    "name": "Accounting II",
+    "codes": [
+      "HACT2A/B"
+    ],
+    "grade": "11-12",
+    "page": 51,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "Accounting I",
+    "corequisite": "",
+    "description": "In Accounting II, students investigate accounting's impact from industry standards and economic, financial, technological, international, social, legal, and ethical factors. Students engage in managerial, financial, and operational accounting activities while formulating, interpreting, and communicating financial information for management decision making. Students use equations, graphical representations, accounting tools, spreadsheet software, and accounting systems to maintain, monitor, control, and plan financial resources in real-world situations. Certification : TBD - pending TEA"
+  },
+  {
+    "name": "Robotics II",
+    "codes": [
+      "ROBO2A/B"
+    ],
+    "grade": "10-12",
+    "page": 51,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Robotics I",
+    "corequisite": "",
+    "description": "Students will transfer academic skills to robotic designs in a project-based environment through implementation of the design process. Students will build prototypes or use simulation software to test their designs. Additionally, students will explore career opportunities, employer expectations, and educational needs in the robotic and automation industry. 51 Science 52"
+  },
+  {
+    "name": "Science Core Courses Biology",
+    "codes": [
+      "SC100A/B"
+    ],
+    "grade": "9",
+    "page": 53,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "Biology focuses on patterns, processes, and relationships of living organisms through four main concepts: biological structures, functions, and processes; mechanisms of genetics; biological evolution; and interdependence within environmental systems. The scientific process and laboratory skills are emphasized along with connections to other scientific disciplines. Completion of this course also fulfills the state requirement for cardiopulmonary resuscitation (CPR) training."
+  },
+  {
+    "name": "Honors Biology",
+    "codes": [
+      "SC110A/B"
+    ],
+    "grade": "9",
+    "page": 53,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "Biology focuses on patterns, processes, and relationships of living organisms through four main concepts: biological structures, functions, and processes; mechanisms of genetics; biological evolution; and interdependence within environmental systems. The scientific process and laboratory skills are emphasized along with connections to other scientific disciplines. Honors Biology covers the same objectives as Biology in more depth and complexity. Completion of this course also fulfills the state requirement for cardiopulmonary resuscitation (CPR) training. 53"
+  },
+  {
+    "name": "Chemistry",
+    "codes": [
+      "SC200A/B"
+    ],
+    "grade": "10",
+    "page": 54,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "One high school science and Algebra I",
+    "corequisite": "",
+    "description": "Chemistry is a laboratory science course that focuses on characteristics of matter, energy transformations, atomic structure, behavior of gasses, bonding, solutes, and chemical reactions. The scientific process and laboratory skills are emphasized along with connections to other scientific disciplines."
+  },
+  {
+    "name": "Honors Chemistry",
+    "codes": [
+      "SC210A/B"
+    ],
+    "grade": "10",
+    "page": 54,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "One high school science and Algebra I",
+    "corequisite": "",
+    "description": "Chemistry is a laboratory science course that focuses on characteristics of matter, energy transformations, atomic structure, behavior of gasses, bonding, solutes, and chemical reactions. The scientific process and laboratory skills are emphasized along with connections to other scientific disciplines. Honors Chemistry covers the same objectives as Chemistry in more depth and complexity."
+  },
+  {
+    "name": "AP Biology",
+    "codes": [
+      "SC120A/B"
+    ],
+    "grade": "11-12",
+    "page": 54,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "Biology/Honors Biology and Chemistry/Honors Chemistry",
+    "corequisite": "",
+    "description": "AP Biology is an advanced, lab-based course that provides a college-level foundation to support future advanced coursework in life science. Students cultivate their understanding of biology through inquiry-based investigations as they explore the following topics: evolution, cellular processes, energy and communication, genetics, information transfer, ecology, and interactions."
+  },
+  {
+    "name": "Integrated Physics & Chemistry (IPC)",
+    "codes": [
+      "SC000A/B"
+    ],
+    "grade": "10",
+    "page": 54,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "Integrated Physics and Chemistry is designed for students to conduct laboratory investigations, use scientific practices during investigation, and make informed decisions and draw conclusions using critical thinking and scientific problem solving. This course integrates the disciplines of physics and chemistry to cover foundational concepts of force, motion, energy, and matter."
+  },
+  {
+    "name": "Earth Systems Science",
+    "codes": [
+      "ESSCIA/B"
+    ],
+    "grade": "11-12",
+    "page": 54,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Algebra I and two credits of high school science",
+    "corequisite": "",
+    "description": "Earth Systems Science is designed to build on students' prior scientific and academic knowledge and skills to develop their understanding of Earth's systems. These systems (the atmosphere, hydrosphere, geosphere, and biosphere) interact through time to produce the Earth's landscapes, climate, and resources. Students explore the geologic history of individual dynamic systems through the flow of energy and matter, their current states, and how these systems affect and are affected by human use. 54"
+  },
+  {
+    "name": "Astronomy",
+    "codes": [
+      "ASTRMA/B"
+    ],
+    "grade": "11-12",
+    "page": 55,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Algebra I and Integrated Physics and Chemistry or Chemistry",
+    "corequisite": "",
+    "description": ". Astronomy focuses on patterns, processes, and relationships between celestial objects in our universe, from the Sun-Earth-Moon system to the vast expanse of the Milky Way and beyond. Through investigations, students will develop a deeper understanding of our place in space and time."
+  },
+  {
+    "name": "AP Chemistry",
+    "codes": [
+      "SC220A/B"
+    ],
+    "grade": "11-12",
+    "page": 55,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "Chemistry/ Honors Chem and Algebra II",
+    "corequisite": "",
+    "description": "AP Chemistry is an advanced, lab-based course that provides a college-level foundation to support post-secondary coursework in chemistry. Students cultivate their understanding of chemistry through inquiry-based investigations as they explore topics such as: atomic structure, intermolecular forces and bonding, chemical reactions, kinetics, thermodynamics, and equilibrium."
+  },
+  {
+    "name": "Physics",
+    "codes": [
+      "SC300A/B"
+    ],
+    "grade": "11-12",
+    "page": 55,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Algebra 1",
+    "corequisite": "",
+    "description": "Physics is a laboratory science course that covers laws of motion, conservation of energy and momentum, force, thermodynamics, characteristics and behavior of waves, electricity and magnetism, and quantum physics. This course provides students with a conceptual and mathematical foundation of physics content in addition to building analytical and scientific skills."
+  },
+  {
+    "name": "Environmental Systems",
+    "codes": [
+      "ENVSYA/B"
+    ],
+    "grade": "10-12",
+    "page": 56,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Biology",
+    "corequisite": "IPC or Chemistry",
+    "description": "Environmental Systems, through the use of field and laboratory investigations, students will draw conclusions using critical thinking and scientific problem solving. Students study a variety of topics that include: biotic and abiotic factors in habitats, ecosystems and biomes, interrelationships among resources and an environmental system, sources and flow of energy through an environmental system, relationship between carrying capacity and changes in populations and ecosystems, and changes in environments."
+  },
+  {
+    "name": "AP Physics C",
+    "codes": [
+      "SC320A/B"
+    ],
+    "grade": "12",
+    "page": 56,
+    "credit": "2",
+    "gpa": "AP/DC",
+    "prerequisite": "AP Physics 1 or Physics",
+    "corequisite": "if not already taken prior to AP Physics C",
+    "description": ""
+  },
+  {
+    "name": "AP Environmental Science",
+    "codes": [
+      "SC420A/B"
+    ],
+    "grade": "11-12",
+    "page": 56,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "Biology, Chemistry, and Algebra 1",
+    "corequisite": "",
+    "description": "AP Environmental Science is a lab-based course that provides students with the scientific principles, concepts, and methodologies required to understand the interrelationships of the natural world. Students will be expected to identify and analyze environmental problems both natural and human-made, evaluate the relative risks associated with these problems, and examine alternative solutions for resolving or preventing them. Environmental science is interdisciplinary and embraces a wide variety of topics from different areas of study."
+  },
+  {
+    "name": "Dual Credit Biology for Science Majors I: BIOL 1406",
+    "codes": [
+      "SC130A"
+    ],
+    "grade": "11-12",
+    "page": 56,
+    "credit": "0.5",
+    "gpa": "AP/DC",
+    "prerequisite": "College Acceptance",
+    "corequisite": "BIOL 1407",
+    "description": ""
+  },
+  {
+    "name": "Dual Credit Biology for Science Majors II: BIOL 1407",
+    "codes": [
+      "SC130B"
+    ],
+    "grade": "11-12",
+    "page": 57,
+    "credit": "0.5",
+    "gpa": "AP/DC",
+    "prerequisite": "College Acceptance",
+    "corequisite": "BIOL 1406",
+    "description": ""
+  },
+  {
+    "name": "Advanced Animal Science",
+    "codes": [
+      "ADANSA/B"
+    ],
+    "grade": "11-12",
+    "page": 57,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "Biology and Chemistry or IPC; Algebra l and Geometry; and either Small Animal Management and Equine Science, or Livestock Production",
+    "corequisite": "",
+    "description": "The scientific study of animal agriculture involving beef cattle, dairy cattle, swine, sheep, goats, and horses. Topics include general management practices, reproduction, nutrition, health, handling, genetic selection, shelter/housing, and marketing strategies and procedures. This is a dual enrollment course through Tarleton State. Students opting into the college credit will be responsible for the cost of tuition. Students on free and reduced status will have no cost. \u25cf Recommended Prerequisite: Veterinary Science"
+  },
+  {
+    "name": "Anatomy & Physiology",
+    "codes": [
+      "ANPHYA/B"
+    ],
+    "grade": "11-12",
+    "page": 57,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "Biology AND Chemistry, Integrated Physics and Chemistry, or Physics",
+    "corequisite": "",
+    "description": "In Anatomy and Physiology, students conduct laboratory and field investigations and make informed decisions using critical thinking and scientific problem solving. Students study a variety of topics, including the structure and function of the human body and the interaction of all eleven body systems for maintaining homeostasis. \u25cf Recommended prerequisite: a course from the Health Science Career Cluster"
+  },
+  {
+    "name": "Anatomy & Physiology (Dual Enrollment)",
+    "codes": [
+      "ANPDEA/B"
+    ],
+    "grade": "11-12",
+    "page": 57,
+    "credit": "1",
+    "gpa": "AP/DC/DE",
+    "prerequisite": "Biology AND Chemistry, Integrated Physics and Chemistry, or Physics",
+    "corequisite": "",
+    "description": "Basic physiological principles and their applications in the study of the skeletal, muscular, and nervous systems are emphasized. This is a dual enrollment course through Tarleton State. Students opting into the college credit will be responsible for the cost of tuition. Students on free and reduced status will have no cost. \u25cf Recommended prerequisite: a course from the Health Science Career Cluster Engineering Design and This course emphasizes solving problems with real-world 57"
+  },
+  {
+    "name": "Problem Solving",
+    "codes": [
+      "ESPSA/B"
+    ],
+    "grade": "11-12",
+    "page": 58,
+    "credit": "1",
+    "gpa": "Honors Required",
+    "prerequisite": "Algebra I, Geometry AND at least two Engineering courses application. Students will apply critical-thinking skills to justify a solution from multiple design options. Additionally, the course promotes interest in and understanding of career opportunities in engineering. This course is intended to stimulate students' ingenuity, intellectual talents, and practical skills in devising solutions to engineering design problems. Students use the engineering design process cycle to investigate, design, plan, create, and evaluate solutions. At the same time, this course fosters awareness of the social and ethical implications of technological development",
+    "corequisite": "",
+    "description": "."
+  },
+  {
+    "name": "Engineering Science",
+    "codes": [
+      "PRENGA/B"
+    ],
+    "grade": "10-12",
+    "page": 58,
+    "credit": "1",
+    "gpa": "Honors Required",
+    "prerequisite": "Algebra I, Biology, AND at least one Engineering course",
+    "corequisite": "",
+    "description": "Students will have an opportunity to investigate engineering and high-tech careers. They will employ STEM concepts in the solution of real-world challenge situations. Students will develop problem-solving skills and apply their knowledge of research and design to create solutions to various challenges."
+  },
+  {
+    "name": "Forensic Science",
+    "codes": [
+      "FORSCA/B"
+    ],
+    "grade": "11-12",
+    "page": 58,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Biology and Chemistry/Physics/IPC",
+    "corequisite": "",
+    "description": "Forensic science is the application of multiple scientific disciplines to the investigation of criminal or civil law. Students use scientific inquiry and the process of forensic investigation and apply knowledge of investigation to the analysis of trace evidence (hair, fiber, etc.), fingerprints, DNA, and blood."
+  },
+  {
+    "name": "Pathophysiology",
+    "codes": [
+      "PATHPA/B"
+    ],
+    "grade": "11-12",
+    "page": 58,
+    "credit": "1",
+    "gpa": "Honors Required",
+    "prerequisite": "One credit in Biology, one credit in Chemistry, and at least one credit in a Level 2 or higher course from the Health Science career cluster",
+    "corequisite": "",
+    "description": "Students study disease processes and how humans are affected. Emphasis is placed on prevention and treatment of disease. 58 Social Studies *Note: Per HB27 in the 89th Legislative Session, the social studies graduation requirements have changed effective for students entering in the 2026-2027 school year. Students will be required to successfully complete a one-half credit personal financial literacy course or advanced equivalent. In Prosper ISD, Economics will be offered as a full-year course that students may choose in lieu of world history to satisfy the social studies credits required for graduation. This recommendation for the new, full-year economics course is subject to change upon further guidance from the TEA on the implementation of HB 27. 59"
+  },
+  {
+    "name": "Social Studies Core Classes World Geography",
+    "codes": [
+      "SS100A/B"
+    ],
+    "grade": "9",
+    "page": 60,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This course examines people, places, and environments at local, regional, national, and global scales from the spatial and ecological perspectives of geography. Students describe the influence of geography on the events of the past and present with an emphasis on contemporary issues. A significant portion of the course centers around the physical processes that shape patterns in the physical environment. * Completion of this course also fulfills the state requirements regarding Instruction on Proper Interaction with Peace Officers."
+  },
+  {
+    "name": "AP Human Geography",
+    "codes": [
+      "SS120A/B"
+    ],
+    "grade": "9-12",
+    "page": 60,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "AP Human Geography is equivalent to a college-level course that introduces students to the systematic study of patterns and processes that have shaped human understanding, use, and alteration of Earth's surface. Students employ spatial concepts and landscape analysis to examine human social organization and its environmental consequences. They also learn about the methods and tools geographers use in their science and practice. This course fulfills the world geography requirement. Completion of this course also fulfills the state requirements regarding Instruction on Proper Interaction with Peace Officers."
+  },
+  {
+    "name": "World History",
+    "codes": [
+      "SS200A/B"
+    ],
+    "grade": "10",
+    "page": 60,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This course is a survey of human history from its earliest origins to the present. The major emphasis is on key concepts and skills that can be applied to various historical periods and civilizations. Through the study of significant people, events and issues, we will experience imperialism, revolution, geography, economics, government, law, religion, philosophy, science and technology. By engaging in historical inquiry, students will develop critical thinking skills and a deep understanding of the past and its relevance to the present."
+  },
+  {
+    "name": "AP World History",
+    "codes": [
+      "SS220A/B"
+    ],
+    "grade": "10",
+    "page": 60,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "AP World History is a college-level introductory course in which students investigate significant events, individuals, developments, and processes from 1200 to the present. Students develop and use the same skills, practices, and methods employed by historians: analyzing primary and secondary sources; developing historical arguments; making historical connections; and utilizing reasoning about comparison, causation, and continuity and change over time. The course provides six themes that students explore throughout the course in order to make connections among historical developments in different times and places: humans and the environment, cultural developments and interactions, governance, economic systems, social interactions and organization, and technology and innovation. 60"
+  },
+  {
+    "name": "Humanities II GT",
+    "codes": [
+      "GTHU2A/B"
+    ],
+    "grade": "10",
+    "page": 61,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "Humanities I and PISD GT Identification",
+    "corequisite": "",
+    "description": "Humanities II GT is a course that provides students receiving gifted services with opportunities not available through on level or advanced classes. This is the second half of a two-year interdisciplinary spiral that includes AP World History objectives. The content is a historical study of the commonalities of the fine arts, including literature, the visual arts, architecture, and music. Students will learn and practice the craft of writing through various products, including AP style writing. Literature from a variety of world traditions will also be a key focus. At the conclusion of Humanities II, students may sit for the AP World History to possibly earn college credit. Successful completion of this course awards AP World History credit. Students should not concurrently enroll in AP World History. Humanities does not fulfill the fine arts requirement for graduation."
+  },
+  {
+    "name": "US History",
+    "codes": [
+      "SS300A/B"
+    ],
+    "grade": "11",
+    "page": 61,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "In this course students study the history of the United States from 1877 to the present. The course content is based on the founding documents of the US government, which provide a framework for its history. Historical content focuses on the political, economic, and social events and issues related to industrialization and urbanization, major wars, domestic and foreign policies, and reform movements including civil rights. Students examine the impact of geographic factors on major events and eras and analyze their causes and effects."
+  },
+  {
+    "name": "AP US History",
+    "codes": [
+      "SS320A/B"
+    ],
+    "grade": "11",
+    "page": 61,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "AP US History provides students with the analytic skills and factual knowledge necessary to deal critically with the problems and materials in US history. Students will learn to assess historical materials--their relevance to a given interpretive problem, reliability, and importance--and to weigh the evidence and interpretations presented in historical scholarship. AP US History develops the skills necessary to arrive at conclusions on the basis of an informed judgment and to present reasons and evidence clearly and persuasively in a variety of formats."
+  },
+  {
+    "name": "Dual Credit US History: HIST 1301",
+    "codes": [
+      "SS335A"
+    ],
+    "grade": "11-12",
+    "page": 61,
+    "credit": "0.5",
+    "gpa": "AP/DC",
+    "prerequisite": "College Acceptance",
+    "corequisite": "Students must take Dual Credit US Hist 1301 fall semester and Dual Credit US History: HIST 1302 spring semester",
+    "description": "per course These two courses focus on the history of the United States and the development of American characteristics and institutions, including the forging of a new society from European, African, and American cultures. Emphasis is on the colonial and early national periods through the Civil War and Reconstruction in the first course and the development of American society in the 20th century from 1877 to the present. \u25cf 3 college credit hours. \u25cf College application and acceptance required 61 .",
+    "listed_with": [
+      "Dual Credit US History: HIST 1301",
+      "Dual Credit US History: HIST 1302"
+    ]
+  },
+  {
+    "name": "Dual Credit US History: HIST 1302",
+    "codes": [
+      "SS335B"
+    ],
+    "grade": "11-12",
+    "page": 61,
+    "credit": "0.5",
+    "gpa": "AP/DC",
+    "prerequisite": "College Acceptance",
+    "corequisite": "Students must take Dual Credit US Hist 1301 fall semester and Dual Credit US History: HIST 1302 spring semester",
+    "description": "per course These two courses focus on the history of the United States and the development of American characteristics and institutions, including the forging of a new society from European, African, and American cultures. Emphasis is on the colonial and early national periods through the Civil War and Reconstruction in the first course and the development of American society in the 20th century from 1877 to the present. \u25cf 3 college credit hours. \u25cf College application and acceptance required 61 .",
+    "listed_with": [
+      "Dual Credit US History: HIST 1301",
+      "Dual Credit US History: HIST 1302"
+    ]
+  },
+  {
+    "name": "GT American Studies: AP US History",
+    "codes": [
+      "GTHU3A/B"
+    ],
+    "grade": "11",
+    "page": 62,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "PISD GT Identification",
+    "corequisite": "Concurrent enrollment in GT American Studies: AP English III",
+    "description": ""
+  },
+  {
+    "name": "US Government",
+    "codes": [
+      "SS4100"
+    ],
+    "grade": "12",
+    "page": 62,
+    "credit": "0.5",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "The US Government course focuses on the principles and beliefs upon which the United States was founded and on the structure, functions, and powers of government at the national, state, and local levels. Students learn major political ideas and forms of government in history. A significant focus of the course is on the US Constitution, its underlying principles and ideas, and the form of government it created. Students analyze major concepts of republicanism, federalism, checks and balances, separation of powers, popular sovereignty, and individual rights and compare the US system of government with other political systems."
+  },
+  {
+    "name": "AP Government",
+    "codes": [
+      "SS4231"
+    ],
+    "grade": "12",
+    "page": 62,
+    "credit": "0.5",
+    "gpa": "AP/DC",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "AP US Government & Politics is a college-level course that provides students with a nonpartisan introduction to key political concepts, ideas, institutions, policies, interactions, roles and behaviors that characterize the constitutional system and political culture of the United States. Students will study U.S. foundational documents, Supreme Court decisions, and other texts and visuals to gain an understanding of the relationship and interactions among political institutions, processes, and behaviors. Underpinning the required content of the course are several big ideas that allow students to create meaningful connections among concepts throughout the course. Students will also engage in skill development that requires them to read and interpret data, make comparisons and applications, and develop evidence-based arguments. Dual : GOVT2305 This is a dual-credit college freshman government course with an introduction to politics and government in the"
+  },
+  {
+    "name": "Economics",
+    "codes": [
+      "SS4200"
+    ],
+    "grade": "12",
+    "page": 63,
+    "credit": "0.5",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "(Classes of 2027, 2028, and 2029) credit Economics, with emphasis on the free enterprise system and its benefits, focuses on the basic principles concerning production, consumption, and distribution of goods and services, including the problem of scarcity, in the United States and a comparison with those in other countries around the world. Students analyze the interaction of supply, demand, and price, and investigate the concepts of specialization and international trade, economic growth, key economic measurements, and monetary and fiscal policy. \u25cf NOTE: Per HB 27, this course may be offered as a full-year course to meet graduation requirements for the classes of 2030 and beyond. Further information to come pending guidance from TEA."
+  },
+  {
+    "name": "Personal Financial Literacy and Economics",
+    "codes": [
+      "SS4220"
+    ],
+    "grade": "12",
+    "page": 63,
+    "credit": "0.5",
+    "gpa": "On-Level",
+    "prerequisite": "none",
+    "corequisite": "",
+    "description": "Personal Financial Literacy and Economics is a hybrid course that emphasizes the economic way of thinking. This course provides a foundation in both microeconomics and macroeconomics as well as personal financial literacy concepts. The course requires that students demonstrate critical thinking by exploring how to invest in themselves with education and skill development, earn income, and budget for spending, saving, investing and protecting. Students will examine their individual responsibility for managing their personal finances and understand the impact on standard of living and long-term financial well-being. Further, students will connect how their financial decision making impacts the greater economy. Students may not receive credit for this course and Personal Financial Literacy. \u25cf NOTE: This course will not be available to students in graduating classes of 2030 and beyond as a result of HB 27."
+  },
+  {
+    "name": "AP Economics",
+    "codes": [
+      "SS4230"
+    ],
+    "grade": "12",
+    "page": 63,
+    "credit": "0.5",
+    "gpa": "AP/DC",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "(Classes of 2027, 2028, and 2029) AP Macroeconomics is a college-level course that provides students a thorough understanding of the principles of economics that apply to an economic system as a whole. This course places particular emphasis on the study of national income and price-level determination and also develops students' familiarity with economic performance measures, the financial sector, stabilization policies, economic growth, and international economics. \u25cf NOTE: Per HB 27, this course may be offered as a full-year course to meet graduation requirements for the classes of 2030 and beyond. Further information to come pending guidance from TEA. Dual : ECON 2301"
+  },
+  {
+    "name": "AP European History",
+    "codes": [
+      "SS520A/B"
+    ],
+    "grade": "10-12",
+    "page": 64,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "AP European History is a college-level survey course focuses on developing students' understanding of European history from approximately 1450 to the present. Students will develop and use the same skills, practices, and methods employed by historians: analyzing primary and secondary sources; developing historical arguments; making historical connections; and utilizing reasoning about comparison, causation, and continuity and change over time. The course also provides seven themes that students explore throughout the course in order to make connections among historical developments in different times and places: interaction of Europe and the world, economic and commercial development, cultural and intellectual development, states and other institutions of power, social organization and development, national and European identity, and technological and scientific innovations."
+  },
+  {
+    "name": "Ethnic Studies: African American Studies",
+    "codes": [
+      "SSAASA/B"
+    ],
+    "grade": "10-12",
+    "page": 64,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "In this course, students will learn about the history and cultural contributions of African Americans. This course is designed to assist students in understanding issues and events from multiple perspectives. This course develops an understanding of the historical roots of African American culture, especially as it pertains to social, economic, and political interactions within the broader context of United States history. It requires an analysis of important ideas, social and cultural values, beliefs, and traditions. Knowledge of past achievements provides citizens of the 21st century with a broader context within which to address the many issues facing the United States. 64"
+  },
+  {
+    "name": "Ethnic Studies: Mexican American Studies",
+    "codes": [
+      "SSMASA/B"
+    ],
+    "grade": "10-12",
+    "page": 65,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "In this course, students will learn about the history and cultural contributions of Mexican Americans from an interdisciplinary perspective. Students will interact with a variety of primary and secondary sources such as relevant videos, literature, art, songs and other media. The course emphasizes events in the 20th and 21st centuries, but students will also engage with events prior to the 20th century. 65 Influences of the New Testament on History and Literature SSBIBN : 0.5 e: None The course will teach students basic biblical knowledge about the New Testament that includes religion, literature, culture, art, music, and history. It will provide a basic knowledge of the Bible as a sourcebook and demonstrate the influence that it has on the development of works of culture, on the development of language, and on historical perspective. The Bible is not only considered a sacred text, but is also considered by many scholars to be the \u201cmost influential text in all of Western Culture.\u201d Knowledge gained from this study will help students understand both classical and contemporary works. In addition, students can use their knowledge as a tool to understand some of the most inspiring rhetoric in American history. Influences of the Old Testament on History and Literature SSBIBO : 0.5 e: None The course will teach students basic biblical knowledge about the Old Testament that includes religion, literature, culture, art, music, and history. It will provide a basic knowledge of the Bible"
+  },
+  {
+    "name": "AP Psychology (Includes Social Studies - Advanced Studies)",
+    "codes": [
+      "PSYAPA/B"
+    ],
+    "grade": "11-12",
+    "page": 67,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "AP Psychology is a college-level course that introduces students to the systematic and scientific study of human behavior and mental processes. While considering the studies that have shaped the field, students explore and apply psychological theories, key concepts, and phenomena associated with major units of study, including biological bases of behavior, cognition, development, learning, social psychology, personality, and mental and physical health. Throughout the course, students apply psychological concepts and employ psychological research methods and data interpretations to evaluate claims, consider evidence, and effectively communicate ideas. Sociology SOCIO : .05 e: None This elective course is an introductory study in social behavior and organization of human society. This course will describe the development of the field as a social science by identifying methods and strategies of research leading to an understanding of how the individual relates to society and the ever changing world. Students will also learn the importance of and role of culture, social structure, socialization, and social change in today's society."
+  },
+  {
+    "name": "Dual Credit Texas Government: GOVT 2306",
+    "codes": [
+      "SS4330"
+    ],
+    "grade": "11-12",
+    "page": 67,
+    "credit": "0.5",
+    "gpa": "AP/DC",
+    "prerequisite": "College acceptance",
+    "corequisite": "",
+    "description": "Origin and development of the Texas Constitution, structure and powers of the state and local government, federalism and intergovernmental relations, political participation, the election process, public policy and the political culture of Texas. Please note that this is a one semester course. \u25cf 3 college credit hours. \u25cf College acceptance and registration required. 67"
+  },
+  {
+    "name": "World Languages (LOTE) American Sign Language I",
+    "codes": [
+      "FA100A/B"
+    ],
+    "grade": "9-11",
+    "page": 68,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "American Sign Language I is an introductory course to the language and culture of the Deaf community. Students will develop expressive and receptive language skills to be able to communicate about highly familiar topics related to everyday student life. Students will demonstrate skills in the interpretive, interpersonal, and presentational modes of communication as defined by the TEKS. The culture and contributions of the Deaf community are discussed throughout the course. The expected outcome of this course is to develop Novice Mid to Novice High proficiency. The course is conducted in ASL (without voice) a significant part of the time."
+  },
+  {
+    "name": "American Sign Language II",
+    "codes": [
+      "FA200A/B"
+    ],
+    "grade": "10-12",
+    "page": 68,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "American Sign Language I",
+    "corequisite": "",
+    "description": "I is a continuation of ASL I focusing on the development of expressive and receptive skills by expanding their knowledge of vocabulary, syntax, and grammatical structures. Students will apply this knowledge across the three modes of communication on familiar topics related to everyday life. Students will be able to demonstrate extended cultural awareness of the Deaf Community. The expected outcome of this course is to develop Novice High to Intermediate Low proficiency. This course is conducted in ASL (without voice) a significant part of the time."
+  },
+  {
+    "name": "Honors American Sign Language III",
+    "codes": [
+      "FA310A/B"
+    ],
+    "grade": "11-12",
+    "page": 68,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "American Sign Language II",
+    "corequisite": "",
+    "description": "I continues the development of receptive and expressive language skills across the three modes of communication. Students will build on existing skills by adding more complex ASL grammatical features, syntax, and vocabulary. Students will continue the exploration of the culture of the Deaf community with an emphasis on ASL as a linguistic minority and particular attention to the effects on the individual. This course may require Deaf Community exposure and involvement. The expected outcome of this course is to develop Intermediate Low to Intermediate Mid proficiency. This course is conducted predominantly in ASL (without voice)."
+  },
+  {
+    "name": "Honors American Sign Language IV",
+    "codes": [
+      "FA410A/B"
+    ],
+    "grade": "11-12",
+    "page": 68,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "Honors American Sign Language III",
+    "corequisite": "",
+    "description": ""
+  },
+  {
+    "name": "French I",
+    "codes": [
+      "FF100A/B"
+    ],
+    "grade": "9-11",
+    "page": 69,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "French I is an introductory course to the French language and culture. Students will develop listening, speaking, reading, and writing skills to be able to communicate about highly familiar topics related to everyday student life. Students will demonstrate their language skills in the interpretive, interpersonal, and presentational modes of communication as defined by the TEKS. Students will recognize the interrelationships between cultures by identifying products and practices to understand cultural perspectives of the Francophone world. The outcome for French I is to develop Novice Mid to Novice High proficiency. This course is conducted in French for a significant amount of time."
+  },
+  {
+    "name": "French II",
+    "codes": [
+      "FF200A/B"
+    ],
+    "grade": "9-12",
+    "page": 69,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "French I",
+    "corequisite": "",
+    "description": "I continues to introduce students to the French language and culture. Students will develop listening, speaking, reading, and writing skills to be able to communicate about familiar topics related to everyday student life. Students will demonstrate their language skills in the interpretive, interpersonal, and presentational modes of communication as defined by the TEKS. Students will recognize the interrelationships between cultures by identifying products and practices to understand cultural perspectives of the Francophone world. The outcome for French II is to develop Novice High to Intermediate Low proficiency. This course is conducted in French for a significant amount of time."
+  },
+  {
+    "name": "Honors French III",
+    "codes": [
+      "FF310A/B"
+    ],
+    "grade": "10-12",
+    "page": 69,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "French II",
+    "corequisite": "",
+    "description": "I Honors students will continue developing their abilities across the three modes of communication. Students increase the complexity of their communication by demonstrating an ability to respond to tasks requiring high cognition and creative thinking using more complex grammatical structures and applicable vocabulary to discuss academic topics beyond everyday situations. Students will read, listen, and view authentic materials to deepen their understanding of the cultural practices and perspectives of various parts of the Francophone world. The outcome for French III Honors is to develop Intermediate Low to Intermediate High proficiency. This course is conducted predominantly in French."
+  },
+  {
+    "name": "AP French IV Language and Culture",
+    "codes": [
+      "FF420A/B"
+    ],
+    "grade": "11-12",
+    "page": 69,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "Honors French III",
+    "corequisite": "",
+    "description": ""
+  },
+  {
+    "name": "Chinese I",
+    "codes": [
+      "FM100A/B"
+    ],
+    "grade": "9-11",
+    "page": 70,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "Chinese I is an introductory course to Mandarin Chinese language and culture . Students will develop listening, speaking, reading, and writing skills on highly familiar topics related to everyday student life. Students will demonstrate their language skills in the interpretive, interpersonal, and presentational modes of communication as defined by the TEKS with an emphasis placed on listening and speaking skills. Students will recognize the interrelationships between cultures by identifying products and practices to understand cultural perspectives of the Mandarin Chinese-speaking world. The outcome for Chinese I is to develop Novice Mid to Novice High proficiency. This course is conducted in Chinese for a significant amount of time."
+  },
+  {
+    "name": "Chinese II",
+    "codes": [
+      "FM200A/B"
+    ],
+    "grade": "9-12",
+    "page": 70,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Chinese I",
+    "corequisite": "",
+    "description": "I continues to introduce students to the Mandarin Chinese language and culture. Students will further develop listening and speaking skills with an increased emphasis on reading and writing Simplified Chinese characters. Students will demonstrate their language skills in the interpretive, interpersonal, and presentational modes of communication on topics expanded beyond the everyday life of a student. Students will recognize the interrelationships between cultures by identifying products and practices to understand cultural perspectives of the Mandarin Chinese-speaking world. The outcome for Chinese II is to develop Novice High to Intermediate Low proficiency. This course is conducted in Chinese for a significant amount of time."
+  },
+  {
+    "name": "Honors Chinese III",
+    "codes": [
+      "FM310A/B"
+    ],
+    "grade": "11-12",
+    "page": 70,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "Chinese II",
+    "corequisite": "",
+    "description": "I Honors builds on Chinese I and II with additional vocabulary and grammar are introduced to further develop reading and writing skills.. Students will demonstrate their language skills in the interpretive, interpersonal, and presentational modes of communication on topics expanded beyond the everyday life of a student. Students will read, listen, and view authentic materials to deepen their understanding of the cultural practices and perspectives of various Chinese regions. The outcome for Chinese III Honors is to develop Intermediate Low to Intermediate Mid proficiency. This course is conducted predominantly in Chinese."
+  },
+  {
+    "name": "AP Chinese IV Language and Culture",
+    "codes": [
+      "FM420A/B"
+    ],
+    "grade": "12",
+    "page": 70,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "Honors Chinese III",
+    "corequisite": "",
+    "description": ": 1 Prerequisite: None reading, and writing skills to be able to communicate about highly familiar topics related to everyday student life. Students will demonstrate their language skills in the interpretive, interpersonal, and presentational modes of communication as defined by the TEKS. Students will recognize the interrelationships between cultures by identifying products and practices to understand cultural perspectives of the Spanish-speaking world. The outcome for Spanish I is to develop Novice Mid to Novice High proficiency. This course is conducted in Spanish for a significant amount of time."
+  },
+  {
+    "name": "Spanish II",
+    "codes": [
+      "FS200A/B"
+    ],
+    "grade": "9-12",
+    "page": 71,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Spanish I",
+    "corequisite": "",
+    "description": "I continues to introduce students to the Spanish language and culture. Students will develop listening, speaking, reading, and writing skills to be able to communicate about familiar topics related to everyday student life. Students will demonstrate their language skills in the interpretive, interpersonal, and presentational modes of communication. Students will recognize the interrelationships between cultures by identifying products and practices to understand cultural perspectives of the Spanish-speaking world. The outcome for Spanish II is to develop Novice High to Intermediate Low proficiency. This course is conducted in Spanish for a significant amount of time."
+  },
+  {
+    "name": "Spanish III",
+    "codes": [
+      "FS300A/B"
+    ],
+    "grade": "10-12",
+    "page": 71,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Spanish II I n Spanish III students will continue developing their abilities across",
+    "corequisite": "",
+    "description": ""
+  },
+  {
+    "name": "Honors Spanish III",
+    "codes": [
+      "FS310A/B"
+    ],
+    "grade": "10-12",
+    "page": 71,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "Spanish II",
+    "corequisite": "",
+    "description": "In Spanish III Honors students will continue developing their abilities across the three modes of communication. Students increase the complexity of their communication by demonstrating an ability to respond to tasks requiring high cognition and creative thinking using more complex grammatical structures and applicable vocabulary to discuss academic topics beyond everyday situations. Students will read, listen, and view authentic materials to deepen their understanding of the cultural practices and perspectives of various parts of the Spanish-speaking world. The outcome for Spanish III Honors is to develop Intermediate Low to Intermediate High proficiency. This course is conducted predominantly in Spanish. 71"
+  },
+  {
+    "name": "AP Spanish IV Language and Culture",
+    "codes": [
+      "FS420A/B"
+    ],
+    "grade": "11-12",
+    "page": 72,
+    "credit": "",
+    "gpa": "AP/DC",
+    "prerequisite": "Spanish III or Honors Spanish III",
+    "corequisite": "",
+    "description": ", ge and Culture engages students in an exploration of culture in both contemporary and historical contexts. The course develops students' awareness and appreciation of cultural products, practices, and perspectives while emphasizing communication by applying interpersonal, interpretive, and presentational skills. This course prepares students to sit for the Advanced Placement Spanish Language and Culture exam. The outcome for Spanish IV AP is to develop Intermediate Mid to Advanced Low proficiency. This course is conducted exclusively in Spanish."
+  },
+  {
+    "name": "Spanish Seminar I",
+    "codes": [
+      "FS510A/B"
+    ],
+    "grade": "11-12",
+    "page": 72,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "AP Spanish Language and Culture",
+    "corequisite": "",
+    "description": ", Spanish Seminar I is designed to foster deep inquiry into specialized areas of study. This course will deepen students' understanding of the cultures and histories of countries and groups representing the Spanish language. Students will dive deep into cultural products and practices, comparing and contrasting with their own and those of other cultures. Through oral presentations, written compositions, and class discussions, students will work toward advanced levels of proficiency. This course is conducted entirely in Spanish."
+  },
+  {
+    "name": "Spanish Seminar II",
+    "codes": [
+      "FS610A/B"
+    ],
+    "grade": "11-12",
+    "page": 72,
+    "credit": "1",
+    "gpa": "Honors weighted",
+    "prerequisite": "Spanish Seminar I - must be taken in consecutive years",
+    "corequisite": "",
+    "description": ", Spanish Seminar II is designed to foster deep inquiry into specialized areas of study. This course will deepen students' understanding of the cultures and histories of countries and groups representing the Spanish language. Students will dive deep into cultural products and practices, comparing and contrasting with their own and those of other cultures. Through oral presentations, written compositions, and class discussions, students will work toward advanced levels of proficiency. This course is conducted entirely in Spanish."
+  },
+  {
+    "name": "AP Spanish V Literature and Culture",
+    "codes": [
+      "FS421A/B"
+    ],
+    "grade": "11-12",
+    "page": 72,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "AP Spanish Language and Culture or Spanish Seminar I",
+    "corequisite": "",
+    "description": "AP Spanish V Spanish Literature and Culture uses a thematic approach to introduce students to a variety of representative texts from Peninsular Spanish, Latin American, and U. S. Hispanic literature. Through careful examination of the texts, students develop critical reading and analytical writing skills. Literature is explored within the contexts of its time and place, and students gain insights on the many voices, historical periods, and cultures represented in the. The course also includes a strong focus on cultural, artistic, and linguistic connections and comparisons, which is supported by the exploration of various media. The outcome for Spanish V AP is to develop Intermediate High to Advanced Low proficiency. This course is conducted exclusively in Spanish. 72 CTE Courses for Languages Other than English (LOTE) * Two credits in computer programming which includes, Computer Science I, II, III, AP Computer Science Principles, and AP Computer Science A may be used to satisfy the World Languages graduation requirements. Check with the college you plan on attending to see if this will count for admissions."
+  },
+  {
+    "name": "Computer Science I",
+    "codes": [
+      "FC110A/B"
+    ],
+    "grade": "9-12",
+    "page": 73,
+    "credit": "1.0",
+    "gpa": "",
+    "prerequisite": "Algebra I",
+    "corequisite": "Algebra I",
+    "description": "This is an introductory course to the fundamental concepts of Computer Science. This object-oriented programming class uses the Python programming language to discuss basic concepts of programming."
+  },
+  {
+    "name": "Computer Science II",
+    "codes": [
+      "FC210A/B"
+    ],
+    "grade": "10-12",
+    "page": 73,
+    "credit": "1",
+    "gpa": "",
+    "prerequisite": "Algebra I",
+    "corequisite": "Algebra I",
+    "description": "This course offers an emphasis on object-oriented programming methodology with a concentration on problem solving and algorithm development using Python programming language."
+  },
+  {
+    "name": "Computer Science III",
+    "codes": [
+      "FC320A/B"
+    ],
+    "grade": "11-12",
+    "page": 73,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "Computer Science II or AP Computer Science A",
+    "corequisite": "",
+    "description": "Computer Science III will foster students' creativity and innovation by presenting opportunities to design, implement, and present meaningful programs through a variety of media. Students will collaborate with one another, their instructor, and various electronic communities to solve the problems presented throughout the course. Through data analysis, students will identify task requirements, plan search strategies, and use computer science concepts to access, analyze, and evaluate information needed to solve problems."
+  },
+  {
+    "name": "AP Computer Science Principles",
+    "codes": [
+      "T9820A/B"
+    ],
+    "grade": "9-12",
+    "page": 73,
+    "credit": "1",
+    "gpa": "AP/DC Recommended",
+    "prerequisite": "Algebra I",
+    "corequisite": "",
+    "description": "AP Computer Science Principles is an introductory college-level computing course that introduces students to the breadth of the field of computer science. Students learn to design and evaluate solutions and apply computer science to solve problems through the development of algorithms and programs. They incorporate abstraction into programs and use data to discover new knowledge. Students also explain how computing innovations and computing systems work, explore their potential impacts, and contribute to a computing culture that is collaborative and ethical. 73"
+  },
+  {
+    "name": "AP Computer Science A",
+    "codes": [
+      "FCSAPA/B"
+    ],
+    "grade": "10-12",
+    "page": 74,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "Algebra I and Computer Science 1 OR AP Computer Science Principles",
+    "corequisite": "",
+    "description": "AP Computer Science A introduces students to computer science through programming. Fundamental topics in this course include the design of solutions to problems, the use of data structures to organize large sets of data, the development and implementation of algorithms to process data and discover new information, the analysis of potential solutions, and the ethical and social implications of computing systems.The course emphasizes object-oriented programming and design using the Java programming language. 74 Fine Arts"
+  },
+  {
+    "name": "Music Studies The History of Popular Music in the United States",
+    "codes": [
+      "E3100A/B"
+    ],
+    "grade": "9-12",
+    "page": 75,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This course is an exploration of the history and evolution of musical genres in America. European, African, and Caribbean roots will be traced as the end of the Civil War yields military brass bands and the beginning roots of Jazz, Tin Pan Alley, Broadway, Musical Theatre, and the foundation of music in radio, tv, and film. Students will have the opportunity to explore the vocabulary, musical terms, instrumentation, genres, musical hybrids, and basic musical forms that evolve into the rock and roll of the 1950's to current. Weekly listening assignments, analysis, and writing assignments will be required."
+  },
+  {
+    "name": "Music Production",
+    "codes": [
+      "EMUSPA/B"
+    ],
+    "grade": "10-12",
+    "page": 75,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "In the field of Music Production in the twenty-first century, traditional roles of songwriter, composer, arranger, musician, musical director, producer, recording technician, mixing engineers and mastering engineers are increasingly blurred. The changes in both working practices and the affordability of music technologies, musically and technically creative individuals can cover several of these roles in a music project. Music Production will explore the terminology, concepts of production, and the creation of music through the utilization of MIDI, basic and advanced audio, virtual instruments, and digital audio editing. Pre-production, studio production, editing and pre-mixing, mixing, and mastering processes will all be explored, developed, and assessed."
+  },
+  {
+    "name": "AP Music Theory",
+    "codes": [
+      "E3200A/B"
+    ],
+    "grade": "11-12",
+    "page": 75,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "AP Music Theory corresponds to one-to-two semesters of typical, introductory college music theory coursework that covers topics such as musicianship, theory, and musical materials and procedures. Musicianship skills, including dictation and listening skills, sightsinging, and harmony, are an important part of the course. Through the course, students develop the ability to recognize, understand, and describe basic materials and processes of tonal music that are heard or presented in a score. Development of aural (listening) skills is a primary objective. Performance is also part of the curriculum through the practice of sight-singing. Students learn basic concepts and terminology by listening to and performing a wide variety of music. Notational skills, speed, and fluency with basic materials are emphasized. 75 Art *CTE Courses for Fine Arts , including Floral Design, Digital Art and Animation, 3D Modeling and Animation, and Introduction to Communication Arts and Media, cannot be utilized as prerequisites for ANY art course."
+  },
+  {
+    "name": "Art I",
+    "codes": [
+      "E1010A/B"
+    ],
+    "grade": "9-12",
+    "page": 76,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This introductory course provides a comprehensive survey of the fundamentals of art. Through hands-on practice, students will develop a foundational understanding of the visual arts and their creative potential. Students will learn and apply the Elements of Art and Principles of Design as they create original works of art. Students will be introduced to significant historical periods and artists, providing a rich cultural and contextual understanding about the world of art. This course is an excellent starting point for students to build a strong artistic foundation and explore their creativity. Art supplies and fees may be required."
+  },
+  {
+    "name": "Studio Art I",
+    "codes": [
+      "E1110A/B"
+    ],
+    "grade": "9-12",
+    "page": 76,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Portfolio Submission",
+    "corequisite": "",
+    "description": "Studio Art I moves beyond an introductory course, challenging students to apply the Elements of Art and Principles of Design with greater intention and technical skill. This course is designed to develop a student's artistic voice and prepare them for advanced high school art courses. Students will be introduced to significant historical periods and artists, providing a rich cultural and contextual understanding about the world of art. Studio Art I is for rigorous studio practice, critical analysis, and the pursuit of a personal artistic vision. Art supplies and fees may be required. 76"
+  },
+  {
+    "name": "Basic Drawing and Design",
+    "codes": [
+      "E1021A/B"
+    ],
+    "grade": "9-12",
+    "page": 77,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Art I /Studio Art I",
+    "corequisite": "",
+    "description": "This course is a focused study designed to develop essential skills in mark-making, composition, and the design process. Students will work in various artistic styles and genres, developing and polishing fundamental technical skills in drawing and design. The curriculum emphasizes the use of personal voice, exploration, and experimentation to enhance artistic expression. By the end of the course, students will have developed a strong portfolio of original pieces suitable for review or further study. Art supplies and fees may be required."
+  },
+  {
+    "name": "Intermediate Drawing and Design",
+    "codes": [
+      "E1121A/B"
+    ],
+    "grade": "11-12",
+    "page": 77,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Basic Drawing and Design",
+    "corequisite": "",
+    "description": "The intermediate and advanced Drawing and Design courses are structured in a scaffolded progression where the expectations for creativity, skill, critical thinking, and independence increase significantly at each level. Art supplies and fees may be required."
+  },
+  {
+    "name": "Advanced Drawing and Design",
+    "codes": [
+      "E1221A/B"
+    ],
+    "grade": "12",
+    "page": 77,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Intermediate Drawing and Design",
+    "corequisite": "",
+    "description": "The intermediate and advanced Drawing and Design courses are structured in a scaffolded progression where the expectations for creativity, skill, critical thinking, and independence increase significantly at each level. Art supplies and fees may be required."
+  },
+  {
+    "name": "Basic Painting",
+    "codes": [
+      "E1022A/B"
+    ],
+    "grade": "10-12",
+    "page": 77,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Art I /Studio Art I",
+    "corequisite": "",
+    "description": "This course is a focused study designed to develop essential skills in painting techniques, color theory, and composition. Students will develop fundamental technical skills with various paints, media, and techniques. By the end of the course, students will have developed a strong portfolio of original pieces suitable for review or further study. This class may require additional hours outside of class. Art supplies and fees may be required."
+  },
+  {
+    "name": "Intermediate Painting",
+    "codes": [
+      "E1122A/B"
+    ],
+    "grade": "11-12",
+    "page": 77,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Basic Painting",
+    "corequisite": "",
+    "description": "The intermediate and advanced Painting courses are structured in a scaffolded progression where the expectations for creativity, skill, critical thinking, and independence increase significantly at each level. This class may require additional hours outside of class. Art supplies and fees may be required. 77"
+  },
+  {
+    "name": "Advanced Painting",
+    "codes": [
+      "E1222A/B"
+    ],
+    "grade": "12",
+    "page": 78,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Intermediate Painting",
+    "corequisite": "",
+    "description": "The intermediate and advanced Painting courses are structured in a scaffolded progression where the expectations for creativity, skill, critical thinking, and independence increase significantly at each level. This class may require additional hours outside of class. Art supplies and fees may be required."
+  },
+  {
+    "name": "Basic Ceramics",
+    "codes": [
+      "E1024A/B"
+    ],
+    "grade": "10-12",
+    "page": 78,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Art I /Studio Art I",
+    "corequisite": "",
+    "description": "This course of study provides a hands-on focus on fundamental, intermediate, and advanced hand-building and wheel-throwing techniques. Students will explore a variety of functional and sculptural 3D works through the use of personal voice, exploration, and experimentation.The curriculum includes instruction on a variety of firing and glazing techniques and basic kiln operations. By the end of the course, students will have developed a strong portfolio of original ceramic pieces suitable for review or further study. Art supplies and fees may be required."
+  },
+  {
+    "name": "Intermediate Ceramics",
+    "codes": [
+      "E1124A/B"
+    ],
+    "grade": "11-12",
+    "page": 78,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Basic Ceramics",
+    "corequisite": "",
+    "description": "The intermediate and advanced Ceramic courses are structured in a scaffolded progression where the expectations for creativity, skill, critical thinking, and independence increase significantly at each level. This class may require additional hours outside of class. Art supplies and fees may be required."
+  },
+  {
+    "name": "Advanced Ceramics",
+    "codes": [
+      "E1224A/B"
+    ],
+    "grade": "12",
+    "page": 78,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Intermediate Ceramics",
+    "corequisite": "",
+    "description": "The intermediate and advanced Ceramic courses are structured in a scaffolded progression where the expectations for creativity, skill, critical thinking, and independence increase significantly at each level. This class may require additional hours outside of class. Art supplies and fees may be required."
+  },
+  {
+    "name": "Basic Sculpture",
+    "codes": [
+      "E1025A/B"
+    ],
+    "grade": "10-12",
+    "page": 78,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Art I/Studio Art I",
+    "corequisite": "",
+    "description": "This Sculpture course is a focused study on mastering additive and subtractive sculpting techniques, along with an exploration of alternative sculptural methods. Students will utilize a wide variety of tools and materials to create 3D works, exploring everything from traditional methods to alternative and experimental techniques. Students will demonstrate a refined understanding of the Principles of Design within their functional and sculptural pieces. Throughout the course, students will develop a strong portfolio of original 3D pieces suitable for review or further study. This class may require additional hours outside of class. Art supplies and fees may be required. 78"
+  },
+  {
+    "name": "Intermediate Sculpture",
+    "codes": [
+      "E1125A/B"
+    ],
+    "grade": "11-12",
+    "page": 79,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Basic Sculpture",
+    "corequisite": "",
+    "description": "The intermediate and advanced Sculpture courses are structured in a scaffolded progression where the expectations for creativity, skill, critical thinking, and independence increase significantly at each level. This class may require additional hours outside of class. Art supplies and fees may be required."
+  },
+  {
+    "name": "Advanced Sculpture",
+    "codes": [
+      "E1225A/B"
+    ],
+    "grade": "12",
+    "page": 79,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Intermediate Sculpture",
+    "corequisite": "",
+    "description": "The intermediate and advanced Sculpture courses are structured in a scaffolded progression where the expectations for creativity, skill, critical thinking, and independence increase significantly at each level. This class may require additional hours outside of class. Art supplies and fees may be required."
+  },
+  {
+    "name": "AP Art History",
+    "codes": [
+      "E1233A/B"
+    ],
+    "grade": "10-12",
+    "page": 79,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "AP Art History welcomes students into the global art world to engage with its forms and content as they research, discuss, read, and write about art, artists, art making, and responses to and interpretations of art. By investigating specific course content of 250 works of art characterized by diverse artistic traditions from prehistory to the present , the students develop in-depth, holistic understanding of the history of art from a global perspective. Students learn and apply skills of visual, contextual, and comparative analysis to engage with a variety of art forms, developing understanding of individual works and interconnections across history."
+  },
+  {
+    "name": "AP Drawing",
+    "codes": [
+      "E1130A/B"
+    ],
+    "grade": "11-12",
+    "page": 79,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "Basic Drawing or Basic Painting",
+    "corequisite": "",
+    "description": "The AP Art and Design program consists of three different courses and AP Portfolio Exams\u2014AP 2-D Art and Design, AP 3-D Art and Design, and AP Drawing\u2014corresponding to college and university foundations courses. Students may choose to submit any or all of the AP Portfolio Exams. The AP Art and Design course framework is composed of course skills, big ideas, essential questions and enduring understandings, learning objectives, and essential knowledge statements. Students create a portfolio of work to demonstrate inquiry through art and design and development of materials, processes, and ideas over the course of a year. Portfolios include works of art and design, process documentation, and written information about the work presented. In May, students submit portfolios for evaluation based on specific criteria, which include skillful synthesis of materials, processes, and ideas and sustained investigation through practice, experimentation, and revision, guided by questions. Students may choose to submit any or all of the AP Portfolio Exams. Art supplies and fees may be required. 79"
+  },
+  {
+    "name": "AP Art 2D Art and Design",
+    "codes": [
+      "E1131A/B"
+    ],
+    "grade": "11-12",
+    "page": 80,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "Basic Drawing or Basic Painting",
+    "corequisite": "",
+    "description": "The AP Art and Design program consists of three different courses and AP Portfolio Exams\u2014AP 2-D Art and Design, AP 3-D Art and Design, and AP Drawing\u2014corresponding to college and university foundations courses. Students may choose to submit any or all of the AP Portfolio Exams. Students create a portfolio of work to demonstrate inquiry through art and design and development of materials, processes, and ideas over the course of a year. Portfolios include works of art and design, process documentation, and written information about the work presented. In May, students submit portfolios for evaluation based on specific criteria, which include skillful synthesis of materials, processes, and ideas and sustained investigation through practice, experimentation, and revision, guided by questions. Students may choose to submit any or all of the AP Portfolio Exams. The AP Art and Design course framework is composed of course skills, big ideas, essential questions and enduring understandings, learning objectives, and essential knowledge statements. Art supplies and fees may be required."
+  },
+  {
+    "name": "AP Art 3D Art and Design",
+    "codes": [
+      "E1132A/B"
+    ],
+    "grade": "11-12",
+    "page": 80,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "Basic Ceramics or Basic Sculpture",
+    "corequisite": "",
+    "description": "The AP Art and Design program consists of three different courses and AP Portfolio Exams\u2014AP 2-D Art and Design, AP 3-D Art and Design, and AP Drawing\u2014corresponding to college and university foundations courses. Students may choose to submit any or all of the AP Portfolio Exams. Students create a portfolio of work to demonstrate inquiry through art and design and development of materials, processes, and ideas over the course of a year. Portfolios include works of art and design, process documentation, and written information about the work presented. In May, students submit portfolios for evaluation based on specific criteria, which include skillful synthesis of materials, processes, and ideas and sustained investigation through practice, experimentation, and revision, guided by questions. Students may choose to submit any or all of the AP Portfolio Exams. The AP Art and Design course framework is composed of course skills, big ideas, essential questions and enduring understandings, learning objectives, and essential knowledge statements. Art supplies and fees may be required. 80 Band \u25cf Students participating in Prosper ISD Band and Color/Winter Guard are REQUIRED to have an annual physical and complete all appropriate paperwork prior to participation in tryouts, practices, and games. \u25cf Physicals must be dated on or after March 1, 2026 for participation for the 2026-2027 school year. Physicals must be completed on the official UIL physical form. Prosper ISD will provide an opp"
+  },
+  {
+    "name": "Honors Wind Ensemble Applied IV",
+    "codes": [
+      "E7141A/B"
+    ],
+    "grade": "12",
+    "page": 82,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "application, and director approval required",
+    "corequisite": "Concurrent enrollment in Wind Ensemble IV",
+    "description": ""
+  },
+  {
+    "name": "Honors Symphonic Band Applied IV",
+    "codes": [
+      "E6141A/B"
+    ],
+    "grade": "12",
+    "page": 83,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "Application and director approval required",
+    "corequisite": "Concurrent enrollment in Applied Music IV",
+    "description": ""
+  },
+  {
+    "name": "Concert Band I",
+    "codes": [
+      "E7005A/B"
+    ],
+    "grade": "9-12",
+    "page": 84,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Audition and director approval",
+    "corequisite": "",
+    "description": "This class is the fourth level band and consists of students that play brass and woodwind instruments. In this course, students will work on beginning through advanced instrument-specific technique, skill development, and fundamentals. The class will participate in a variety of ensembles including marching band, concert band, and various small ensembles. Students will also work on individual projects such as All-Region, etudes, and solos as part of the course curriculum and may qualify to participate in individual competitions. \u25cf All students can earn up to 1 PE credit for participation in the fall semester of marching band during high school. The PE credit will be Pass/Fail and not receive",
+    "listed_with": [
+      "Concert Band I",
+      "Concert Band II",
+      "Concert Band III",
+      "Concert Band IV"
+    ]
+  },
+  {
+    "name": "Concert Band II",
+    "codes": [
+      "E7006A/B"
+    ],
+    "grade": "9-12",
+    "page": 84,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Audition and director approval",
+    "corequisite": "",
+    "description": "This class is the fourth level band and consists of students that play brass and woodwind instruments. In this course, students will work on beginning through advanced instrument-specific technique, skill development, and fundamentals. The class will participate in a variety of ensembles including marching band, concert band, and various small ensembles. Students will also work on individual projects such as All-Region, etudes, and solos as part of the course curriculum and may qualify to participate in individual competitions. \u25cf All students can earn up to 1 PE credit for participation in the fall semester of marching band during high school. The PE credit will be Pass/Fail and not receive",
+    "listed_with": [
+      "Concert Band I",
+      "Concert Band II",
+      "Concert Band III",
+      "Concert Band IV"
+    ]
+  },
+  {
+    "name": "Concert Band III",
+    "codes": [
+      "E7007A/B"
+    ],
+    "grade": "9-12",
+    "page": 84,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Audition and director approval",
+    "corequisite": "",
+    "description": "This class is the fourth level band and consists of students that play brass and woodwind instruments. In this course, students will work on beginning through advanced instrument-specific technique, skill development, and fundamentals. The class will participate in a variety of ensembles including marching band, concert band, and various small ensembles. Students will also work on individual projects such as All-Region, etudes, and solos as part of the course curriculum and may qualify to participate in individual competitions. \u25cf All students can earn up to 1 PE credit for participation in the fall semester of marching band during high school. The PE credit will be Pass/Fail and not receive",
+    "listed_with": [
+      "Concert Band I",
+      "Concert Band II",
+      "Concert Band III",
+      "Concert Band IV"
+    ]
+  },
+  {
+    "name": "Concert Band IV",
+    "codes": [
+      "E7008A/B"
+    ],
+    "grade": "9-12",
+    "page": 84,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Audition and director approval",
+    "corequisite": "",
+    "description": "This class is the fourth level band and consists of students that play brass and woodwind instruments. In this course, students will work on beginning through advanced instrument-specific technique, skill development, and fundamentals. The class will participate in a variety of ensembles including marching band, concert band, and various small ensembles. Students will also work on individual projects such as All-Region, etudes, and solos as part of the course curriculum and may qualify to participate in individual competitions. \u25cf All students can earn up to 1 PE credit for participation in the fall semester of marching band during high school. The PE credit will be Pass/Fail and not receive",
+    "listed_with": [
+      "Concert Band I",
+      "Concert Band II",
+      "Concert Band III",
+      "Concert Band IV"
+    ]
+  },
+  {
+    "name": "Percussion I",
+    "codes": [
+      "E7017A/B"
+    ],
+    "grade": "9-12",
+    "page": 84,
+    "credit": "1.0",
+    "gpa": "",
+    "prerequisite": "Audition and director approval",
+    "corequisite": "",
+    "description": "This class consists of students that play percussion instruments. In this course, students will work on beginning through advanced instrument-specific technique, skill development, and fundamentals. The class will participate in a variety of ensembles including marching band, concert band, winter drumline, and various small ensembles. Students will also work on individual projects such as All-Region, etudes, and solos as part of the course curriculum and may qualify to participate in individual competitions. \u25cf All students can earn up to 1 PE credit for participation in the fall semester of marching band during high school. The PE credit will be Pass/Fail and not receive \u25cf Percussion Students selected for Wind Ensemble, will be required to take Wind Ensemble OR Wind Ensemble Applied. 85 Choir \u25cf According to UIL rules, students must maintain a 70 average in all of their classes to remain eligible for competition. See the UIL Eligibility information in the Academic Guidelines section of this catalog for more information.",
+    "listed_with": [
+      "Percussion I",
+      "Percussion II",
+      "Percussion III",
+      "Percussion IV"
+    ]
+  },
+  {
+    "name": "Percussion II",
+    "codes": [
+      "E7018A/B"
+    ],
+    "grade": "9-12",
+    "page": 84,
+    "credit": "1.0",
+    "gpa": "",
+    "prerequisite": "Audition and director approval",
+    "corequisite": "",
+    "description": "This class consists of students that play percussion instruments. In this course, students will work on beginning through advanced instrument-specific technique, skill development, and fundamentals. The class will participate in a variety of ensembles including marching band, concert band, winter drumline, and various small ensembles. Students will also work on individual projects such as All-Region, etudes, and solos as part of the course curriculum and may qualify to participate in individual competitions. \u25cf All students can earn up to 1 PE credit for participation in the fall semester of marching band during high school. The PE credit will be Pass/Fail and not receive \u25cf Percussion Students selected for Wind Ensemble, will be required to take Wind Ensemble OR Wind Ensemble Applied. 85 Choir \u25cf According to UIL rules, students must maintain a 70 average in all of their classes to remain eligible for competition. See the UIL Eligibility information in the Academic Guidelines section of this catalog for more information.",
+    "listed_with": [
+      "Percussion I",
+      "Percussion II",
+      "Percussion III",
+      "Percussion IV"
+    ]
+  },
+  {
+    "name": "Percussion III",
+    "codes": [
+      "E7019A/B"
+    ],
+    "grade": "9-12",
+    "page": 84,
+    "credit": "1.0",
+    "gpa": "",
+    "prerequisite": "Audition and director approval",
+    "corequisite": "",
+    "description": "This class consists of students that play percussion instruments. In this course, students will work on beginning through advanced instrument-specific technique, skill development, and fundamentals. The class will participate in a variety of ensembles including marching band, concert band, winter drumline, and various small ensembles. Students will also work on individual projects such as All-Region, etudes, and solos as part of the course curriculum and may qualify to participate in individual competitions. \u25cf All students can earn up to 1 PE credit for participation in the fall semester of marching band during high school. The PE credit will be Pass/Fail and not receive \u25cf Percussion Students selected for Wind Ensemble, will be required to take Wind Ensemble OR Wind Ensemble Applied. 85 Choir \u25cf According to UIL rules, students must maintain a 70 average in all of their classes to remain eligible for competition. See the UIL Eligibility information in the Academic Guidelines section of this catalog for more information.",
+    "listed_with": [
+      "Percussion I",
+      "Percussion II",
+      "Percussion III",
+      "Percussion IV"
+    ]
+  },
+  {
+    "name": "Percussion IV",
+    "codes": [
+      "E7020A/B"
+    ],
+    "grade": "9-12",
+    "page": 84,
+    "credit": "1.0",
+    "gpa": "",
+    "prerequisite": "Audition and director approval",
+    "corequisite": "",
+    "description": "This class consists of students that play percussion instruments. In this course, students will work on beginning through advanced instrument-specific technique, skill development, and fundamentals. The class will participate in a variety of ensembles including marching band, concert band, winter drumline, and various small ensembles. Students will also work on individual projects such as All-Region, etudes, and solos as part of the course curriculum and may qualify to participate in individual competitions. \u25cf All students can earn up to 1 PE credit for participation in the fall semester of marching band during high school. The PE credit will be Pass/Fail and not receive \u25cf Percussion Students selected for Wind Ensemble, will be required to take Wind Ensemble OR Wind Ensemble Applied. 85 Choir \u25cf According to UIL rules, students must maintain a 70 average in all of their classes to remain eligible for competition. See the UIL Eligibility information in the Academic Guidelines section of this catalog for more information.",
+    "listed_with": [
+      "Percussion I",
+      "Percussion II",
+      "Percussion III",
+      "Percussion IV"
+    ]
+  },
+  {
+    "name": "Bel Canto I",
+    "codes": [
+      "E5105A/B"
+    ],
+    "grade": "9-12",
+    "page": 87,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This is the non-varsity UIL and TMEA competition choir for treble voices. Proficiency in sight-reading and vocal tone production are required for this ensemble. Members are selected by the Choral Director only. This choir prepares and performs music of various styles for choral competitions and UIL Concert & Sight-reading. Some rehearsals and performances will take place outside of school hours, and are required by enrollment in this year-long course. Repertoire consists of traditional choral, folk, Americana, and pop music. Performance and sight-reading techniques will be taught. Students may participate in individual competitions in addition to performing seasonal concerts.",
+    "listed_with": [
+      "Bel Canto I",
+      "Bel Canto II",
+      "Bel Canto III",
+      "Bel Canto IV"
+    ]
+  },
+  {
+    "name": "Bel Canto II",
+    "codes": [
+      "E5106A/B"
+    ],
+    "grade": "9-12",
+    "page": 87,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This is the non-varsity UIL and TMEA competition choir for treble voices. Proficiency in sight-reading and vocal tone production are required for this ensemble. Members are selected by the Choral Director only. This choir prepares and performs music of various styles for choral competitions and UIL Concert & Sight-reading. Some rehearsals and performances will take place outside of school hours, and are required by enrollment in this year-long course. Repertoire consists of traditional choral, folk, Americana, and pop music. Performance and sight-reading techniques will be taught. Students may participate in individual competitions in addition to performing seasonal concerts.",
+    "listed_with": [
+      "Bel Canto I",
+      "Bel Canto II",
+      "Bel Canto III",
+      "Bel Canto IV"
+    ]
+  },
+  {
+    "name": "Bel Canto III",
+    "codes": [
+      "E5107A/B"
+    ],
+    "grade": "9-12",
+    "page": 87,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This is the non-varsity UIL and TMEA competition choir for treble voices. Proficiency in sight-reading and vocal tone production are required for this ensemble. Members are selected by the Choral Director only. This choir prepares and performs music of various styles for choral competitions and UIL Concert & Sight-reading. Some rehearsals and performances will take place outside of school hours, and are required by enrollment in this year-long course. Repertoire consists of traditional choral, folk, Americana, and pop music. Performance and sight-reading techniques will be taught. Students may participate in individual competitions in addition to performing seasonal concerts.",
+    "listed_with": [
+      "Bel Canto I",
+      "Bel Canto II",
+      "Bel Canto III",
+      "Bel Canto IV"
+    ]
+  },
+  {
+    "name": "Bel Canto IV",
+    "codes": [
+      "E5108A/B"
+    ],
+    "grade": "9-12",
+    "page": 87,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This is the non-varsity UIL and TMEA competition choir for treble voices. Proficiency in sight-reading and vocal tone production are required for this ensemble. Members are selected by the Choral Director only. This choir prepares and performs music of various styles for choral competitions and UIL Concert & Sight-reading. Some rehearsals and performances will take place outside of school hours, and are required by enrollment in this year-long course. Repertoire consists of traditional choral, folk, Americana, and pop music. Performance and sight-reading techniques will be taught. Students may participate in individual competitions in addition to performing seasonal concerts.",
+    "listed_with": [
+      "Bel Canto I",
+      "Bel Canto II",
+      "Bel Canto III",
+      "Bel Canto IV"
+    ]
+  },
+  {
+    "name": "Show Choir II",
+    "codes": [
+      "E5002A/B"
+    ],
+    "grade": "10-12",
+    "page": 87,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Audition",
+    "corequisite": "",
+    "description": "T his is an auditioned, elite group of singers/dancers. Students in this group perform a wide variety of popular and jazz music with intricate harmonies and choreography. Students learn advanced vocal and performance technique. Students in this choir may also participate in individual competitions during the year. This group performs their own show each winter and spring. Membership in an additional choir is required. 87",
+    "listed_with": [
+      "Show Choir II",
+      "Show Choir III",
+      "Show Choir IV"
+    ]
+  },
+  {
+    "name": "Show Choir III",
+    "codes": [
+      "E5003A/B"
+    ],
+    "grade": "10-12",
+    "page": 87,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Audition",
+    "corequisite": "",
+    "description": "T his is an auditioned, elite group of singers/dancers. Students in this group perform a wide variety of popular and jazz music with intricate harmonies and choreography. Students learn advanced vocal and performance technique. Students in this choir may also participate in individual competitions during the year. This group performs their own show each winter and spring. Membership in an additional choir is required. 87",
+    "listed_with": [
+      "Show Choir II",
+      "Show Choir III",
+      "Show Choir IV"
+    ]
+  },
+  {
+    "name": "Show Choir IV",
+    "codes": [
+      "E5004A/B"
+    ],
+    "grade": "10-12",
+    "page": 87,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Audition",
+    "corequisite": "",
+    "description": "T his is an auditioned, elite group of singers/dancers. Students in this group perform a wide variety of popular and jazz music with intricate harmonies and choreography. Students learn advanced vocal and performance technique. Students in this choir may also participate in individual competitions during the year. This group performs their own show each winter and spring. Membership in an additional choir is required. 87",
+    "listed_with": [
+      "Show Choir II",
+      "Show Choir III",
+      "Show Choir IV"
+    ]
+  },
+  {
+    "name": "Chorale I",
+    "codes": [
+      "E5205A/B"
+    ],
+    "grade": "9-12",
+    "page": 88,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This is the non-varsity UIL and TMEA competition choir for mixed voices. Proficiency in sight-reading and vocal tone production are required for this ensemble. Members are selected by the Choral Director only. This choir prepares and performs music of various styles for choral competitions and UIL Concert & Sight-reading. Some rehearsals and performances will take place outside of school hours, and are required by enrollment in this year-long course. The repertoire consists of traditional choral, folk, Americana, and pop music. Performance and sight-reading techniques will be taught. Students may participate in individual competitions in addition to performing seasonal concerts.",
+    "listed_with": [
+      "Chorale I",
+      "Chorale II",
+      "Chorale III",
+      "Chorale IV"
+    ]
+  },
+  {
+    "name": "Chorale II",
+    "codes": [
+      "E5206A/B"
+    ],
+    "grade": "9-12",
+    "page": 88,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This is the non-varsity UIL and TMEA competition choir for mixed voices. Proficiency in sight-reading and vocal tone production are required for this ensemble. Members are selected by the Choral Director only. This choir prepares and performs music of various styles for choral competitions and UIL Concert & Sight-reading. Some rehearsals and performances will take place outside of school hours, and are required by enrollment in this year-long course. The repertoire consists of traditional choral, folk, Americana, and pop music. Performance and sight-reading techniques will be taught. Students may participate in individual competitions in addition to performing seasonal concerts.",
+    "listed_with": [
+      "Chorale I",
+      "Chorale II",
+      "Chorale III",
+      "Chorale IV"
+    ]
+  },
+  {
+    "name": "Chorale III",
+    "codes": [
+      "E5207A/B"
+    ],
+    "grade": "9-12",
+    "page": 88,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This is the non-varsity UIL and TMEA competition choir for mixed voices. Proficiency in sight-reading and vocal tone production are required for this ensemble. Members are selected by the Choral Director only. This choir prepares and performs music of various styles for choral competitions and UIL Concert & Sight-reading. Some rehearsals and performances will take place outside of school hours, and are required by enrollment in this year-long course. The repertoire consists of traditional choral, folk, Americana, and pop music. Performance and sight-reading techniques will be taught. Students may participate in individual competitions in addition to performing seasonal concerts.",
+    "listed_with": [
+      "Chorale I",
+      "Chorale II",
+      "Chorale III",
+      "Chorale IV"
+    ]
+  },
+  {
+    "name": "Chorale IV",
+    "codes": [
+      "E5208A/B"
+    ],
+    "grade": "9-12",
+    "page": 88,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This is the non-varsity UIL and TMEA competition choir for mixed voices. Proficiency in sight-reading and vocal tone production are required for this ensemble. Members are selected by the Choral Director only. This choir prepares and performs music of various styles for choral competitions and UIL Concert & Sight-reading. Some rehearsals and performances will take place outside of school hours, and are required by enrollment in this year-long course. The repertoire consists of traditional choral, folk, Americana, and pop music. Performance and sight-reading techniques will be taught. Students may participate in individual competitions in addition to performing seasonal concerts.",
+    "listed_with": [
+      "Chorale I",
+      "Chorale II",
+      "Chorale III",
+      "Chorale IV"
+    ]
+  },
+  {
+    "name": "Honors Choir Applied Music IV",
+    "codes": [
+      "E5410A/B"
+    ],
+    "grade": "12",
+    "page": 89,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "Concurrent enrollment in Applied Music IV, application, and director approval required",
+    "corequisite": "",
+    "description": ". In addition to the requirements of Choir Applied Music IV, advanced requirements include field-based internships, teaching experiences, a research paper with oral defense, concert reviews, elevated performance opportunities, and participation in PISD All District Fine Arts Academy Honor Ensembles . \u25cf Students will select Applied Music IV \u25cf Students will be placed in Honors Applied Music IV by director approval. Honors Choir Applied Music requires concurrent enrollment in a Varsity Choir. 89 Dance Students will receive a Physical Education credit when taking Dance I/Drill Team I. This PE credit will not count towards \u25cf Students participating in Prosper ISD Drill Team are REQUIRED to have an annual physical and complete all appropriate paperwork prior to participation in tryouts, practices, and games. \u25cf Physicals must be dated on or after March 1, 2026 for participation for the 2026-2027 school year. \u25cf Physicals must be completed on the official UIL physical form. Prosper ISD will provide an opportunity for students to receive a physical each spring for a nominal fee. Students meeting all of the free or reduced lunch requirements will be given the opportunity to receive a physical for free or at a reduced rate. \u25cf Drill Team members must commit to attending practices and games before school, after school, on Saturdays, and some holidays (winter break, spring break, etc.) \u25cf According to UIL rules, students must maintain a 70 average in all of their classes to remain eligible fo"
+  },
+  {
+    "name": "Dance I",
+    "codes": [
+      "E1001A/B"
+    ],
+    "grade": "9-12",
+    "page": 90,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "These courses of study are designed to help dance students develop basic dance technique and skills. The classes will cover different styles of dance throughout the year, and students will develop perceptual thinking skills, various movement abilities, and a physical understanding of themselves and others. Consequently, students enrolled in these classes will emerge as versatile movers and technicians. Student assessments will focus on individual growth in technique and choreography. By mastering movement principles and skills, students will develop self-discipline and healthy bodies that move expressively, efficiently, and safely through space and time with controlled energy."
+  },
+  {
+    "name": "Dance II",
+    "codes": [
+      "E1002A/B"
+    ],
+    "grade": "10-12",
+    "page": 90,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Dance I",
+    "corequisite": "",
+    "description": ""
+  },
+  {
+    "name": "Dance III",
+    "codes": [
+      "E1003A/B"
+    ],
+    "grade": "11-12",
+    "page": 90,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Dance II",
+    "corequisite": "",
+    "description": "These courses of study are designed to build upon knowledge acquired in Dance II. Students will develop advanced dance technique and skills through a focus on training, movement, choreography, and conditioning. These classes will cover different genres of dance throughout the year, through which students will enhance their understanding of various styles of movement and music, and explore the concept of dance as a communicative art form. By mastering movement principles and skills, students will develop self-discipline, self-esteem, and healthy bodies that move expressively, efficiently, and safely through space and time with controlled, purposeful energy."
+  },
+  {
+    "name": "Dance IV",
+    "codes": [
+      "E1004A/B"
+    ],
+    "grade": "11-12",
+    "page": 90,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Dance III",
+    "corequisite": "",
+    "description": ""
+  },
+  {
+    "name": "Drill Team I",
+    "codes": [
+      "E0001A/B"
+    ],
+    "grade": "9-12",
+    "page": 91,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Audition",
+    "corequisite": "",
+    "description": "This course of study is designed for the members of a High School Drill Team. Students will focus on dance and kick technique, drill team etiquette, and performance fundamentals. Through training, performance, and evaluation, students will develop the knowledge and skills necessary to become competitive precision dancers. All Drill Team courses last for a full academic year, and tryouts are held in the spring semester of the previous school year. Varsity Level Drill Team requires double blocking.",
+    "listed_with": [
+      "Drill Team I",
+      "Drill Team II",
+      "Drill Team III",
+      "Drill Team IV"
+    ]
+  },
+  {
+    "name": "Drill Team II",
+    "codes": [
+      "E0002A/B"
+    ],
+    "grade": "9-12",
+    "page": 91,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Audition",
+    "corequisite": "",
+    "description": "This course of study is designed for the members of a High School Drill Team. Students will focus on dance and kick technique, drill team etiquette, and performance fundamentals. Through training, performance, and evaluation, students will develop the knowledge and skills necessary to become competitive precision dancers. All Drill Team courses last for a full academic year, and tryouts are held in the spring semester of the previous school year. Varsity Level Drill Team requires double blocking.",
+    "listed_with": [
+      "Drill Team I",
+      "Drill Team II",
+      "Drill Team III",
+      "Drill Team IV"
+    ]
+  },
+  {
+    "name": "Drill Team III",
+    "codes": [
+      "E0003A/B"
+    ],
+    "grade": "9-12",
+    "page": 91,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Audition",
+    "corequisite": "",
+    "description": "This course of study is designed for the members of a High School Drill Team. Students will focus on dance and kick technique, drill team etiquette, and performance fundamentals. Through training, performance, and evaluation, students will develop the knowledge and skills necessary to become competitive precision dancers. All Drill Team courses last for a full academic year, and tryouts are held in the spring semester of the previous school year. Varsity Level Drill Team requires double blocking.",
+    "listed_with": [
+      "Drill Team I",
+      "Drill Team II",
+      "Drill Team III",
+      "Drill Team IV"
+    ]
+  },
+  {
+    "name": "Drill Team IV",
+    "codes": [
+      "E0004A/B"
+    ],
+    "grade": "9-12",
+    "page": 91,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Audition",
+    "corequisite": "",
+    "description": "This course of study is designed for the members of a High School Drill Team. Students will focus on dance and kick technique, drill team etiquette, and performance fundamentals. Through training, performance, and evaluation, students will develop the knowledge and skills necessary to become competitive precision dancers. All Drill Team courses last for a full academic year, and tryouts are held in the spring semester of the previous school year. Varsity Level Drill Team requires double blocking.",
+    "listed_with": [
+      "Drill Team I",
+      "Drill Team II",
+      "Drill Team III",
+      "Drill Team IV"
+    ]
+  },
+  {
+    "name": "Drill Team Prep I",
+    "codes": [
+      "E001PA/B"
+    ],
+    "grade": "9-11",
+    "page": 91,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This course of study is a preparation class, designed for the developing dancers who are interested in auditioning for the drill team in a future school year. This course also allows students to develop skills and experience what the drill team offers, but before committing to the intensive schedule and responsibilities involved in being on the team. Similar to the Drill Team, students will focus on dance and kick technique, drill team etiquette, and performance fundamentals."
+  },
+  {
+    "name": "Drill Team Prep II",
+    "codes": [
+      "E002PA/B"
+    ],
+    "grade": "9-11",
+    "page": 91,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Drill Team Prep I for Drill Team Prep II",
+    "corequisite": "",
+    "description": ""
+  },
+  {
+    "name": "Honors Orchestra Applied Music IV",
+    "codes": [
+      "E8045A/B"
+    ],
+    "grade": "12",
+    "page": 93,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "Concurrent enrollment in Applied Music IV, application, and director approval required",
+    "corequisite": "",
+    "description": ""
+  },
+  {
+    "name": "Theatre Theatre Arts I",
+    "codes": [
+      "E2001A/B"
+    ],
+    "grade": "9-12",
+    "page": 94,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This course of study is designed as an introductory survey in the fundamentals of theatre, including the role of the actor, the role of the technician, the interpretation of dramatic literature, the development of the physical theatre, and the historical movements and trends in theatre. Through performance and evaluation, the student develops physical, vocal, and mental processes with an emphasis on interpretation, body movement, and characterization."
+  },
+  {
+    "name": "Theatre Arts II",
+    "codes": [
+      "E2012A/B"
+    ],
+    "grade": "9-12",
+    "page": 94,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Theatre Arts I OR director approval if in 9th grade",
+    "corequisite": "",
+    "description": "This course of study is designed to further develop the student as an actor through performing and analyzing quality dramatic literature, as well as successfully evaluating and critiquing dramatic works. The primary focus of this course includes learning the principles of acting, exploring comedic and dramatic theory, developing stage movement, and increasing experience in scene work and/or play production. 94"
+  },
+  {
+    "name": "Theatre Arts III",
+    "codes": [
+      "E2013A/B"
+    ],
+    "grade": "10-12",
+    "page": 95,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Theatre Arts II",
+    "corequisite": "",
+    "description": "This course of study is designed as an advanced acting course, and builds upon previously learned content to help students achieve mastery in theatrical performance. The primary focus of this course includes refining the techniques of acting, analyzing culturally relevant works, preparing scenes from classical and modern eras, and increasing experience in scene work and/or play production."
+  },
+  {
+    "name": "Theatre Arts IV",
+    "codes": [
+      "E2014A/B"
+    ],
+    "grade": "11-12",
+    "page": 95,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Theatre Arts III",
+    "corequisite": "",
+    "description": "This course of study is designed as a mastery level course in acting for the stage. Students will utilize their knowledge of technique and method in class performances, play productions, critical evaluations, and portfolio development for college/career preparation. The primary focus of this course includes playwriting and directing as well. Students will learn the fundamentals of playwriting, directing, producing, and managing for the theatre, culminating in an original play script, a self-directed one-act play, or similarly rigorous capstone project."
+  },
+  {
+    "name": "Technical Theatre I",
+    "codes": [
+      "E3001A/B"
+    ],
+    "grade": "9-12",
+    "page": 95,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This course of study is designed as an introductory survey in the fundamentals of technical theatre, including safety, terminology, history, as well as the exploration of all tech theatre disciplines. Through production design and project-based learning, the student will study the application of set, lighting, sound, costumes, props, makeup, publicity, and house/stage management."
+  },
+  {
+    "name": "Technical Theatre II",
+    "codes": [
+      "E3002A/B"
+    ],
+    "grade": "10-12",
+    "page": 95,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Technical Theatre I",
+    "corequisite": "",
+    "description": "This course of study is designed for the student who wants to continue to explore specific disciplines within technical theatre. Student projects may focus on scenic construction and design, lighting, sound, properties, costuming, make-up, publicity, as well as house and stage management. This course will allow students to improve upon specific skills and techniques depending on their discipline of study. These skills may include theatrical design. scenic carpentry, lighting plotting and focusing, theatrical soundscape mixing, prop construction, sewing/stitching/costume construction, and theatrical make-up application. The curriculum will be extensively hands-on and project-based."
+  },
+  {
+    "name": "Technical Theatre III",
+    "codes": [
+      "E3003A/B"
+    ],
+    "grade": "11-12",
+    "page": 95,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Technical Theatre II",
+    "corequisite": "",
+    "description": "students, but with an emphasis on script analysis and theatrical production. Technical Theatre III students will connect specific design and construction elements to style, period, genre, and playwright intention, while also considering production history through exploration and research. Projects may contribute directly to the theatre program's season of productions, and students will get the opportunity to serve as designers or on technical run crews for a given play or musical. The curriculum will be extensively hands-on and production-based. 95"
+  },
+  {
+    "name": "Technical Theatre IV",
+    "codes": [
+      "E3004A/B"
+    ],
+    "grade": "12",
+    "page": 96,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Technical Theatre III",
+    "corequisite": "",
+    "description": "These courses of study are designed for the student who wants to commit and focus on a specific discipline within technical theatre. Students will participate similarly to Technical Theatre II students, but with an emphasis on script analysis and theatrical production. Technical Theatre IV students will connect specific design and construction elements to style, period, genre, and playwright intention, while also considering production history through exploration and research. Projects may contribute directly to the theatre program's season of productions, and students will get the opportunity to serve as designers or on technical run crews for a given play or musical. The curriculum will be extensively hands-on and production-based."
+  },
+  {
+    "name": "Directing I",
+    "codes": [
+      "E4009A/B"
+    ],
+    "grade": "11-12",
+    "page": 96,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Theatre Production /Theatre Arts II",
+    "corequisite": "",
+    "description": "This course of study is designed for the student seriously interested in directing for theatre arts. Students will build upon their knowledge of acting and tech theatre in order to analyze scripts, evaluate critically, effectively delegate, and artistically lead, all while building a portfolio for college/career preparation. The main focus of this course includes directing intermediate level acting students, primarily in a theatrical setting, with supplemental explorations of directing for film and television. Students will learn the fundamentals of directing, producing, and managing for the theatre, culminating in a self-directed one-act play, or similarly rigorous capstone project."
+  },
+  {
+    "name": "Directing II",
+    "codes": [
+      "E4010A/B"
+    ],
+    "grade": "12",
+    "page": 96,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Directing I",
+    "corequisite": "",
+    "description": "This course of study is designed for the student seriously interested in directing for theatre arts. Students will build upon their knowledge of acting and tech theatre in order to analyze scripts, evaluate critically, effectively delegate, and artistically lead, all while building a portfolio for college/career preparation. The main focus of this course includes directing intermediate level acting students, primarily in a theatrical setting, with supplemental explorations of directing for film and television. Students will learn the fundamentals of directing, producing, and managing for the theatre, culminating in a self-directed one-act play, or similarly rigorous capstone project."
+  },
+  {
+    "name": "Musical Theatre Arts I",
+    "codes": [
+      "E2021A/B"
+    ],
+    "grade": "9-12",
+    "page": 97,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This course of study is designed as an introduction to all of the fundamentals of Musical Theatre, including the role of the musical theatre performer, the interpretation of musical literature, the balance of acting, singing, and dancing, as well as the historical movements and trends of musical theatre. The primary focus of these courses is performance, evaluation, production, and college/career preparation, including portfolio building and auditioning techniques."
+  },
+  {
+    "name": "Musical Theatre Arts II",
+    "codes": [
+      "E2022A/B"
+    ],
+    "grade": "10-12",
+    "page": 97,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Audition OR Director Approval",
+    "corequisite": "",
+    "description": "This course of study is designed as an introduction to all of the fundamentals of Musical Theatre, including the role of the musical theatre performer, the interpretation of musical literature, the balance of acting, singing, and dancing, as well as the historical movements and trends of musical theatre. The primary focus of these courses is performance, evaluation, production, and college/career preparation, including portfolio building and auditioning techniques. 97",
+    "listed_with": [
+      "Musical Theatre Arts II",
+      "Musical Theatre Arts III",
+      "Musical Theatre Arts IV"
+    ]
+  },
+  {
+    "name": "Musical Theatre Arts III",
+    "codes": [
+      "E2023A/B"
+    ],
+    "grade": "10-12",
+    "page": 97,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Audition OR Director Approval",
+    "corequisite": "",
+    "description": "This course of study is designed as an introduction to all of the fundamentals of Musical Theatre, including the role of the musical theatre performer, the interpretation of musical literature, the balance of acting, singing, and dancing, as well as the historical movements and trends of musical theatre. The primary focus of these courses is performance, evaluation, production, and college/career preparation, including portfolio building and auditioning techniques. 97",
+    "listed_with": [
+      "Musical Theatre Arts II",
+      "Musical Theatre Arts III",
+      "Musical Theatre Arts IV"
+    ]
+  },
+  {
+    "name": "Musical Theatre Arts IV",
+    "codes": [
+      "E2024A/B"
+    ],
+    "grade": "10-12",
+    "page": 97,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Audition OR Director Approval",
+    "corequisite": "",
+    "description": "This course of study is designed as an introduction to all of the fundamentals of Musical Theatre, including the role of the musical theatre performer, the interpretation of musical literature, the balance of acting, singing, and dancing, as well as the historical movements and trends of musical theatre. The primary focus of these courses is performance, evaluation, production, and college/career preparation, including portfolio building and auditioning techniques. 97",
+    "listed_with": [
+      "Musical Theatre Arts II",
+      "Musical Theatre Arts III",
+      "Musical Theatre Arts IV"
+    ]
+  },
+  {
+    "name": "CTE Courses for Fine Arts credit Floral Design",
+    "codes": [
+      "FLORDA/B"
+    ],
+    "grade": "10-12",
+    "page": 98,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "Students will identify and demonstrate the principles and techniques related to floral design as well as an understanding of the management of floral enterprises. Course fees may apply. Certification: TSFA Knowledge Based Floral"
+  },
+  {
+    "name": "Digital Art and Animation",
+    "codes": [
+      "T9703A/B"
+    ],
+    "grade": "9-12",
+    "page": 98,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This course consists of computer images and animations created with digital imaging software such as Adobe: Photoshop, Illustrator, and Animate. Digital Art and Animation has applications in many careers, such as graphic design, advertising, web design, animation, and magazine, film, television, and game industries. Students will learn the basic software skills while incorporating the design principles in their unique projects. Students cannot take Digital Arts and Animation if they have previously completed ICAM Certification: Adobe Photoshop, Adobe Illustrator"
+  },
+  {
+    "name": "Introduction to Communication Arts and Media",
+    "codes": [
+      "ICAMA/B"
+    ],
+    "grade": "9-11",
+    "page": 98,
+    "credit": "1",
+    "gpa": "On-level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This course introduces students to the world of digital media design, focusing on practical applications in journalism, fashion design, broadcast, film, and radio. Through hands-on experience with industry-standard software like Adobe Photoshop, Illustrator, and InDesign, students will learn to create compelling visual content."
+  },
+  {
+    "name": "Lifetime Fitness and Wellness",
+    "codes": [
+      "PELFWA/B"
+    ],
+    "grade": "9-12",
+    "page": 99,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This course introduces the student to basic fitness principles, physical activity and the relationship between these factors and developing a healthy lifestyle. Knowledge and skills acquired in this course include fitness and training, principles of weightlifting, interval training, circuit training, high intensity interval training, as well as nutrition, weight control, and stress management."
+  },
+  {
+    "name": "Lifetime Recreation and Outdoor Pursuits",
+    "codes": [
+      "PELROA/B"
+    ],
+    "grade": "9-12",
+    "page": 99,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This course is designed to promote outdoor education activities that provide opportunities for enjoyment and challenge. Students will access resources from the Outdoors Tomorrow Foundation to demonstrate competencies in outdoor recreational activities including, but not limited to, outdoor cooking, backpacking, archery, boating, angler education, and hunter education. Emphasis is placed upon student selection of activities that promote a respect for the environment and that can be enjoyed for a lifetime."
+  },
+  {
+    "name": "Skill-Based Lifetime Activities",
+    "codes": [
+      "PESBLA/B"
+    ],
+    "grade": "9-12",
+    "page": 99,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "This course is designed to foster proficiencies, competition, and fitness in team and individual activities including but not limited to: soccer, softball, tennis, volleyball, basketball, flag football, pickleball, badminton, golf, and ultimate Frisbee. Students will develop strategies and skills for each activity with an emphasis on lifetime fitness."
+  },
+  {
+    "name": "Partners Physical Education",
+    "codes": [
+      "PEPA1A/B"
+    ],
+    "grade": "9-12",
+    "page": 99,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "The focus of the class is to provide individualized instruction and an expanded curriculum (i.e., community based instruction and lifetime leisure activities) to our students with disabilities, in order to maximize their opportunities for participation, skill acquisition, and meaningful social interactions. The class will utilize peer partners to aid in providing instruction to our students with disabilities."
+  },
+  {
+    "name": "Off-Campus PE",
+    "codes": [
+      "PE1OFA/B"
+    ],
+    "grade": "9-12",
+    "page": 99,
+    "credit": "1",
+    "gpa": "No",
+    "prerequisite": "Application and fee required",
+    "corequisite": "",
+    "description": "Students must complete an Off-Campus PE application, pay a fee to participate, and report grades at designated progress dates communicated by the PE Director. Off-Campus PE is designed for students who participate in Olympic level, highly competitive and intense physical activity or performance. Students can earn up to 4 credits in Off-Campus PE during high school. The following activities are approved for OCPE participation: 99 credits",
+    "listed_with": [
+      "Off-Campus PE",
+      "PE2OFA/B"
+    ]
+  },
+  {
+    "name": "PE2OFA/B",
+    "codes": [
+      "PE3OFA/B"
+    ],
+    "grade": "9-12",
+    "page": 99,
+    "credit": "1",
+    "gpa": "No",
+    "prerequisite": "Application and fee required",
+    "corequisite": "",
+    "description": "Students must complete an Off-Campus PE application, pay a fee to participate, and report grades at designated progress dates communicated by the PE Director. Off-Campus PE is designed for students who participate in Olympic level, highly competitive and intense physical activity or performance. Students can earn up to 4 credits in Off-Campus PE during high school. The following activities are approved for OCPE participation: 99 credits",
+    "listed_with": [
+      "Off-Campus PE",
+      "PE2OFA/B"
+    ]
+  },
+  {
+    "name": "Cheer",
+    "codes": [
+      "CHER1A/B"
+    ],
+    "grade": "9-12",
+    "page": 100,
+    "credit": "1.0",
+    "gpa": "On-Level",
+    "prerequisite": "Tryout",
+    "corequisite": "",
+    "description": "* Students who make the cheer team will be placed in the cheer class by the counselors once the team roster has been provided by the cheer coach. Students in Cheerleading are double blocked. *Students can earn 1 credit for cheer and up to 3 credits for athletic substitution. 100 Athletics Athletics is intended for students interested in playing competitive sports. Athletic participation is a privilege, not a right and student athletes are held to a higher standard of conduct. Any questions concerning participation should be addressed to the specific coach or campus athletic coordinator after you enroll in Prosper ISD. If you have questions prior to enrolling, you must contact the Assistant Athletic Director, Kyle Lintelman 469-219-2215 or aklintelman@prosper-isd.net. \u25cf Students participating in Prosper ISD Athletics are REQUIRED to have an annual physical and complete all appropriate paperwork prior to participation in tryouts, practices, and games. \u25cf Physicals must be dated on or after March 1, 2026 for participation in athletics for the 2026-2027 school year. Physicals must be completed on the official UIL physical form. PISD athletics will provide an opportunity for students to receive a physical for a nominal fee in May each year. Student athletes meeting all of the free or reduced lunch requirements will be given the opportunity to receive a physical for free or at a reduced rate. \u25cf Athletes must be able to attend practices and games before school, after school, Saturday",
+    "listed_with": [
+      "Cheer",
+      "CHER2A/B"
+    ]
+  },
+  {
+    "name": "CHER2A/B",
+    "codes": [
+      "CHER3A/B"
+    ],
+    "grade": "9-12",
+    "page": 100,
+    "credit": "1.0",
+    "gpa": "On-Level",
+    "prerequisite": "Tryout",
+    "corequisite": "",
+    "description": "* Students who make the cheer team will be placed in the cheer class by the counselors once the team roster has been provided by the cheer coach. Students in Cheerleading are double blocked. *Students can earn 1 credit for cheer and up to 3 credits for athletic substitution. 100 Athletics Athletics is intended for students interested in playing competitive sports. Athletic participation is a privilege, not a right and student athletes are held to a higher standard of conduct. Any questions concerning participation should be addressed to the specific coach or campus athletic coordinator after you enroll in Prosper ISD. If you have questions prior to enrolling, you must contact the Assistant Athletic Director, Kyle Lintelman 469-219-2215 or aklintelman@prosper-isd.net. \u25cf Students participating in Prosper ISD Athletics are REQUIRED to have an annual physical and complete all appropriate paperwork prior to participation in tryouts, practices, and games. \u25cf Physicals must be dated on or after March 1, 2026 for participation in athletics for the 2026-2027 school year. Physicals must be completed on the official UIL physical form. PISD athletics will provide an opportunity for students to receive a physical for a nominal fee in May each year. Student athletes meeting all of the free or reduced lunch requirements will be given the opportunity to receive a physical for free or at a reduced rate. \u25cf Athletes must be able to attend practices and games before school, after school, Saturday",
+    "listed_with": [
+      "Cheer",
+      "CHER2A/B"
+    ]
+  },
+  {
+    "name": "AP Seminar: Independent Study in English",
+    "codes": [
+      "APSEMA/B"
+    ],
+    "grade": "10-12",
+    "page": 102,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "AP Seminar is a foundational course where students engage in discussions on complex academic and real-world topics, exploring different perspectives. Through an inquiry-based approach, students practice reading and analyzing articles, research studies, literary texts, and more. Students gather information from multiple sources, develop their perspectives through written essays, and create and deliver oral and visual presentations. Working individually and in teams of three to six, they identify, investigate, analyze, and evaluate academic or real-world problems, questions, or issues. Skills Developed in AP Seminar: \u25cf Reading and analyzing diverse articles, studies, and texts \u25cf Synthesizing information from multiple sources \u25cf Examining issues from various perspectives \u25cf Crafting, communicating, and defending evidence-based arguments"
+  },
+  {
+    "name": "AP Research: Social Studies Research Methods",
+    "codes": [
+      "APRESA/B"
+    ],
+    "grade": "11-12",
+    "page": 102,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "AP Seminar",
+    "corequisite": "",
+    "description": "AP Research, the second course in the AP Capstone program, enables students to dive deeply into a topic, problem, or idea of personal interest. Over the course of a year, students design and conduct an investigation to answer a research question of their choice. Building on skills from AP Seminar, students develop expertise in research methods, ethical practices, and source analysis, all documented in a process and reflection portfolio. The course culminates in a 4,000-5,000-word academic paper and a presentation with an oral defense. Skills Developed in AP Research: \u25cf Conducting independent research \u25cf Analyzing sources and evidence \u25cf Applying context and multiple perspectives \u25cf Writing a college-level academic paper \u25cf Presenting and defending research findings 102"
+  },
+  {
+    "name": "Hope Squad",
+    "codes": [
+      "HOPE1A/B"
+    ],
+    "grade": "9-12",
+    "page": 103,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Nomination and application",
+    "corequisite": "",
+    "description": "Hope Squads students are the eyes and ears of your school. Hope Squad students work with school advisors and students are trained to watch for at-risk peers, provide friendship, identify warning signs, and seek help from adults. Hope Squad students are identified by their classmates as trustworthy peers to serve as Hope Squad members."
+  },
+  {
+    "name": "Partners PE- Peer Assistance",
+    "codes": [
+      "PEPARA/B"
+    ],
+    "grade": "9-12",
+    "page": 103,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Application",
+    "corequisite": "",
+    "description": "The focus of the class is to provide individualized instruction and an expanded curriculum (i.e., community based instruction and lifetime leisure activities) to our students with disabilities, in order to maximize their opportunities for participation, skill acquisition, and meaningful social interactions. The class will utilize peer partners to aid in providing instruction to our students with disabilities. *Students who have already taken and received credit for this course and want to continue to be a part of the program can apply to be a partner mentor. Partner mentors will receive local credit only."
+  },
+  {
+    "name": "Sports Medicine I",
+    "codes": [
+      "SPMD1A/B"
+    ],
+    "grade": "9-12",
+    "page": 103,
+    "credit": "",
+    "gpa": "",
+    "prerequisite": "Application",
+    "corequisite": "",
+    "description": ", 1 credit, On-Level weighted e course provides an opportunity for the study and application of the components of sports medicine including but not limited to: sports medicine related careers, organizational and administrative considerations, prevention of athletic injuries, recognition, evaluation, and immediate care of athletic injuries, rehabilitation and management skills, taping and wrapping techniques, first aid/CPR/AED, emergency procedures, nutrition, sports psychology, human anatomy and physiology, therapeutic modalities, and therapeutic exercise. Enrollment in Sports Medicine requires a commitment to before and after school practice and evening and weekend athletic events. 103",
+    "listed_with": [
+      "Sports Medicine I",
+      "Sports Medicine II",
+      "Sports Medicine III"
+    ]
+  },
+  {
+    "name": "Sports Medicine II",
+    "codes": [
+      "SPMD2A/B"
+    ],
+    "grade": "9-12",
+    "page": 103,
+    "credit": "",
+    "gpa": "",
+    "prerequisite": "Application",
+    "corequisite": "",
+    "description": ", 1 credit, On-Level weighted e course provides an opportunity for the study and application of the components of sports medicine including but not limited to: sports medicine related careers, organizational and administrative considerations, prevention of athletic injuries, recognition, evaluation, and immediate care of athletic injuries, rehabilitation and management skills, taping and wrapping techniques, first aid/CPR/AED, emergency procedures, nutrition, sports psychology, human anatomy and physiology, therapeutic modalities, and therapeutic exercise. Enrollment in Sports Medicine requires a commitment to before and after school practice and evening and weekend athletic events. 103",
+    "listed_with": [
+      "Sports Medicine I",
+      "Sports Medicine II",
+      "Sports Medicine III"
+    ]
+  },
+  {
+    "name": "Sports Medicine III",
+    "codes": [
+      "SPMD3A/B"
+    ],
+    "grade": "9-12",
+    "page": 103,
+    "credit": "",
+    "gpa": "",
+    "prerequisite": "Application",
+    "corequisite": "",
+    "description": ", 1 credit, On-Level weighted e course provides an opportunity for the study and application of the components of sports medicine including but not limited to: sports medicine related careers, organizational and administrative considerations, prevention of athletic injuries, recognition, evaluation, and immediate care of athletic injuries, rehabilitation and management skills, taping and wrapping techniques, first aid/CPR/AED, emergency procedures, nutrition, sports psychology, human anatomy and physiology, therapeutic modalities, and therapeutic exercise. Enrollment in Sports Medicine requires a commitment to before and after school practice and evening and weekend athletic events. 103",
+    "listed_with": [
+      "Sports Medicine I",
+      "Sports Medicine II",
+      "Sports Medicine III"
+    ]
+  },
+  {
+    "name": "Student Leadership",
+    "codes": [
+      "STULDA/B"
+    ],
+    "grade": "11-12",
+    "page": 104,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Application",
+    "corequisite": "",
+    "description": "This course provides opportunities to study, to practice, and to develop group and individual leadership and organizational skills in decision-making, problem-solving, communication, leadership, human relations, and civic responsibility. Students enrolled in this course will apply these skills in dealing with peers, school administration, and the community. This is a project based class. Students may only earn one state credit for this course."
+  },
+  {
+    "name": "Team Sports Officiating",
+    "codes": [
+      "TEAMOA/B"
+    ],
+    "grade": "9-12",
+    "page": 104,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "description": "Students enrolled in Team Sport Officiating learn rules and regulations of selected team sports, developing skills in the area of communication, decision making, and conflict management which are needed to officiate team sport competitions. Working with coaches, players, other officials, and parents, the expectation is that by the end of the course students will have the ability to officiate at various levels and manage responsibilities that come with the role."
+  },
+  {
+    "name": "General Dual Credit Electives for Celina Cohort Dual Credit EDUC 1300: Learning Frameworks",
+    "codes": [
+      "SS3330"
+    ],
+    "grade": "11-12",
+    "page": 104,
+    "credit": ".5",
+    "gpa": "AP/DC",
+    "prerequisite": "College acceptance",
+    "corequisite": "",
+    "description": "A study of the: research and theory in the psychology of learning, cognition, and motivation; factors that impact learning, and application of learning strategies. Theoretical models of strategic learning, cognition, and motivation serve as the conceptual basis for the introduction of college-level student academic strategies. Students use assessment instruments (e.g., learning inventories) to help them identify their own strengths and weaknesses as strategic learners. Students are ultimately expected to integrate and apply the learning skills discussed across their own academic programs and become effective and efficient learners. Students developing these skills should be able to continually draw from the theoretical models they have learned. \u25cf 3 college credit hours \u25cf College acceptance and registration required. \u25cf This is a one-semester course"
+  },
+  {
+    "name": "Dual Credit SPCH 1311: Introduction to Speech Communication",
+    "codes": [
+      "EN5025"
+    ],
+    "grade": "11-12",
+    "page": 104,
+    "credit": "0.5",
+    "gpa": "AP/DC",
+    "prerequisite": "College acceptance",
+    "corequisite": "",
+    "description": "Introduces basic human communication principles and theories embedded in a variety of contexts including interpersonal, small group, and public speaking. \u25cf 3 college credit hours \u25cf College acceptance and registration required. \u25cf This is a one-semester course 104"
+  },
+  {
+    "name": "Dual Credit Art Appreciation: ARTS 1301",
+    "codes": [
+      "E13000"
+    ],
+    "grade": "11-12",
+    "page": 105,
+    "credit": "0.5",
+    "gpa": "AP/DC",
+    "prerequisite": "College acceptance",
+    "corequisite": "Dual Credit Intro to Speech for the alternate semester",
+    "description": "Recommended . A general introduction to the visual arts designed to create an appreciation of the vocabulary, media, techniques, and purposes of the creative process. Students will critically interpret and evaluate works of art within formal, cultural, and historical context. Prerequisite: \u25cf 3 college credit hours \u25cf College acceptance and registration required. \u25cf This is a one-semester course Office Aide Seniors who are on track to earn the required number of credits to graduate on time, have achieved CCMR status, and have appropriate attendance and discipline may choose to be an office aide. No credit is awarded for release periods. Junior Release Period Juniors who have earned the required number of credits to graduate on time, have already achieved CCMR status, and have appropriate attendance may choose to have a release period. Juniors may choose only one off period; juniors are only allowed an off period every other day (one period). Students who select this option must have a completed permission form in Skyward and provide their own transportation to arrive or leave campus. Senior Release Periods Seniors may be eligible for one release period if they meet ALL of the following criteria: \u25cf : Have earned the required number of credits to be on track to graduate on time, and \u25cf Attendance: Cannot have been sent to Truancy Tribunal in previous year, and \u25cf Enrolled in course(s) and takes test for college readiness (if applicable) which allows me to potentially earn CCMR (AP, "
+  }
+]

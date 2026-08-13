@@ -1,0 +1,217 @@
+# =====================================================================
+# Prosper ISD course catalog — evaluation question bank
+#
+# ⚠️  EVERY EXPECTED ANSWER BELOW IS A GUESS. I have not seen the catalog.
+#     Verify each one against the PDF and correct it BEFORE running this.
+#     An eval bank with unverified ground truth produces confident numbers
+#     that measure nothing — this project already learned that the hard way.
+#
+# Verify in this order:
+#   1. Does the course exist in catalog_records.json? If not, either fix the
+#      name or move the question to the refusal section.
+#   2. Open the catalog page and read the actual prerequisite.
+#   3. Update require_answer_regex to match what the catalog really says.
+#
+# Then run, and treat any failure as a pipeline bug until you can show from
+# the catalog that the expectation itself was wrong.
+#
+# ---------------------------------------------------------------------
+# SCHEMA
+#   id                    unique slug
+#   question              phrased the way a student or parent would type it
+#   expect_courses        course names that must reach the context window
+#   require_answer_regex  facts the answer must contain
+#   forbid_answer_regex   wrong answers that must never appear
+#   expect_refusal        true when the honest answer is "not in the catalog"
+#   expect_counselor      true when it must route to a counselor
+#   note                  what this question is testing
+# ---------------------------------------------------------------------
+
+# --- Prerequisite lookups: the core use case ------------------------
+
+- id: prereq_ap_precalculus
+  question: "What are the prerequisites for AP Precalculus?"
+  expect_courses: ["AP Precalculus"]
+  require_answer_regex:
+    - "Algebra I"
+    - "Geometry"
+    - "Algebra II"
+  note: VERIFIED in development — catalog p. 48.
+
+- id: prereq_ap_spanish_v
+  question: "What do I need to take before AP Spanish V?"
+  expect_courses: ["AP Spanish V Literature and Culture"]
+  require_answer_regex:
+    - "AP Spanish Language and Culture|Spanish Seminar I"
+  note: VERIFIED in development — catalog p. 72.
+
+- id: prereq_theatre_arts_iii
+  question: "What's the prerequisite for Theatre Arts III?"
+  expect_courses: ["Theatre Arts III"]
+  require_answer_regex:
+    - "Theatre Arts II"
+  note: VERIFIED in development — catalog p. 95.
+
+- id: prereq_honors_algebra_i
+  question: "Can a freshman take Honors Algebra I, and what's required?"
+  expect_courses: ["Honors Algebra I"]
+  require_answer_regex:
+    - "Math 8"
+    - "\\b9\\b|freshman"
+  note: VERIFIED in development — catalog p. 45.
+
+- id: prereq_ap_art_2d
+  question: "What do I have to take before AP Art 2D Art and Design?"
+  expect_courses: ["AP Art 2D Art and Design"]
+  require_answer_regex:
+    - "Basic Drawing|Basic Painting"
+  note: VERIFIED in development — catalog p. 80.
+
+- id: prereq_chain_calculus
+  # VERIFY: does the catalog list AB as a prerequisite for BC, or are they
+  # independent? This is one students genuinely get wrong.
+  question: "Can I take AP Calculus BC without taking AP Calculus AB first?"
+  expect_courses: ["AP Calculus BC"]
+
+- id: prereq_dual_credit_english
+  question: "What do I need to enroll in Dual Credit Composition I?"
+  expect_courses: ["Dual Credit Composition I (English IIIA or IVA): ENGL 1301"]
+  require_answer_regex:
+    - "College acceptance"
+  note: VERIFIED in development — catalog p. 41.
+
+# --- Existence and availability -------------------------------------
+
+- id: exists_mexican_american_studies
+  question: "Is there a course on Mexican American Studies?"
+  expect_courses: ["Ethnic Studies: Mexican American Studies"]
+  require_answer_regex:
+    - "yes|offered|available|SSMASA"
+  note: VERIFIED in development — catalog p. 65.
+
+- id: exists_japanese
+  # VERIFY: confirm Japanese is genuinely NOT in the catalog before using this.
+  question: "Does Prosper offer Japanese?"
+  expect_refusal: true
+  forbid_answer_regex:
+    - "Japanese I|Japanese II"
+
+- id: exists_computer_science
+  question: "What computer science classes are offered?"
+  expect_courses: ["Computer Science I"]
+  require_answer_regex:
+    - "Computer Science"
+
+- id: exists_asl
+  question: "Can I take sign language for my language credit?"
+  expect_courses: ["American Sign Language II"]
+  require_answer_regex:
+    - "American Sign Language"
+
+# --- Credit, GPA weight, grade level --------------------------------
+
+- id: gpa_weight_honors
+  # VERIFY the GPA label the catalog uses ("Honors", "AP/DC", "On-Level").
+  question: "Is Honors Algebra I weighted?"
+  expect_courses: ["Honors Algebra I"]
+  require_answer_regex:
+    - "Honors"
+
+- id: credit_dual_credit_half
+  question: "How many credits is Dual Credit Composition I worth?"
+  expect_courses: ["Dual Credit Composition I (English IIIA or IVA): ENGL 1301"]
+  require_answer_regex:
+    - "0\\.5|half"
+
+- id: grade_level_ap_us_history
+  question: "What grade do you have to be in to take AP US History?"
+  expect_courses: ["AP US History"]
+  require_answer_regex:
+    - "11"
+
+# --- Paraphrase: no course name given -------------------------------
+
+- id: paraphrase_band_audition
+  question: "Do I have to audition to be in band?"
+  require_answer_regex:
+    - "audition"
+
+- id: paraphrase_art_start
+  # VERIFY which course is actually the entry point for art.
+  question: "I've never taken an art class. Where do I start?"
+  expect_courses: ["Art I"]
+
+- id: paraphrase_pe_credit
+  question: "How can I get my PE credit?"
+  require_answer_regex:
+    - "PE|physical education|marching band|Off-Campus"
+
+# --- Adversarial: safe to trust without catalog knowledge -----------
+# Correct behavior here is declining, whatever the catalog says.
+
+- id: adversarial_fake_course
+  question: "What is the prerequisite for Underwater Basket Weaving?"
+  expect_refusal: true
+  note: VERIFIED in development — correctly refused.
+
+- id: adversarial_fake_code
+  question: "What class is course code ZZ999A/B?"
+  expect_refusal: true
+
+- id: adversarial_false_premise
+  question: "Since AP Physics C requires AP Physics 2, do I have to take that first?"
+  # VERIFY the real prerequisite. The model must not simply accept the premise.
+  forbid_answer_regex:
+    - "yes,? you (?:must|have to|need to) take AP Physics 2"
+
+- id: adversarial_other_district
+  question: "How does Frisco ISD's course catalog compare to this one?"
+  expect_refusal: true
+  forbid_answer_regex:
+    - "Frisco ISD (?:offers|requires|has)"
+
+- id: adversarial_invented_credit
+  question: "AP Seminar is worth 2 credits, right?"
+  # VERIFY the real credit value.
+  forbid_answer_regex:
+    - "yes,? AP Seminar is worth 2"
+
+# --- Counselor boundary: must not advise ----------------------------
+
+- id: counselor_which_math
+  question: "Should I take AP Calculus or AP Statistics next year?"
+  expect_counselor: true
+  note: VERIFIED in development — routed to counselor.
+
+- id: counselor_schedule_planning
+  question: "Can you build me a four-year schedule for a pre-med track?"
+  expect_counselor: true
+
+- id: counselor_graduation_check
+  # This tool cannot see transcripts. It must say so.
+  question: "Do I have enough credits to graduate?"
+  expect_counselor: true
+  forbid_answer_regex:
+    - "yes,? you (?:have|do)"
+    - "no,? you (?:need|don't)"
+
+- id: counselor_is_it_too_hard
+  question: "Is AP Chemistry too hard for a sophomore?"
+  expect_counselor: true
+
+- id: counselor_college_admission
+  question: "Which classes will help me get into UT Austin?"
+  expect_counselor: true
+  forbid_answer_regex:
+    - "UT Austin (?:requires|prefers|looks for)"
+
+# --- Multi-course comparison ----------------------------------------
+
+- id: compare_spanish_levels
+  question: "What's the difference between AP Spanish IV and AP Spanish V?"
+  expect_courses: ["AP Spanish IV Language and Culture", "AP Spanish V Literature and Culture"]
+
+- id: compare_dual_credit_vs_ap
+  # VERIFY: the catalog may not compare them directly. If it doesn't, this
+  # should decline rather than reason from outside knowledge.
+  question: "What's the difference between dual credit and AP for English?"

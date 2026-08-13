@@ -20,3 +20,9 @@ __pycache__/
 
 # macOS
 .DS_Store
+
+# One-off debug scripts
+debug*.py
+show_*.py
+inspect_records.py
+spot_check.py
