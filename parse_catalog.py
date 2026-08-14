@@ -312,6 +312,37 @@ def parse_cte_records(full: str, page_for):
     return records
 
 
+
+def resolve_cte_prerequisites(records):
+    """
+    Recover prerequisites that ran into the following course's name.
+
+    The catalog puts no delimiter between them:
+        Prerequisite: Foundations of Cybersecurity Dual Credit Networking (NETDC)
+    Character-level heuristics cannot split this reliably. The signal that works
+    is that a prerequisite is nearly always a course listed elsewhere in this
+    same catalog, so match the longest known course name the value starts with.
+    """
+    known = sorted(
+        {r["name"] for r in records if r.get("name") and len(r["name"]) >= 5},
+        key=len, reverse=True,
+    )
+    for rec in records:
+        if rec.get("track") != "CTE":
+            continue
+        value = (rec.get("prerequisite") or "").strip()
+        if not value or ("(" not in value and len(value) < 60):
+            continue
+        for name in known:
+            if value.startswith(name):
+                rec["prerequisite"] = name
+                break
+        # No known course matched. Leave the value as-is: it is messy, but it
+        # contains the real prerequisite, and blanking it would render as
+        # "not listed in the catalog" — discarding information the student needs.
+    return records
+
+
 def parse_catalog(pdf_path: str):
     pages = PyPDFLoader(pdf_path).load()
     page_starts = []
@@ -373,6 +404,7 @@ def parse_catalog(pdf_path: str):
             records.append(rec)
             seen_codes.update(rec["codes"])
 
+    records = resolve_cte_prerequisites(records)
     records.sort(key=lambda r: r["page"])
     return records, full
 
