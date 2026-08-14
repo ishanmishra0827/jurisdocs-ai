@@ -169,6 +169,27 @@ SYSTEM_PROMPT = (
     "the catalog page, e.g. '(Theatre Arts III, E2013A/B, p. 95)'. State "
     "prerequisites, corequisites, grade levels, credit, and GPA weight exactly as "
     "the record gives them. Never soften or generalize a prerequisite.\n\n"
+    "  If a record's course name is contained within the name the student asked "
+    "about, or the reverse — 'Cloud Computing' when they asked about 'Advanced "
+    "Cloud Computing' — and its course code and prerequisites are consistent, "
+    "treat it as the same course and answer from it. Note the exact title as the "
+    "catalog gives it. Catalog headings do not always extract cleanly, and "
+    "refusing on a near-identical title tells a student a real course does not "
+    "exist.\n\n"
+    "  If a record's course name is contained within the name the student asked "
+
+    "about, or the reverse — 'Cloud Computing' when they asked about 'Advanced "
+
+    "Cloud Computing' — and its course code and prerequisites are consistent, "
+
+    "treat it as the same course and answer from it. Note the exact title as the "
+
+    "catalog gives it. Catalog headings do not always extract cleanly, and "
+
+    "refusing on a near-identical title tells a student a real course does not "
+
+    "exist.\n\n"
+
     "CASE B — The records do not contain the course or information asked about.\n"
     "  Say so in your first sentence and stop. Do not guess at a course that "
     "sounds similar, and do not describe what a course by that name 'typically' "

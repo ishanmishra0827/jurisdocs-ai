@@ -389,9 +389,9 @@
     "page": 46,
     "credit": "1",
     "gpa": "On-Level",
-    "prerequisite": "Algebra I",
+    "prerequisite": "Algebra I Recommended",
     "corequisite": "",
-    "description": "Recommended Prerequisite: Geometry Students will build on the knowledge and skills for mathematics learned in Algebra I to broaden their knowledge of quadratic functions, exponential functions, and systems of equations. They will expand their knowledge of functions to include logarithmic, radical, polynomial, absolute value, rational functions, and their related equations. Students will connect functions to their inverses and associated equations and solutions in both mathematical and real-world situations. In addition, students will extend their knowledge of data analysis and numeric and algebraic methods."
+    "description": "Prerequisite: Geometry Students will build on the knowledge and skills for mathematics learned in Algebra I to broaden their knowledge of quadratic functions, exponential functions, and systems of equations. They will expand their knowledge of functions to include logarithmic, radical, polynomial, absolute value, rational functions, and their related equations. Students will connect functions to their inverses and associated equations and solutions in both mathematical and real-world situations. In addition, students will extend their knowledge of data analysis and numeric and algebraic methods."
   },
   {
     "name": "Honors Algebra II",
@@ -402,9 +402,9 @@
     "page": 46,
     "credit": "1",
     "gpa": "Honors",
-    "prerequisite": "Algebra I",
+    "prerequisite": "Algebra I Recommended",
     "corequisite": "",
-    "description": "Recommended Prerequisite: Geometry This course addresses all of the concepts presented in the Algebra 2 class described above with a great emphasis on depth and complexity and moving quickly through foundational knowledge to application of the standards."
+    "description": "Prerequisite: Geometry This course addresses all of the concepts presented in the Algebra 2 class described above with a great emphasis on depth and complexity and moving quickly through foundational knowledge to application of the standards."
   },
   {
     "name": "College Prep Math",
@@ -441,9 +441,9 @@
     "page": 47,
     "credit": "1",
     "gpa": "On-Level",
-    "prerequisite": "Algebra I",
+    "prerequisite": "Algebra I Recommended",
     "corequisite": "",
-    "description": "Recommended Prerequisites: Geometry and Algebra II Taking statistics in high school equips students with essential skills for analyzing and interpreting data, fostering critical thinking and problem-solving abilities. By applying these skills to real-world contexts like business, health sciences, and social studies, students gain a deeper understanding of trends, probabilities, and predictions that shape various fields. Statistics also empowers students to critically evaluate information from media, politics, and scientific reports, promoting informed citizenship. It lays a strong foundation for college majors where data analysis is crucial, such as business, psychology, and data science. Additionally, statistics supports personal decision-making in areas like finance and risk assessment, preparing students for success in an increasingly data-driven world."
+    "description": "Prerequisites: Geometry and Algebra II Taking statistics in high school equips students with essential skills for analyzing and interpreting data, fostering critical thinking and problem-solving abilities. By applying these skills to real-world contexts like business, health sciences, and social studies, students gain a deeper understanding of trends, probabilities, and predictions that shape various fields. Statistics also empowers students to critically evaluate information from media, politics, and scientific reports, promoting informed citizenship. It lays a strong foundation for college majors where data analysis is crucial, such as business, psychology, and data science. Additionally, statistics supports personal decision-making in areas like finance and risk assessment, preparing students for success in an increasingly data-driven world."
   },
   {
     "name": "AP Statistics",
@@ -495,7 +495,7 @@
     "gpa": "AP/DC",
     "prerequisite": "AP Precalc",
     "corequisite": "MATH 1342 Elementary Statistical Methods (Spring Semester)",
-    "description": "AP Calculus BC is a full-year course in the calculus of functions of a single variable. Calculus BC covers all the topics in Calculus AB, but is more extensive. Students cover the additional topics of vector functions, polar coordinates, and Epsilon-delta proofs. The course represents college-level mathematics for which most colleges grant advanced placement and/or credit in Calculus. For Calculus AB or Calculus BC recommendations, please see program pathway chart. Dual : MATH 1314 MA435A : 11-12 : AP/DC Prerequisite: Geometry and Algebra II Recommended recommended. A graphing calculator may be required. 48 : 0.5 : Geometry and Algebra II Recommended Corequisite: MATH 1314 College Algebra (Fall Semester) \u25cf 3 college credit hours \u25cf College acceptance and registration required."
+    "description": "AP Calculus BC is a full-year course in the calculus of functions of a single variable. Calculus BC covers all the topics in Calculus AB, but is more extensive. Students cover the additional topics of vector functions, polar coordinates, and Epsilon-delta proofs. The course represents college-level mathematics for which most colleges grant advanced placement and/or credit in Calculus. For Calculus AB or Calculus BC recommendations, please see program pathway chart. Dual : MATH 1314 MA435A : 11-12 : AP/DC Prerequisite: Geometry and Algebra II Recommended : 0.5 : Geometry and Algebra II Recommended Corequisite: MATH 1314 College Algebra (Fall Semester) \u25cf 3 college credit hours \u25cf College acceptance and registration required."
   },
   {
     "name": "Dual Credit Mathematics for Business and Social Sciences: MATH 1324",
@@ -506,9 +506,9 @@
     "page": 49,
     "credit": "0.5",
     "gpa": "AP/DC",
-    "prerequisite": "Geometry and Algebra II",
+    "prerequisite": "Geometry and Algebra II Recommended",
     "corequisite": "MATH 1325 Calculus for Business and Social Sciences (Spring Semester)",
-    "description": "Recommended"
+    "description": ""
   },
   {
     "name": "Dual Credit Calculus for Business and Social Sciences: MATH 1325",
@@ -519,9 +519,9 @@
     "page": 49,
     "credit": "0.5",
     "gpa": "AP/DC",
-    "prerequisite": "Geometry and Algebra II",
+    "prerequisite": "Geometry and Algebra II Recommended",
     "corequisite": "MATH 1324 Math for Business and Social Sciences (Fall Semester)",
-    "description": "Recommended"
+    "description": ""
   },
   {
     "name": "Dual Credit Calculus III: MATH 2415",
@@ -2801,8 +2801,1659 @@
     "page": 105,
     "credit": "0.5",
     "gpa": "AP/DC",
-    "prerequisite": "College acceptance",
+    "prerequisite": "College acceptance Recommended",
     "corequisite": "Dual Credit Intro to Speech for the alternate semester",
-    "description": "Recommended . A general introduction to the visual arts designed to create an appreciation of the vocabulary, media, techniques, and purposes of the creative process. Students will critically interpret and evaluate works of art within formal, cultural, and historical context. Prerequisite: \u25cf 3 college credit hours \u25cf College acceptance and registration required. \u25cf This is a one-semester course Office Aide Seniors who are on track to earn the required number of credits to graduate on time, have achieved CCMR status, and have appropriate attendance and discipline may choose to be an office aide. No credit is awarded for release periods. Junior Release Period Juniors who have earned the required number of credits to graduate on time, have already achieved CCMR status, and have appropriate attendance may choose to have a release period. Juniors may choose only one off period; juniors are only allowed an off period every other day (one period). Students who select this option must have a completed permission form in Skyward and provide their own transportation to arrive or leave campus. Senior Release Periods Seniors may be eligible for one release period if they meet ALL of the following criteria: \u25cf : Have earned the required number of credits to be on track to graduate on time, and \u25cf Attendance: Cannot have been sent to Truancy Tribunal in previous year, and \u25cf Enrolled in course(s) and takes test for college readiness (if applicable) which allows me to potentially earn CCMR (AP, "
+    "description": ". A general introduction to the visual arts designed to create an appreciation of the vocabulary, media, techniques, and purposes of the creative process. Students will critically interpret and evaluate works of art within formal, cultural, and historical context. Prerequisite: \u25cf 3 college credit hours \u25cf College acceptance and registration required. \u25cf This is a one-semester course Office Aide Seniors who are on track to earn the required number of credits to graduate on time, have achieved CCMR status, and have appropriate attendance and discipline may choose to be an office aide. No credit is awarded for release periods. Junior Release Period Juniors who have earned the required number of credits to graduate on time, have already achieved CCMR status, and have appropriate attendance may choose to have a release period. Juniors may choose only one off period; juniors are only allowed an off period every other day (one period). Students who select this option must have a completed permission form in Skyward and provide their own transportation to arrive or leave campus. Senior Release Periods Seniors may be eligible for one release period if they meet ALL of the following criteria: \u25cf : Have earned the required number of credits to be on track to graduate on time, and \u25cf Attendance: Cannot have been sent to Truancy Tribunal in previous year, and \u25cf Enrolled in course(s) and takes test for college readiness (if applicable) which allows me to potentially earn CCMR (AP, College Prep"
+  },
+  {
+    "name": "Principles of Agriculture, Food, and Natural Resources",
+    "codes": [
+      "PRAFNA/B"
+    ],
+    "grade": "9-12",
+    "page": 111,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Develop knowledge and skills of the agricultural industry as it relates to plant and animal systems food production, mechanical systems, entrepreneurship, leadership, and environmental sciences.",
+    "track": "CTE"
+  },
+  {
+    "name": "Small Animal Management",
+    "codes": [
+      "SMANM"
+    ],
+    "grade": "10-12",
+    "page": 111,
+    "credit": "0.5",
+    "gpa": "On-Level",
+    "prerequisite": "Principles of Agriculture, Food and Natural Resources",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit This course covers small animals and the small animal management industry in relationship to dogs cats, amphibians, reptiles, and birds. Recommended",
+    "track": "CTE"
+  },
+  {
+    "name": "Equine Science",
+    "codes": [
+      "EQUIS"
+    ],
+    "grade": "10-12",
+    "page": 111,
+    "credit": "0.5",
+    "gpa": "On-Level",
+    "prerequisite": "Principles of Agriculture, Food and Natural Resources",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Students will gain skills related to equine animal systems and the equine industry. Recommended",
+    "track": "CTE"
+  },
+  {
+    "name": "Livestock Production",
+    "codes": [
+      "LIVPRA/B"
+    ],
+    "grade": "10-12",
+    "page": 111,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "A minimum of two credits with at least one course in a Level 2 or higher course from the Agriculture, Food, and Natural Resources career cluster",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit This course provides knowledge and skills related to animal systems and the career opportunities entry requirements and industry expectations in this field. Some animals included in the course of study are beef cattle, dairy cattle, sheep, goats, and poultry.",
+    "track": "CTE"
+  },
+  {
+    "name": "Veterinary Science",
+    "codes": [
+      "VETMDA/B"
+    ],
+    "grade": "11-12",
+    "page": 111,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Small Animal Management AND Equine Science, OR Livestock Production",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit This course provides knowledge and skills related to large and small animal systems used in veterinary practices.",
+    "track": "CTE"
+  },
+  {
+    "name": "Practicum in Veterinary Science",
+    "codes": [
+      "HPAVMA/B"
+    ],
+    "grade": "12",
+    "page": 111,
+    "credit": "2",
+    "gpa": "Honors",
+    "prerequisite": "Veterinary Science and Program Qualification Form",
+    "corequisite": "",
+    "certification": "TBD- Pending TEA",
+    "description": "credits (Double Block) This is an internship-based course that follows the coherent sequence of veterinary medical applications courses. Practicum experiences give students a supervised application",
+    "track": "CTE"
+  },
+  {
+    "name": "Agricultural Mechanics and Metal Technologies",
+    "codes": [
+      "AGMMTA/B"
+    ],
+    "grade": "10-12",
+    "page": 112,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Principles of Agriculture",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit This course prepares students for careers in agriculture power structural, and technical systems by developing skills and understanding as it relates to safety in tool operation, electrical wiring, plumbing, carpentry, fencing, concrete, and metal techniques/welding. Recommended",
+    "track": "CTE"
+  },
+  {
+    "name": "Structures Design, and Fabrication",
+    "codes": [
+      "AGSTDA/B"
+    ],
+    "grade": "11-12",
+    "page": 112,
+    "credit": "2",
+    "gpa": "On-Level",
+    "prerequisite": "Agriculture",
+    "corequisite": "",
+    "certification": "",
+    "description": "credits (Double Block) This course prepares students for careers in mechanized agriculture and technical systems by developing knowledge and skills related to agricultural facilities design and fabrication.",
+    "track": "CTE"
+  },
+  {
+    "name": "Agricultural Engineering",
+    "codes": [
+      "HPAAGA/B"
+    ],
+    "grade": "12",
+    "page": 112,
+    "credit": "2",
+    "gpa": "Honors",
+    "prerequisite": "Agricultural Structures Design, and Fabrication",
+    "corequisite": "",
+    "certification": "AWS D1.1 & D9.1 - 4F MIG/Stick",
+    "description": "credits (Double Block) This is a capstone experience for students participating in a coherent sequence of courses in Agricultural Mechanics. Practicum experiences are designed to give students supervised practical application appropriate to the level and nature of skills acquired in their chosen sequence.",
+    "track": "CTE"
+  },
+  {
+    "name": "Advanced Floral Design",
+    "codes": [
+      "ADFLDA/B"
+    ],
+    "grade": "11-12",
+    "page": 113,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Floral Design",
+    "corequisite": "",
+    "certification": "TBD- Pending TEA",
+    "description": "credit In this course students build on knowledge gained from Floral Design and are introduced to more advanced concepts, with an emphasis on specialty designs and specific occasion planning. Course fees may apply.",
+    "track": "CTE"
+  },
+  {
+    "name": "Practicum in Floral Design",
+    "codes": [
+      "HPAHFA/B"
+    ],
+    "grade": "12",
+    "page": 113,
+    "credit": "2",
+    "gpa": "Honors",
+    "prerequisite": "Advance Floral Design",
+    "corequisite": "",
+    "certification": "",
+    "description": "credits(Double Block) This is a capstone experience for students participating in a coherent sequence of courses in Horticulture and Floral Design. Practicum experiences are designed to give students supervised practical application appropriate to the level and nature of skills acquired in their chosen sequence. Course fees may apply.",
+    "track": "CTE"
+  },
+  {
+    "name": "Principles of Architecture",
+    "codes": [
+      "PRARCA/B"
+    ],
+    "grade": "9-11",
+    "page": 114,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Principles of Architecture provides an overview of the various fields of architecture interior design, and construction management. Classroom studies include topics such as safety, work ethics, communication, information technology applications, systems, health, environment, leadership, teamwork, ethical and legal responsibility, employability, and career development and include skills such as problem solving, critical thinking, and reading technical drawings.",
+    "track": "CTE"
+  },
+  {
+    "name": "Architectural Design I",
+    "codes": [
+      "ARDN1A/B"
+    ],
+    "grade": "10-12",
+    "page": 114,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Principles of Architecture, Algebra I AND English I Recommended Prerequisite: Geometry",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit In Architectural Design I students will gain knowledge and skills needed to enter a career in architecture or construction or prepare a foundation toward a postsecondary degree in architecture, construction science, drafting, interior design, or landscape architecture. Architectural Design I includes the knowledge of the design, design history, techniques, and tools related to the production of drawings, renderings, and scaled models for nonresidential or residential architectural purposes.",
+    "track": "CTE"
+  },
+  {
+    "name": "Architectural Design II",
+    "codes": [
+      "ARDN2A/B"
+    ],
+    "grade": "11-12",
+    "page": 114,
+    "credit": "2",
+    "gpa": "On-Level",
+    "prerequisite": "Architectural Design I",
+    "corequisite": "",
+    "certification": "Autodesk Certified User in Revit Architecture",
+    "description": "credits (Single Block) In Architectural Design II students will gain advanced knowledge and skills needed to enter a career in architecture or construction or prepare a foundation toward a postsecondary degree in architecture, construction science, drafting, interior design, or landscape architecture. Architectural Design II includes the advanced knowledge of the design, design history, techniques, and tools related to the production of drawings, renderings, and scaled models for nonresidential or residential architectural purposes.",
+    "track": "CTE"
+  },
+  {
+    "name": "Practicum in Architectural Design",
+    "codes": [
+      "HPARDA/B"
+    ],
+    "grade": "12",
+    "page": 114,
+    "credit": "2",
+    "gpa": "Honors",
+    "prerequisite": "Architectural Design II",
+    "corequisite": "",
+    "certification": "",
+    "description": "credits (Double Block) Students will continue to gain knowledge and skills in architecture or construction or prepare a foundation toward a postsecondary degree in architecture construction science, drafting, interior design, or landscape architecture.",
+    "track": "CTE"
+  },
+  {
+    "name": "Interior Design I",
+    "codes": [
+      "INTDEA/B"
+    ],
+    "grade": "10-12",
+    "page": 115,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Algebra I AND English I Recommended Prerequisite: Principles of Architecture",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Interior Design I is a technical course that addresses psychological physiological, and sociological needs of individuals by enhancing the environments in which they live and work. Students will use knowledge and skills related to interior and exterior environments, construction, and furnishings to make wise consumer decisions, increase productivity, promote sustainability, and compete in industry. Not offered at all campuses, transportation provided.",
+    "track": "CTE"
+  },
+  {
+    "name": "Interior Design II",
+    "codes": [
+      "INTD2A/B"
+    ],
+    "grade": "11-12",
+    "page": 115,
+    "credit": "2",
+    "gpa": "On-Level",
+    "prerequisite": "English II, Geometry, AND Interior Design I",
+    "corequisite": "",
+    "certification": "Autodesk Certified User in Revit Architecture",
+    "description": "credits (Single Block) Interior Design II is a technical laboratory course that includes the application of the employability characteristics principles, processes, technologies, communication, tools, equipment, and materials related to interior design to meet industry standards.",
+    "track": "CTE"
+  },
+  {
+    "name": "Construction and Project Management I",
+    "codes": [
+      "CONSTA/B"
+    ],
+    "grade": "10-12",
+    "page": 116,
+    "credit": "2",
+    "gpa": "On-Level",
+    "prerequisite": "Principles of Architecture, Principles of Applied Engineering, Engineering Design and Presentation I, Architectural Design I, or Interior Design I",
+    "corequisite": "",
+    "certification": "NCCER Core",
+    "description": "credits (Single Block) - Housed at WGHS In Construction and Project Management I students will gain knowledge and skills needed to enter the workforce as carpenters or building maintenance supervisors or to prepare for a postsecondary degree in construction management, architecture, or engineering. Students will acquire knowledge and skills in safety, tool usage, building materials, codes, and framing. Offered on the Walnut Grove campus.",
+    "track": "CTE"
+  },
+  {
+    "name": "Construction and Project Management II",
+    "codes": [
+      "CNST2A/B"
+    ],
+    "grade": "11-12",
+    "page": 116,
+    "credit": "2",
+    "gpa": "On-Level",
+    "prerequisite": "Construction Technology I",
+    "corequisite": "",
+    "certification": "NCCER Carpentry Level I (TBD - pending TEA)",
+    "description": "credits (Single Block) - Housed at WGHS In Construction and Project Management II students will gain advanced knowledge and skills needed to enter the workforce as carpenters, building maintenance technicians, or supervisors or to prepare for a postsecondary degree in construction management, architecture, or engineering. Students will build on the knowledge base from Construction and Project Management II, and are introduced to exterior and interior finish out skills. Offered on the Walnut Grove campus.",
+    "track": "CTE"
+  },
+  {
+    "name": "CTE Practicum",
+    "codes": [
+      "PRENTA/B"
+    ],
+    "grade": "12",
+    "page": 116,
+    "credit": "2",
+    "gpa": "Honors",
+    "prerequisite": "courses in an industry relevant manner. Students will dive deeper into previously explored content through a variety of instructional methods, projects, and experiences. Through the practicum course, work-based learning, industry ready standards, and entrepreneurial avenues will all be investigated and applied. Prerequisites: Construction Technology II AND Program Qualification Form",
+    "corequisite": "",
+    "certification": "",
+    "description": "credits (Double Block) This capstone course allows students to utilize the knowledge and skill gained in",
+    "track": "CTE"
+  },
+  {
+    "name": "Photoshop AND Adobe Illustrator 3D Modeling and Animation",
+    "codes": [
+      "T9704A/B"
+    ],
+    "grade": "10-12",
+    "page": 117,
+    "credit": "1",
+    "gpa": "On-level",
+    "prerequisite": "Digital Art and Animation OR Video Game Design",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit On-level This course consists of computer images created in a virtual three-dimensional (3D) environment. Applications in careers including criminal justice crime scene and legal applications; construction and architecture; engineering and design; and the movie and game industries will be explored. Students in this course will produce various 3D models of real-world objects using software such as Maxon Cinema 4D and Blender. This course satisfies the fine arts graduation requirement. Recommended",
+    "track": "CTE"
+  },
+  {
+    "name": "Animation I",
+    "codes": [
+      "ANIM1A/B"
+    ],
+    "grade": "11-12",
+    "page": 117,
+    "credit": "1",
+    "gpa": "On-level",
+    "prerequisite": "3D Modeling and Animation",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit On-level Careers in animation span all aspects of motion graphics. Within this context in addition to developing technical knowledge and skills needed for success students will be expected to develop an understanding of the history and techniques of the animation industry.",
+    "track": "CTE"
+  },
+  {
+    "name": "Animation II",
+    "codes": [
+      "HANI2A/B"
+    ],
+    "grade": "11-12",
+    "page": 117,
+    "credit": "2",
+    "gpa": "Honors",
+    "prerequisite": "Animation I",
+    "corequisite": "",
+    "certification": "",
+    "description": "credits (Double Block) Careers in animation span all aspects of motion graphics. Within this context in addition to developing advanced knowledge and skills needed for success, students will be expected to create two and three-dimensional animations using software such as Cinema 4D, Blender, and AutoDesk products. The instruction also assists students seeking careers in the animation industry.",
+    "track": "CTE"
+  },
+  {
+    "name": "Audio Video and Broadcast Production I",
+    "codes": [
+      "AVPRDA/B"
+    ],
+    "grade": "10-12",
+    "page": 118,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Introduction to Communication Arts and Media",
+    "corequisite": "",
+    "certification": "Adobe Premiere Pro",
+    "description": "credit Students will explore visual filmmaking creative screenwriting, and journalism fundamentals while gaining hands-on experience with industry-standard cameras, editing software, audio equipment, and studio facilities. With a focus on both cinematic storytelling and news reporting, students will produce feature stories, broadcasts, film projects, and multimedia content grounded in school and community events, activities, and people. Students will have the opportunity to work with audio related to radio and television broadcasting, film and video, animation, music production, and live sound. This course will require time outside of school.",
+    "track": "CTE"
+  },
+  {
+    "name": "Audio Video and Broadcast Production II",
+    "codes": [
+      "AVPR2A/B"
+    ],
+    "grade": "11-12",
+    "page": 118,
+    "credit": "2",
+    "gpa": "On-Level",
+    "prerequisite": "Audio Video Production I OR Broadcast News Team I",
+    "corequisite": "",
+    "certification": "Adobe After Effects",
+    "description": "credits (Double Block) This course gives students a deeper understanding of careers in film production radio and television broadcast, journalism, and news industries, with a focus on pre-production, production, and post-production using industry-standard equipment and software.",
+    "track": "CTE"
+  },
+  {
+    "name": "Entrepreneurship I",
+    "codes": [
+      "ENTPRA/B"
+    ],
+    "grade": "11-12",
+    "page": 118,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "One course in a qualifying program of study",
+    "corequisite": "",
+    "certification": "Entrepreneurship and Small Business (DNQ in this Pathway)",
+    "description": "credit Students will gain the knowledge and skills needed to become an entrepreneur. Students will understand the process of analyzing a business opportunity preparing a business plan, determining feasibility of an idea using research, and developing a plan to organize and promote the business and its products and services. In addition, students will understand the capital required, the return on investment desired, and the potential for profit.",
+    "track": "CTE"
+  },
+  {
+    "name": "Practicum in Audio Video and Broadcast Production",
+    "codes": [
+      "HPCAVA/B"
+    ],
+    "grade": "11-12",
+    "page": 118,
+    "credit": "2",
+    "gpa": "Honors",
+    "prerequisite": "Audio Video Production II OR Broadcast News Team II AND Program Qualification Form",
+    "corequisite": "",
+    "certification": "",
+    "description": "credits (Double Block) This course will give students real-world client-based experience in the broadcast, radio, and filmmaking industries by using industry-standard equipment, methods, and software. This course will require significant time outside of school.",
+    "track": "CTE"
+  },
+  {
+    "name": "Fashion Design I",
+    "codes": [
+      "FASHDA/B"
+    ],
+    "grade": "10-12",
+    "page": 119,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Introduction to Communication Arts and Media",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit This course is designed to help students understand the fashion industry with an emphasis on design and construction. Students will be required to provide their own sewing supplies.",
+    "track": "CTE"
+  },
+  {
+    "name": "Fashion Design II",
+    "codes": [
+      "FSHD2A/B"
+    ],
+    "grade": "11-12",
+    "page": 119,
+    "credit": "2",
+    "gpa": "On-Level",
+    "prerequisite": "Fashion Design I",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit (Double Block) This course is intended for those interested in the fields of fashion design retailing, and visual merchandising to create and construct apparel products. Students will practice skills required for customer service, business profitability, and career success and are responsible for the production of a fashion show. Students will be required to provide their own sewing supplies.",
+    "track": "CTE"
+  },
+  {
+    "name": "Practicum in Fashion Design",
+    "codes": [
+      "PFASHA/B"
+    ],
+    "grade": "11-12",
+    "page": 119,
+    "credit": "2",
+    "gpa": "Honors",
+    "prerequisite": "Fashion Design II",
+    "corequisite": "",
+    "certification": "",
+    "description": "credits (Double Block) The Practicum in Fashion Design is the capstone course for students dedicated to advancing their skills in fashion design garment construction, and fashion business management. Building on skills developed in Fashion Design I and II, students will work independently and in teams to create professional-grade fashion products and showcase collections in a fully produced fashion show. This course emphasizes career readiness by covering advanced techniques in apparel design, fabric manipulation, and fashion marketing, and includes a deep dive into the fashion industry's production and merchandising sectors. Practicum students will collaborate with industry professionals, engage in community and retail partnerships, and manage event coordination for the fashion show. Students are required to provide their own sewing supplies.",
+    "track": "CTE"
+  },
+  {
+    "name": "Modern Media I Graphic Design & Illustration I",
+    "codes": [
+      "MODM1A/B"
+    ],
+    "grade": "10-12",
+    "page": 120,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Introduction to Communication Arts and Media",
+    "corequisite": "",
+    "certification": "Adobe InDesign",
+    "description": "credit Students will gain practical experience in the field of multimedia design and production including photography, design, and journalism, through hands-on projects and coursework utilizing industry standard software and equipment. Students will use composition and storytelling techniques to produce professional designs and publications, as well as other modern media outlets, and utilize cutting-edge publishing software and online publishing platforms. This course may require participation outside of school hours, including covering athletic events, practices, club activities, and student life.",
+    "track": "CTE"
+  },
+  {
+    "name": "Modern Media II Graphic Design and Illustration II",
+    "codes": [
+      "MODM2A/B"
+    ],
+    "grade": "11-12",
+    "page": 120,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Modern Media I",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit This course will build upon foundational photography design, and journalism skills while refining their artistic vision and technical abilities through a variety of projects. Students will explore advanced photographic techniques and gain hands-on experience in designing and producing professional-quality publications, such as newspapers and digital media, as well as other modern media outlets. Students will also use industry-standard software to create appealing layouts and engaging content. This course may require participation outside of school hours, including covering athletic events, practices, club activities, and student life.",
+    "track": "CTE"
+  },
+  {
+    "name": "Practicum in Modern Media",
+    "codes": [
+      "PCMMA/B"
+    ],
+    "grade": "12",
+    "page": 120,
+    "credit": "2",
+    "gpa": "Honors",
+    "prerequisite": "Modern Media II",
+    "corequisite": "",
+    "certification": "",
+    "description": "credits (Double Block) This course will give students real-world client-based experience in the journalism, news, digital media, and photography industries by using industry standard equipment, methods, and software. This course may require participation outside of school hours, including covering athletic events, practices, club activities, and student life.",
+    "track": "CTE"
+  },
+  {
+    "name": "Video Game Design",
+    "codes": [
+      "VIDGDA/B"
+    ],
+    "grade": "9-12",
+    "page": 121,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Video Game Design will allow students to explore one of the largest industries in the global marketplace and the new emerging careers it provides in the field of technology. Students will learn gaming computerized gaming, evolution of gaming, artistic aspects of perspective, design, animation, technical concepts of collision theory, and programming logic. Students will participate in a simulation of a real video game design team while developing technical proficiency in constructing an original game design.",
+    "track": "CTE"
+  },
+  {
+    "name": "Design II",
+    "codes": [
+      "VIDPGA/B"
+    ],
+    "grade": "10-12",
+    "page": 121,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Video Game Programming expands on the foundation created in Video Game Design through programming languages such as: C# programming XNA game studio, Java, and Android App. In this course, students will investigate the inner workings of a fully functional video game by building and customizing objects, methods, and scenes while developing games through guided lessons and of their own design.",
+    "track": "CTE"
+  },
+  {
+    "name": "Design III",
+    "codes": [
+      "HADVGA/B"
+    ],
+    "grade": "11-12",
+    "page": 121,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Using Unity as an introduction to 3D game development students will have exposure to and an understanding of: object-oriented programming concepts; game development skill and 3D modeling. Students will communicate and collaborate on group-based projects.",
+    "track": "CTE"
+  },
+  {
+    "name": "Yearbook I Graphic Design & Illustration I",
+    "codes": [
+      "GRDY1A/B"
+    ],
+    "grade": "10-12",
+    "page": 122,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Introduction to Communication Arts and Media AND Program Qualification Form",
+    "corequisite": "",
+    "certification": "Adobe InDesign",
+    "description": "credit Students will design produce, exhibit, perform, write, and publish the campus yearbook. Students will be responsible for creating a story budget, making deadlines, and marketing/selling advertising to support the book's publication. Out-of-school time will be required by attending outside of school events and community activities. Summer workshop is highly encouraged and required for editors.",
+    "track": "CTE"
+  },
+  {
+    "name": "Yearbook II Graphic Design and Illustration II",
+    "codes": [
+      "GRDY2A/B"
+    ],
+    "grade": "11-12",
+    "page": 122,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Yearbook I AND Program Qualification Form",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Students will design produce, exhibit, perform, write, and publish the campus yearbook. Students will be responsible for creating a story budget, making deadlines, and marketing and selling advertising to support the book's publication. Out-of-school time will be required by attending outside of school events and community activities. Summer workshop is highly encouraged and required for editors.",
+    "track": "CTE"
+  },
+  {
+    "name": "Yearbook Capstone",
+    "codes": [
+      "YRCAPA/B"
+    ],
+    "grade": "12",
+    "page": 122,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "courses in an industry relevant manner. Students will dive deeper into previously explored content through a variety of instructional methods, projects, and experiences. Through the practicum course, work-based learning, industry ready standards, and entrepreneurial avenues will all be investigated and applied. Prerequisite: Yearbook II AND Program Qualification Form",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit This capstone course allows students to utilize the knowledge and skills gained in",
+    "track": "CTE"
+  },
+  {
+    "name": "Principles of Business, Marketing, and Finance",
+    "codes": [
+      "PBMFA/B"
+    ],
+    "grade": "9-11",
+    "page": 123,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit In Principles of Business Marketing, and Finance, students gain knowledge and skills in economies and private enterprise systems, the impact of global business, the marketing of goods and services, advertising, and product pricing. Students analyze the sales process and financial management principles. This course allows students to reinforce, apply, and transfer academic knowledge and skills to a variety of activities, problems, and settings.",
+    "track": "CTE"
+  },
+  {
+    "name": "Management I",
+    "codes": [
+      "BUSM1A/B"
+    ],
+    "grade": "9-12",
+    "page": 123,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "certification": "Microsoft Word Expert (",
+    "description": "credit This is an introduction to business applications of emerging technologies creating word-processing documents (Microsoft Word), developing spreadsheets (Microsoft Excel), formulating databases (Microsoft Access), and producing electronic presentations (Microsoft PowerPoint).",
+    "track": "CTE"
+  },
+  {
+    "name": "DNQ) Accounting I",
+    "codes": [
+      "ACCT1A/B"
+    ],
+    "grade": "10-12",
+    "page": 123,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit An introduction to the field of accounting including the accounting equation, journal entries, inventory, payroll, and financial statements. You will create, analyze, interpret financial statements and other financial information.",
+    "track": "CTE"
+  },
+  {
+    "name": "TBD - pending TEA Financial Analysis",
+    "codes": [
+      "FINANA/B"
+    ],
+    "grade": "11-12",
+    "page": 123,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Students gather create, and evaluate various companies' financial information to be able to make recommendations for stakeholders.",
+    "track": "CTE"
+  },
+  {
+    "name": "Accounting I Securities and Investments",
+    "codes": [
+      "SECINA/B"
+    ],
+    "grade": "11-12",
+    "page": 123,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Students learn about the securities industry by exploring its history and inner workings while becoming familiar with the stock market.",
+    "track": "CTE"
+  },
+  {
+    "name": "Resources Management",
+    "codes": [
+      "HUMR"
+    ],
+    "grade": "10-12",
+    "page": 124,
+    "credit": ".5",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Human Resources Management is designed to familiarize students with the concepts related to human resource management including legal requirements, recruitment, employee selection methods, and employee development and evaluation. Students will also become familiar with compensation and benefits programs as well as workplace safety, employee-management relations, and the impact of global events on human resources management.",
+    "track": "CTE"
+  },
+  {
+    "name": "Virtual Business",
+    "codes": [
+      "VRTBUS"
+    ],
+    "grade": "10-12",
+    "page": 124,
+    "credit": ".5",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Virtual Business is designed for students to start a virtual business by creating a web presence conducting online and off-line marketing, examining contracts appropriate for an online business, and demonstrating project-management skills. Students will also demonstrate bookkeeping skills for a virtual business, maintain business records, and understand legal issues associated with a virtual business.",
+    "track": "CTE"
+  },
+  {
+    "name": "Fashion Marketing",
+    "codes": [
+      "FASMKT"
+    ],
+    "grade": "10-12",
+    "page": 125,
+    "credit": "0.5",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Students in Fashion Marketing will gain a working knowledge of promotion textiles, merchandising, selling, visual merchandising and career opportunities in the fashion industry.",
+    "track": "CTE"
+  },
+  {
+    "name": "Sports & Entertainment Marketing",
+    "codes": [
+      "SPENMK"
+    ],
+    "grade": "10-12",
+    "page": 125,
+    "credit": "0.5",
+    "gpa": "On-Level",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Learn how companies and marketers use collegiate and professional sports teams and events celebrities, and entertainment events such as a music concert or an awards show to promote its brand name and products.",
+    "track": "CTE"
+  },
+  {
+    "name": "None Advertising",
+    "codes": [
+      "ADVSPR"
+    ],
+    "grade": "10-12",
+    "page": 125,
+    "credit": "0.5",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Students will learn about the practices of advertising including the use of various media formats and the exploration of social ethical, and legal issues of advertising including the historical influences, the strategies, and the media decision.",
+    "track": "CTE"
+  },
+  {
+    "name": "Social Media Marketing",
+    "codes": [
+      "SOCMEM"
+    ],
+    "grade": "10-12",
+    "page": 125,
+    "credit": "0.5",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "certification": "TBD - pending TEA",
+    "description": "credit Learn how companies and marketers create and use social media as a part of their overall marketing strategies.",
+    "track": "CTE"
+  },
+  {
+    "name": "Retail Management - School Store",
+    "codes": [
+      "RTMANA/B"
+    ],
+    "grade": "11-12",
+    "page": 125,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Retail management focuses on the distribution and selling of products to consumers using various vending points such as chain stores department stores, stand-alone stores, and various online markets. The course highlights the mechanisms necessary to operate a successful retail establishment. The student is taught to evaluate methods for promoting merchandise, supervising employees, handling customer needs, and maintaining inventories.",
+    "track": "CTE"
+  },
+  {
+    "name": "Principles of Human Services",
+    "codes": [
+      "PRHMSA/B"
+    ],
+    "grade": "9-11",
+    "page": 126,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Students investigate careers including counseling and mental health early childhood development, family and community, personal care, and consumer services.",
+    "track": "CTE"
+  },
+  {
+    "name": "Human Growth and Development",
+    "codes": [
+      "HUGRDA/B"
+    ],
+    "grade": "10-12",
+    "page": 126,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Students will examine human development across the lifespan with emphasis on research theoretical perspectives, and common developmental milestones. This course covers material generally taught in a postsecondary introductory developmental psychology or human development course.",
+    "track": "CTE"
+  },
+  {
+    "name": "Instructional Practices - Ready, Set, Teach I",
+    "codes": [
+      "PRED1A/B"
+    ],
+    "grade": "11-12",
+    "page": 126,
+    "credit": "2",
+    "gpa": "AP/DC",
+    "prerequisite": "/",
+    "corequisite": "",
+    "certification": "",
+    "description": "credits (Double Block) AP/DC Students will explore the teaching profession in class and in an elementary or middle school internship. Students will study child and adolescent development as it applies to the classroom as well as principles of effective teaching and training practices. Personal Transportation Required. Co-requisite: Human Growth and Development AND Program Qualification Form **This course is offered as a Dual Enrollment course through Tarleton State. Students can opt in or out of 9 hours of college credit. Students opting into the college credit will be responsible for the cost of tuition.",
+    "track": "CTE"
+  },
+  {
+    "name": "Principles of Manufacturing",
+    "codes": [
+      "PMANA/B"
+    ],
+    "grade": "9",
+    "page": 127,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Principles of Applied Engineering (8th grade)",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit This foundational course equips Electrical Engineering/Electronics Technology students with essential skills for their career path. Students gain hands-on experience in soldering desoldering, and safe tool use while developing technical mathematics skills, including metric prefixes. The course explores fundamental concepts of mechanisms and electronics, enabling students to design, build, analyze, and document basic manufacturing problems. Students develop technical proficiency, problem-solving abilities, and professional skills necessary for careers as electronic engineers or technicians. Recommended",
+    "track": "CTE"
+  },
+  {
+    "name": "AND Algebra I AC/DC Electronics",
+    "codes": [
+      "ACDCA/B"
+    ],
+    "grade": "10",
+    "page": 127,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Principles of Manufacturing",
+    "corequisite": "",
+    "certification": "SACA C-200 (",
+    "description": "credit This course explores direct and alternating current electronics through hands-on experience with electrical components test equipment, and circuit construction. Students will solve electrical values, conduct computer simulations, analyze circuit behavior, and document findings in technical reports. Topics include magnetism, sine waves, inductance, capacitance, and frequency filtering for communication circuits. Through rigorous laboratory processes, students develop a comprehensive understanding of electrical circuits for advanced studies and industry applications.",
+    "track": "CTE"
+  },
+  {
+    "name": "Solid State Electronics",
+    "codes": [
+      "SOLEL"
+    ],
+    "grade": "11",
+    "page": 127,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "AC/DC Electronics, Algebra I, AND Geometry Career & Technical Education Capstone - Electrical Engineering* Grade 12, 1 credit, Level 4 Available 2027-2028 School Year",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit This advanced course explores solid-state electronics and integrated circuit applications used throughout modern electronics and computer industries. Building on AC/DC Electronics fundamentals students will master advanced circuit theory, semiconductor devices, and microprocessor applications through project-based learning. Students will design, simulate, troubleshoot, and repair complex electronic systems using precision measurement techniques and industry-standard equipment. The curriculum integrates project management, technical documentation, and prototype development that mirror real-world engineering environments. Note: This is housed in a one semester (Spring) double block format. MUST be enrolled in Digital Electronics in the same academic year.",
+    "track": "CTE"
+  },
+  {
+    "name": "Principles of Applied Engineering",
+    "codes": [
+      "PRAPEA/B"
+    ],
+    "grade": "8-11",
+    "page": 128,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit This course develops essential engineering communication and problem-solving skills through hands-on projects and presentations. Students apply the engineering design process to create models produce technical drawings, and use computer-aided design (CAD) tools with various hardware and software applications. Strong mathematical skills are necessary; completion of or concurrent enrollment in Algebra I is highly recommended. Students gain foundational understanding of engineering disciplines to make informed career choices in the field.",
+    "track": "CTE"
+  },
+  {
+    "name": "Engineering Design and Presentation I",
+    "codes": [
+      "ENDSPA/B"
+    ],
+    "grade": "9-12",
+    "page": 128,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "Algebra I AND Principles of Applied Engineering",
+    "corequisite": "",
+    "certification": "Autodesk Fusion 360",
+    "description": "credit Students will demonstrate knowledge and skills of the design process as it applies to engineering fields and project management using multiple software applications and tools necessary to produce and present working drawings solid model renderings, and prototypes. Through implementation of the design process, students will transfer advanced academic skills to component designs. Additionally, students will explore career opportunities in engineering, technology, and drafting.",
+    "track": "CTE"
+  },
+  {
+    "name": "Robotics I",
+    "codes": [
+      "RBOT1A/B"
+    ],
+    "grade": "9-12",
+    "page": 128,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Principles of Applied Engineering",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Students will transfer academic skills to robotic designs in a project-based environment through implementation of the design process. Students will build prototypes or use simulation software to test their designs. Additionally students will explore career opportunities, employer expectations, and educational needs in the robotic and automation industry.",
+    "track": "CTE"
+  },
+  {
+    "name": "Aerospace I",
+    "codes": [
+      "ARSP1A/B"
+    ],
+    "grade": "10-12",
+    "page": 128,
+    "credit": "1",
+    "gpa": "",
+    "prerequisite": "Algebra I AND Principles of Applied Engineering",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit GPA: This course introduces aircraft and aerospace system design through fundamental concepts of atmospheric and space flight. Students explore forces of flight aerodynamics propulsion systems, structures, stability and control, and orbital mechanics related to mission requirements. The curriculum covers flight history, aircraft categories, and material selection. Students apply the engineering design process to analyze requirements and develop solutions for flight challenges. Through hands-on projects, students design and test components using industry-standard computational tools while developing project management, teamwork, and documentation skills for postsecondary programs and aerospace careers.",
+    "track": "CTE"
+  },
+  {
+    "name": "Principles of Biomedical Science",
+    "codes": [
+      "PBIOSA/B"
+    ],
+    "grade": "9-12",
+    "page": 129,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Determine what led to the death of a fictional person and investigate lifestyle choices and medical treatments that might have prolonged their life. Through activities and projects you explore human physiology, medicine, research processes and bioinformatics. You will learn about homeostasis, metabolism, inheritance of traits, and defense against diseases.",
+    "track": "CTE"
+  },
+  {
+    "name": "Body Systems",
+    "codes": [
+      "HUMANA/B"
+    ],
+    "grade": "10-12",
+    "page": 129,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Students examine the interactions of human body systems as they explore identity power, movement, protection, and homeostasis in the body. Exploring science in action, students build organs and tissues on a skeletal system; use data acquisition software to monitor body functions such as muscle movement, reflex and voluntary action, and respiration; and take on the roles of biomedical professionals to solve real-world medical cases.",
+    "track": "CTE"
+  },
+  {
+    "name": "Medical Interventions",
+    "codes": [
+      "MEDINA/B"
+    ],
+    "grade": "11-12",
+    "page": 129,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Students investigate the variety of interventions involved in the prevention diagnosis, and treatment of disease as they follow the lives of a fictitious family. Through these scenarios, students will be exposed to a wide range of interventions related to immunology, surgery, genetics, pharmacology, medical devices and diagnostics.",
+    "track": "CTE"
+  },
+  {
+    "name": "Biomedical Innovation",
+    "codes": [
+      "BIOINA/B"
+    ],
+    "grade": "12",
+    "page": 129,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "Medical Interventions",
+    "corequisite": "",
+    "certification": "Biotechnician Assistant Credentialing Exam (BACE)",
+    "description": "credits Students design innovative solutions for health challenges of the 21st century working through challenging open-ended problems addressing topics such as clinical medicine, physiology, biomedical engineering, and public health. Students are presented with each problem in a mission file, a case brief, a list of completion tasks, links to resources, and a reflection section. This provides skills-based instruction in research and experimentation and tools students use to design innovative solutions to real-world problems. The student uses what they learn in these missions as they develop and implement their independent project at the end of the year, culminating in the creation of a project portfolio. Students are encouraged to work with a mentor from the biomedical industry and present their work to an audience from the health care community.",
+    "track": "CTE"
+  },
+  {
+    "name": "Principles of Exercise Science and Wellness",
+    "codes": [
+      "PREXSA/B"
+    ],
+    "grade": "9-10",
+    "page": 130,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit The Principles of Exercise Science and Wellness course provides an overview of the knowledge and skills that assist patients with maintaining physical mental, and emotional health.",
+    "track": "CTE"
+  },
+  {
+    "name": "Kinesiology I",
+    "codes": [
+      "KINESA/B"
+    ],
+    "grade": "10-12",
+    "page": 130,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Students will gain an understanding of body mechanics anatomy and physiological functions of the skeletal and muscular systems, how to treat common sports injuries, the history of kinesiology, and the psychological impact of sports and athletic performance.",
+    "track": "CTE"
+  },
+  {
+    "name": "Kinesiology II",
+    "codes": [
+      "KINE2A/B"
+    ],
+    "grade": "11-12",
+    "page": 130,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Kinesiology I",
+    "corequisite": "",
+    "certification": "TBD- Pending TEA ; Basic Life Support (BLS) - Does not meet CCMR (Student Fee)",
+    "description": "credit The Kinesiology II course is designed to provide students an advanced level of knowledge skills, and understanding of body composition and the effect on health, nutritional needs of physically active individuals, qualitative biomechanics, application of therapeutic modalities, appropriate rehabilitation services, and aerobic training intensity programs.",
+    "track": "CTE"
+  },
+  {
+    "name": "Practicum in Exercise Science",
+    "codes": [
+      "PRENXA/B"
+    ],
+    "grade": "12",
+    "page": 130,
+    "credit": "2",
+    "gpa": "Honors",
+    "prerequisite": "courses in an industry relevant manner. Students will dive deeper into previously explored content through a variety of instructional methods, projects, and experiences. Through the practicum course, work-based learning, industry ready standards, and entrepreneurial avenues will all be investigated and applied. Prerequisite: Kinesiology II OR Rehab Aide (DC) with Kinesiology 1",
+    "corequisite": "",
+    "certification": "",
+    "description": "credits (Double Block) This capstone course allows students to utilize the knowledge and skill gained in",
+    "track": "CTE"
+  },
+  {
+    "name": "Principles of Health Science",
+    "codes": [
+      "PRHSCA/B"
+    ],
+    "grade": "8-11",
+    "page": 131,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Principles of Health Science provides an overview of the therapeutic diagnostic, health informatics, support services, and biotechnology research and development systems of the healthcare industry.",
+    "track": "CTE"
+  },
+  {
+    "name": "Therapeutic Services",
+    "codes": [
+      "ALHSA/B"
+    ],
+    "grade": "9-10",
+    "page": 131,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit This course will focus on anatomy and physiology medical terminology, and career skills and exploration associated with the healthcare industry standards for respiratory therapy, physical and occupational therapy, radiological imaging, and pharmaceuticals.",
+    "track": "CTE"
+  },
+  {
+    "name": "Medical Terminology",
+    "codes": [
+      "MEDITA/B"
+    ],
+    "grade": "9-12",
+    "page": 131,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "One credit from the Health Science Career Cluster Health Science",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Medical Terminology allows students to achieve comprehension of medical vocabulary appropriate to medical procedures human anatomy and physiology, and pathophysiology. Students that take Medical Terminology in 9th grade will be ineligible for DC Medical Terminology.",
+    "track": "CTE"
+  },
+  {
+    "name": "Theory",
+    "codes": [
+      "HSTHEA/B"
+    ],
+    "grade": "10-12",
+    "page": 131,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "One credit in Biology AND at least one credit in a course from the Health Science career cluster Recommended Prerequisite: Medical Terminology",
+    "corequisite": "",
+    "certification": "Basic Life Support (BLS) - Does not meet CCMR (",
+    "description": "credit This course is designed to provide for the development of advanced knowledge and skills related to a variety of health careers. Students are expected to learn to reason think critically, make decisions, solve problems, communicate effectively and employ professional integrity.",
+    "track": "CTE"
+  },
+  {
+    "name": "Student Fee) Pharmacy I",
+    "codes": [
+      "PHRM1A/B"
+    ],
+    "grade": "11-12",
+    "page": 131,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Pharmacy I allows students to gain a foundation in the knowledge and skills needed to pursue a career in the pharmaceutical field (e.g. pharmacy technician, pharmacist).",
+    "track": "CTE"
+  },
+  {
+    "name": "Assistant Pharmacology",
+    "codes": [
+      "PHARMA/B"
+    ],
+    "grade": "12",
+    "page": 132,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "One credit in Biology, one credit in Chemistry, AND at least one credit in a",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit This course is designed to study how natural and synthetic chemical agents such as drugs affect biological systems.",
+    "track": "CTE"
+  },
+  {
+    "name": "Dual Credit Medical Terminology",
+    "codes": [
+      "MEDTDC",
+      "PATHOD"
+    ],
+    "grade": "10-11",
+    "page": 132,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "College acceptance and registration required 11th or 12th Grade CNA Fall: Nurse Aide for Health Care (NURA 1401)",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit AP/DC This is the study of medical terms through word origin and structure with an introduction to abbreviations and symbols surgical and diagnostic procedures and medical specialties as well as the study of general health management of diseases and injuries across the lifespan. Topics include etiology symptoms and the physical and psychological reactions to diseases and injuries.",
+    "track": "CTE"
+  },
+  {
+    "name": "EKG)",
+    "codes": [
+      "HSTELA/B"
+    ],
+    "grade": "11-12",
+    "page": 133,
+    "credit": "2",
+    "gpa": "AP/DC",
+    "prerequisite": "One credit within the PISD Health Science career cluster, program qualification form, interview, college acceptance, and registration required 11th or 12th Grade Rehabilitation Aide",
+    "corequisite": "",
+    "certification": "",
+    "description": "credits AP/DC Health Science Theory and Clinical (EKG) is designed to provide for the development of advanced knowledge and skills related to a wide variety of health careers. Students will gain hands-on experiences and exposure to different methodologies such as clinical rotations and career preparation learning with a focus on principles procedures and regulations governing the legal and ethical relationships among physicians, patients, and healthcare professionals. The curriculum extensively covers the anatomy, physiology, and pathophysiology of the cardiovascular system, focusing specifically on structural anatomy and relationships, electrical innervation, embryology, and hemodynamics. This includes studying the pathophysiology, etiology, pathology, signs, symptoms, risk factors, and treatment of related diseases. The course also details various cardiac testing methods, including the techniques and interpretation of patient physical assessment, electrocardiography, stress testing, Holter monitoring, vital signs, and cardiovascular pharmacology. Additionally, it addresses current ethical issues related to the various healthcare professions and patient confidentiality. Upon successfully completing the required hours and achieving the necessary grades, the student will be eligible to take the EKG state exam. Fees for uniforms, insurance and testing are required for this course. Students must provide their own transportation to and from clinical locations.",
+    "track": "CTE"
+  },
+  {
+    "name": "Dual Credit Practicum in Health Science - Rehab Aide",
+    "codes": [
+      "REHABA/B"
+    ],
+    "grade": "11-12",
+    "page": 133,
+    "credit": "2",
+    "gpa": "AP/DC",
+    "prerequisite": "One credit within the PISD Health Science career cluster, program qualification form, interview, college acceptance, and registration required 12th Grade Only Patient Care Technician *MUST have completed CNA first Fall: Diagnostic Electrocardiography (DSAE 1340) Phlebotomy (PLAB 1323) Spring: Patient Care Technician/Assistant (NUPC 1320) Clinical - Nursing Assistant/Aide and Patient Care Assistant/Aide (NUPC 1160) 10 College Hours",
+    "corequisite": "",
+    "certification": "",
+    "description": "credits AP/DC 133 Fall: The Profession of Physical Therapy (PTHA 1201) Introduction to Physical Therapy (PTHA 1409) Spring: Clinical - Physical Therapy Assistant (PTHA 1160) Basic Health Skills II (HPRS 2310) 10 college hours The Rehabilitation Aide Occupational Skills Award (OSA) is a two-semester award that prepares students for a career as a Rehabilitation Aide or Physical Therapy Technician. This award serves as an excellent starting point for anyone interested in pursuing advanced careers in physical therapy occupational therapy chiropractic medicine massage, personal training, and other related medical fields. The two-semester track offers an in-depth education with hands-on experience in the rehabilitation field, utilizing experienced clinical staff and faculty alongside state-of-the-art lab and simulation equipment. Instruction includes the application of basic patient handling, functional skills, communication, and selected data collection techniques. Ultimately, the award prepares the student to enter the rehabilitation field and provides those interested in an advanced career in rehabilitation a springboard to explore their interests and begin working toward advanced degrees and training. Fees for uniforms, insurance and testing are required for this course. Students must provide their own transportation to and from clinical locations.",
+    "track": "CTE"
+  },
+  {
+    "name": "PCT)",
+    "codes": [
+      "EKG00A/B"
+    ],
+    "grade": "12",
+    "page": 134,
+    "credit": "2",
+    "gpa": "AP/DC",
+    "prerequisite": "One credit within the PISD Health Science career cluster, CNA, program qualification form, interview, college acceptance, and registration required",
+    "corequisite": "",
+    "certification": "",
+    "description": "credits AP/DC The Patient Care Technician (PCT) Health Science Practicum is a health-related work-based learning experience designed to provide students with opportunities for the practical application of previously studied specialized occupational theory skills and concepts in a variety of appropriate locations. Students will study Cardiac testing which covers the techniques and interpretation of patient physical assessment, electrocardiography, stress testing, Holter monitoring, vital signs, and cardiovascular pharmacology. Additionally, the practicum focuses on skill development in the performance of a variety of blood collection methods, using proper techniques and standard precautions, including vacuum collection devices, syringes, capillary skin puncture, butterfly needles, and blood culture. This training includes specimen collection on adults, children, and infants, with emphasis on infection prevention, patient identification, specimen labeling, quality assurance, specimen handling, processing, accessioning, professionalism, ethics, and medical terminology. Ultimately, this experience provides the necessary training, skills, and knowledge required to gain employment as a Patient Care Technician (PCT) in a hospital setting. Fees for uniforms, insurance and testing will be required for this course. Students must provide their own transportation to and from clinical locations.",
+    "track": "CTE"
+  },
+  {
+    "name": "EMT)",
+    "codes": [
+      "EMTDCA/B"
+    ],
+    "grade": "12",
+    "page": 135,
+    "credit": "2",
+    "gpa": "AP/DC",
+    "prerequisite": "One credit within the PISD Health Science career cluster, CNA or RA recommended, program qualification form, interview, college acceptance, and registration required 11th or 12th Grade Medical Scribe Fall Medical Terminology (HITT 1305) Medical Law and Ethics (HPRS 2321) Spring Anatomy & Physiology Basic (BIOL 2404) Administrative Procedures (MDCA 1321) 13 college hours",
+    "corequisite": "",
+    "certification": "as an EMT. The curriculum includes an Introduction to Emergency Medical Services, covering its history, organization and function, legal aspects, and ethics. This course provides an overview of human anatomy and physiology, patient assessment, airway control, and infection control techniques. Other critical topics covered include lifespan development, dealing with veteran mental health, vital signs, recognizing terrorism and hazardous materials environments, safely lifting and moving patients, basic pharmacology, and safe ambulance operation. Fees for uniforms, insurance and testing will be required for this course. Students must provide their own transportation to and from clinical locations",
+    "description": "credits AP/DC The Emergency Medical Technician (EMT) program is designed to provide students with opportunities for the practical application of previously studied knowledge and skills in a variety of locations appropriate to the nature and level of experience ultimately serving as preparation for",
+    "track": "CTE"
+  },
+  {
+    "name": "Dual Credit Medical Scribe",
+    "codes": [
+      "MESDC"
+    ],
+    "grade": "11",
+    "page": 135,
+    "credit": "2",
+    "gpa": "",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "th or 12th No GPA points awarded A medical scribe works in a healthcare facility helping to improve accuracy and efficiency in the recording of a patient's medical history. They do this through documenting the physician-patient interaction taking notes during patient interviews entering information into the Electronic Medical Record, and writing notes that the physician has dictated. The goal is to ensure that the doctor can focus on the treatment of the patient, rather than on clerical work. Medical scribes typically work in healthcare facilities such as hospitals, doctor's offices, urgent care centers, or other locations where professionals meet with patients. *Medical Scribe is an ONLINE PRACTICUM EXPERIENCE. Students will enroll in a zero hour section of the course and will work on the course OUTSIDE of the typical school day. No GPA points will be awarded. If enrolled student is CCMR met, they may choose to engage in the class during their release periods* 135 Culinary Arts and Hospitality Business & Industry Endorsement The Culinary Arts program of study introduces CTE learners to occupations and educational opportunities related to the planning, directing, or coordinating activities of a food and beverage organization or department. This program of study also explores opportunities involved in directing and participating in the preparation and cooking of food. This program qualifies for participation in the following organization: SkillsUSA",
+    "track": "CTE"
+  },
+  {
+    "name": "Introduction to Culinary Arts",
+    "codes": [
+      "INTCAA/B"
+    ],
+    "grade": "9-11",
+    "page": 136,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "certification": "E-Food Handlers (student fee)",
+    "description": "credit Students will learn the principles of planning organizing, staffing, directing, and controlling the management of a variety of food service operations. Fee for testing may be required.",
+    "track": "CTE"
+  },
+  {
+    "name": "Principles of Hospitality and Tourism",
+    "codes": [
+      "PRHSPA/B"
+    ],
+    "grade": "9-11",
+    "page": 136,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Students will learn the industry that encompasses lodging travel and tourism, recreation, amusements, attractions, and food/beverage operations.",
+    "track": "CTE"
+  },
+  {
+    "name": "Culinary Arts",
+    "codes": [
+      "CLAR1A/B"
+    ],
+    "grade": "10-12",
+    "page": 136,
+    "credit": "2",
+    "gpa": "On-Level",
+    "prerequisite": "E-Food Handlers Certification obtained in Introduction to Culinary Arts",
+    "corequisite": "",
+    "certification": "obtained in Introduction to Culinary Arts Certification: Food Protection Manager",
+    "description": "credits (Single Block) Students will be certified in safety and sanitation through a recognized program. Major focuses will be on the art of cooking science of baking, including management and production skills and professional etiquette. Fees for uniforms and testing may be required. This course is articulated with Collin College.",
+    "track": "CTE"
+  },
+  {
+    "name": "Advanced Culinary Arts",
+    "codes": [
+      "ADVCAA/B"
+    ],
+    "grade": "11-12",
+    "page": 136,
+    "credit": "2",
+    "gpa": "On-Level",
+    "prerequisite": "Culinary Arts",
+    "corequisite": "",
+    "certification": "",
+    "description": "credits (Double Block) Students will extend content and enhance skills introduced in Culinary Arts including art of cooking backing, management, production skills, and professional etiquette. Fees for uniforms and testing may be required.",
+    "track": "CTE"
+  },
+  {
+    "name": "Practicum in Culinary Arts",
+    "codes": [
+      "HPRCAA/B"
+    ],
+    "grade": "12",
+    "page": 136,
+    "credit": "2",
+    "gpa": "Honors",
+    "prerequisite": "Advanced Culinary Arts",
+    "corequisite": "",
+    "certification": "",
+    "description": "credits (Double Block) This course is a unique practicum that provides occupationally specific opportunities for students to participate in a learning experience that combines classroom instruction with business and industry experience. Fees for uniforms and additional testing may be required.",
+    "track": "CTE"
+  },
+  {
+    "name": "Fundamentals of Cosmetology",
+    "codes": [
+      "FCOSMA/B"
+    ],
+    "grade": "9",
+    "page": 137,
+    "credit": "2",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit (Double Block) Students coordinate integration of academic career, and technical knowledge and skills in this laboratory instructional sequence course designed to provide job-specific training for employment in cosmetology careers. Students will attain academic skills and knowledge as well as technical knowledge and skills related to cosmetology design and color theory. Students will develop knowledge and skills regarding various cosmetology design elements such as form, lines, texture, structure and illusion or depth as they relate to the art of cosmetology. Instruction includes sterilization and sanitation procedures, hair care, nail care, and skin care and meets the TDLR requirements for licensure upon passing the state examination. Analysis of career opportunities, license requirements, knowledge and skills expectations, and development of workplace skills are included. **Students will be required to obtain their Student License from TDLR prior to the start of the school year. There will be a $25 fee for this license **",
+    "track": "CTE"
+  },
+  {
+    "name": "Intermediate Cosmetology",
+    "codes": [
+      "ICOSMA/B"
+    ],
+    "grade": "10",
+    "page": 137,
+    "credit": "2",
+    "gpa": "On-Level",
+    "prerequisite": "Fundamentals of Cosmetology",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit (Double Block) Students coordinate integration of academic career, and technical knowledge and skills in this laboratory instructional sequence course designed to provide job-specific training for employment in cosmetology careers. Instruction includes sterilization and sanitation procedures, hair care, nail care, and skin care and meets the Texas Department of Licensing and Regulation (TDLR) requirements for licensure upon passing the state examination. Analysis of career opportunities, license requirements, knowledge and skills expectations, and development of workplace skills are included.",
+    "track": "CTE"
+  },
+  {
+    "name": "None Dollars and Sense",
+    "codes": [
+      "DOLLSN"
+    ],
+    "grade": "9-12",
+    "page": 138,
+    "credit": "0.5",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Students learn about money-management and decision making and how these choices impact them and the world/economy around them.",
+    "track": "CTE"
+  },
+  {
+    "name": "Professional Communications",
+    "codes": [
+      "PROCOM"
+    ],
+    "grade": "9-12",
+    "page": 138,
+    "credit": "0.5",
+    "gpa": "On-Level",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Professional Communications blends written oral, and graphical communication in a career-based environment. Careers in the global economy require individuals to be creative and have a strong background in computer and technology applications, a strong and solid academic foundation, and a proficiency in professional oral and written communication. Within this context, students will be expected to develop and expand the ability to write, read, edit, speak, listen, apply software applications, manipulate computer graphics, and conduct internet research.",
+    "track": "CTE"
+  },
+  {
+    "name": "Mental Health",
+    "codes": [
+      "COUNSA/B"
+    ],
+    "grade": "11-12",
+    "page": 138,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit In Counseling and Mental Health students model the knowledge and skills necessary to pursue a counseling and mental health career through simulated environments. Students are expected to apply knowledge of ethical and legal responsibilities, limitations on their actions and responsibilities, and the implications of their actions. Students understand how professional integrity in counseling and mental health care is dependent on acceptance of ethical and legal responsibilities.",
+    "track": "CTE"
+  },
+  {
+    "name": "Fundamentals of Computer Science",
+    "codes": [
+      "T9706A/B"
+    ],
+    "grade": "8-12",
+    "page": 139,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit This is a beginner's level approach to computer science. Students who enroll in this class are not expected to have prior knowledge of programming. Students will be taught structured programming concepts and the use of algorithms for problem solving while using time management skills.",
+    "track": "CTE"
+  },
+  {
+    "name": "Cloud Computing",
+    "codes": [
+      "ACLCA/B"
+    ],
+    "grade": "12",
+    "page": 139,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "Computer Science II OR AP Computer Science A",
+    "corequisite": "",
+    "certification": "AWS Certified Cloud Practitioner",
+    "description": "credit In this course students explore cloud computing services, applications, and use cases. Students dive into cloud computing best practices and learn how cloud computing helps users develop a global infrastructure to support use case at scale while also developing and inventing innovative technologies.",
+    "track": "CTE"
+  },
+  {
+    "name": "Principles of Information Technology",
+    "codes": [
+      "ITPRA/B"
+    ],
+    "grade": "9",
+    "page": 140,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "certification": "CompTIA Tech+",
+    "description": "credit In Principles of Information Technology students will develop computer literacy skills to adapt to emerging technologies used in the global marketplace. Students will implement personal and interpersonal skills to prepare for a rapidly evolving workplace environment. Students will enhance reading, writing, computing, communication, and reasoning skills and apply them to the information technology environment.",
+    "track": "CTE"
+  },
+  {
+    "name": "Foundations of Cybersecurity",
+    "codes": [
+      "FCYBA/B"
+    ],
+    "grade": "10",
+    "page": 140,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Principles of Information Technology",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit In the Foundations of Cybersecurity course students will develop the knowledge and skills needed to explore fundamental concepts related to the ethics, laws, and operations of cybersecurity. Students will examine trends and operations of cyberattacks, threats, and vulnerabilities. Students will review and explore security policies designed to mitigate risks. The skills obtained in this course prepare students for additional study in cybersecurity.",
+    "track": "CTE"
+  },
+  {
+    "name": "Networking",
+    "codes": [
+      "NETWK"
+    ],
+    "grade": "11",
+    "page": 140,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "Foundations of Cybersecurity",
+    "corequisite": "",
+    "certification": "CompTIA Network+",
+    "description": "credit Students will develop knowledge of data networking technologies and practices by exploring the design configuration, and management of telecommunications and network systems. Through hands-on experience, students will learn network fundamentals including TCP/IP protocols, subnetting, network topologies, wireless technologies, and the OSI model. Students will analyze network components, design addressing schemes, implement security practices, and develop disaster recovery and preventive maintenance plans. Emphasis is placed on troubleshooting connectivity issues, interpreting technical documentation, and applying professional standards required in IT careers. Note: This is housed in a one semester double block format (Fall). Must be taken in the same academic year as Digital Forensics.",
+    "track": "CTE"
+  },
+  {
+    "name": "Digital Forensics",
+    "codes": [
+      "DIGFR"
+    ],
+    "grade": "11",
+    "page": 140,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "Foundations of Cybersecurity",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Digital Forensics will foster students' creativity and innovation by presenting opportunities to investigate simulations and case studies of crimes reconstructing computer security incidents, troubleshooting operational problems, and recovering from accidental system damage. Students will collaborate to develop forensic techniques to assist with computer security incident response. Students will learn methods to identify, collect, examine, and analyze data while preserving the integrity of the information and maintaining a strict chain of custody for data. Students will solve problems as they study the application of science to the law. Students will learn digital citizenship by researching current laws and regulations and by practicing integrity and respect. Students will gain an understanding of computing and networking systems that transmit or store electronic data. Note: This is housed in a one semester double block format (Spring). MUST be taken in the same academic year as Networking.",
+    "track": "CTE"
+  },
+  {
+    "name": "Dual Credit Internetworking Technology I",
+    "codes": [
+      "INTDC"
+    ],
+    "grade": "11",
+    "page": 141,
+    "credit": "1",
+    "gpa": "AP/DC",
+    "prerequisite": "Foundations of Cybersecurity Dual Credit Networking (NETDC) * Grade 11, 1 credit, Level 3, AP/DC weighted GPA Assists individuals in preparing for Computing Technology Industry Association (CompTIA) Network certification exam and career as a network professional. Additionally, prepares individuals for a career as a Network Engineer in the Information Technology support industry. Includes the various responsibilities and tasks required for service engineers to successfully perform in a specific environment. Prerequisite: Foundations of Cybersecurity",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit AP/DC Provides comprehensive overview of computer hardware and software and an introduction to advanced concepts addressed by CISCO Prerequisite: Foundations of Cybersecurity Dual Credit Independent Study in Technology (ITCDC)* Grade 11 , Level 4, AP/DC weighted GPA An introduction to information security including vocabulary and terminology, ethics, the legal environment, and risk management. Identification of exposures and vulnerabilities and countermeasures are addressed. The importance of appropriate planning, policies and controls is also discussed. Prerequisite: Foundations of Cybersecurity Certification: CompTIA Security+ Cybersecurity Capstone Grade 12, 1 credit, Level 4, Honors weighted GPA Available 2027-2028 School Year Prerequisite: Digital Forensics AND Networking or Dual Credit Equivalent Certification: CompTIA Security+ 12th Grade Only-Available 2027-2028 School Year Fall Operating Systems Security (ITSY 2300) Linux Installation and Configuration (ITSC 1316) Spring Shell Programming-Scripting (ITSC 1342) Firewall and Network Security (ITSY 2301) 12 College Hours Dual Credit Practicum in STEM Grade 12, 2 credits (Double Block), Level 4, AP/DC weighted GPA Available 2027-2028 School Year Prerequisite: Dual Credit Internetworking, Dual Credit Networking, Dual Credit Digital Forensics, Dual Credit Independent Study in Technology Certification: CompTIA Linux+ 141 Law Enforcement Public Service Endorsement The Law Enforcement program of study teaches CTE learn",
+    "track": "CTE"
+  },
+  {
+    "name": "Principles of Law, Public Safety, Corrections & Security",
+    "codes": [
+      "PRLPSA/B"
+    ],
+    "grade": "9-12",
+    "page": 142,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Students are introduced to professions in law enforcement security, corrections, and fire department/emergency management services. Students examine the roles and responsibilities of police officers, court systems, corrections, private security, and protective agencies of fire and emergency services. The course provides students with an overview of the skills necessary for careers in law enforcement, fire service, security, and corrections.",
+    "track": "CTE"
+  },
+  {
+    "name": "Law Enforcement I",
+    "codes": [
+      "LAWE1A/B"
+    ],
+    "grade": "10-12",
+    "page": 142,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Principles of Law, Public Safety, Corrections & Security",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Law Enforcement I is an overview of the history organization, and functions of local, state, and federal law enforcement. This course includes the role of constitutional law, the United States legal system, criminal law, law enforcement terminology, and the classification and elements of crime. Recommended",
+    "track": "CTE"
+  },
+  {
+    "name": "Forensic Psychology",
+    "codes": [
+      "FRPSYA/B"
+    ],
+    "grade": "10-12",
+    "page": 142,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Principles of Law, Public Safety, Corrections & Security",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit The intersection between psychology and the criminal justice system. It involves understanding criminal law in the relevant jurisdictions in order to be able to interact within the criminal justice system. It utilizes and applies basic skills developed in psychology and criminal scenarios resulting in a structured and scientific approach to investigative analysis; thereby enabling police and law enforcement officials to predict criminal activity via scientific analysis rather-+2. than intuition. This course discusses topics that may be sensitive in nature. Please consider this content when choosing this course. Recommended",
+    "track": "CTE"
+  },
+  {
+    "name": "Law Enforcement II",
+    "codes": [
+      "LAWE2A/B"
+    ],
+    "grade": "11-12",
+    "page": 142,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Law Enforcement I",
+    "corequisite": "",
+    "certification": "TBD - pending TEA",
+    "description": "credit Law Enforcement II provides the knowledge and skills necessary to prepare for a career in law enforcement. Students will understand ethical and legal responsibilities patrol procedures, first responder roles, telecommunications, emergency equipment operations, and courtroom testimony.",
+    "track": "CTE"
+  },
+  {
+    "name": "Practicum in Law, Public Safety, Corrections, and Security",
+    "codes": [
+      "HPLAWA/B"
+    ],
+    "grade": "11-12",
+    "page": 142,
+    "credit": "2",
+    "gpa": "Honors",
+    "prerequisite": "At least 2 Law courses AND Program Qualification Form",
+    "corequisite": "",
+    "certification": "",
+    "description": "credits (Double Block) Students participate in supervised practical application of previously studied knowledge and skills.",
+    "track": "CTE"
+  },
+  {
+    "name": "Junior Reserve Officers' Training Corps I",
+    "codes": [
+      "ROTC1A/B"
+    ],
+    "grade": "9-12",
+    "page": 143,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "None",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit - Housed at RHHS The Emerging Leader First-year Cadets learn JROTC foundations organizational structure, customs, and uniform standards. The curriculum covers basic drill and ceremony, decision-making, goal-setting, conflict resolution, stress management, and physical fitness through the Cadet Challenge. Students develop character, discipline, and teamwork skills essential for leadership and citizenship.",
+    "track": "CTE"
+  },
+  {
+    "name": "Junior Reserve Officers' Training Corps II",
+    "codes": [
+      "ROTC2A/B"
+    ],
+    "grade": "10-12",
+    "page": 143,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Junior Reserves Officers Corps I",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit - Housed at RHHS The Developing Leader Second-year Cadets explore leadership elements attributes, and competencies while developing communication skills through writing, speaking, and listening. The curriculum includes first aid training, bullying and violence prevention, nutrition and fitness planning, career exploration, and post-secondary education options. Students advance in drill leadership roles and learn about American government and citizenship.",
+    "track": "CTE"
+  },
+  {
+    "name": "Junior Reserve Officers' Training Corps III",
+    "codes": [
+      "ROTC3A/B"
+    ],
+    "grade": "11-12",
+    "page": 143,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Junior Reserves Officers Corps II CCMR Offering: ASVAB",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit - Housed at RHHS The Supervising Leader Third-year Cadets prepare for battalion staff positions through command and staff operations project planning, and continuous improvement. Students focus on post-secondary planning, college applications, career portfolios, and r\u00e9sum\u00e9 development. The curriculum includes platoon-level drill, conflict resolution, ethical decision-making, substance abuse awareness, and leading comprehensive service learning projects.",
+    "track": "CTE"
+  },
+  {
+    "name": "Junior Reserve Officers' Training Corps IV",
+    "codes": [
+      "ROTC4A/B"
+    ],
+    "grade": "12",
+    "page": 143,
+    "credit": "1",
+    "gpa": "On-Level",
+    "prerequisite": "Junior Reserves Officers Corps III CCMR Offering: ASVAB",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit - Housed at RHHS The Managing Leader Senior Cadets serve as program managers and mentors applying leadership skills to continuous improvement initiatives. Students develop teaching strategies, create 10-year professional and personal goal plans, and execute company and battalion drill. The curriculum includes managing service learning projects using advanced project management tools and examining constitutional principles and democratic values to prepare for post-secondary success.",
+    "track": "CTE"
+  },
+  {
+    "name": "Automotive Technology I: Maintenance and Light Repair",
+    "codes": [
+      "AUTO1A/B"
+    ],
+    "grade": "10-12",
+    "page": 144,
+    "credit": "2",
+    "gpa": "On-Level",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "",
+    "description": "credits (Single Block) - Housed at PHS This course includes knowledge of the function of the major automotive systems history of the automobile, and the principles of diagnosing and servicing all major automotive systems. Students will participate in the shop after the successful classroom curriculum is completed. This course meets at Prosper",
+    "track": "CTE"
+  },
+  {
+    "name": "Technology II: Automotive Service",
+    "codes": [
+      "AUTO2A/B"
+    ],
+    "grade": "11-12",
+    "page": 144,
+    "credit": "2",
+    "gpa": "On-Level",
+    "prerequisite": "",
+    "corequisite": "",
+    "certification": "exam and the S/P2 (Safety and Environmental certification exams). This course meets at",
+    "description": "credits (Double Block) - Housed at PHS This course includes knowledge of the function of the major automotive systems history of the automobile, and the principles of diagnosing and servicing all major automotive systems. Students are required to take an ASE student",
+    "track": "CTE"
+  },
+  {
+    "name": "Study II",
+    "codes": [
+      "PRIS2A/B"
+    ],
+    "grade": "12",
+    "page": 145,
+    "credit": "1",
+    "gpa": "Honors",
+    "prerequisite": "PCIS I AND Program Qualification Form",
+    "corequisite": "",
+    "certification": "",
+    "description": "credit Students build upon the career exploration of PCIS I and now shift the focus outward emphasizing collaborative problem-solving leadership and community impact. The curriculum is designed to provide a holistic approach to leadership development that challenges students to work across multiple career fields to address complex community or societal challenges. The curriculum balances theoretical learning with practical application, ensuring students gain both knowledge and experiential understanding of leadership principles. This approach prepares students to become adaptive, collaborative leaders capable of addressing complex issues through integrated, cross-functional thinking and teamwork. Student product includes developing and organizing a networking event (fall semester) and culminates in a signature comprehensive project requiring collaborative problem-solving across diverse professional disciplines. PCIS II students are required to create a professional level presentation and defend their work in front of a panel of professionals. Students will also implement and hone their learning by serving as mentors for the PCIS I students",
+    "track": "CTE"
   }
 ]

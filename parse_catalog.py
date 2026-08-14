@@ -41,7 +41,7 @@ FIELD_GPA = re.compile(r"GPA\s*:?\s*(?P<v>[A-Za-z/\-+ ]{2,20}?)(?=\s+(?:Prereq|C
 # Field labels vary across the catalog: "Credit : 1", "Credits: 2",
 # "Pre-requisite or Corequisite:". Match all of them.
 _STOP = (
-    r"(?=\s+Co-?requisites?\s*:|\s+Pre-?requisites?\s*:|\s+Recommended\b|"
+    r"(?=\s+Co-?requisites?\s*:|\s+Pre-?requisites?\s*:|\s+Recommended\s*:|"
     r"\s+Grade\s*:|\s+Credits?\s*:|\s+GPA\s*:|$)"
 )
 FIELD_PREREQ = re.compile(
@@ -83,7 +83,13 @@ def cut_at_description(value: str) -> str:
         kept.append(seg)
         if len(" ".join(kept)) > 200:
             break
-    return re.sub(r"\s+", " ", " ".join(kept)).strip(" .;,")
+    value = re.sub(r"\s+", " ", " ".join(kept)).strip(" .;,")
+    # Strip a trailing page number. Restricted to the catalog's page range so
+    # legitimate values ending in a digit ("Math 8") survive.
+    trailing = re.search(r"\s+(\d{2,3})$", value)
+    if trailing and 30 <= int(trailing.group(1)) <= 200:
+        value = value[:trailing.start()]
+    return value.strip(" .;,")
 
 
 def normalize(text: str) -> str:
@@ -211,6 +217,101 @@ def inherit_grouped_fields(records):
     return records
 
 
+
+# ---------------------------------------------------------------------
+# CTE format
+#
+# Career and Technical Education courses are laid out differently from
+# academic ones, and the academic pattern silently skips all of them:
+#
+#   Advanced Cloud Computing * (ACLCA/B) Grade 12, 1 credit, Level 3,
+#   Honors weighted GPA  In this course, students explore ... 
+#   Prerequisite: Computer Science II OR AP Computer Science A
+#   Certification: AWS Certified Cloud Practitioner
+#
+# Code is parenthesised, "Grade 12," has no colon, credit precedes the word
+# "credit", GPA is given as "Level N, X weighted GPA", the prerequisite comes
+# AFTER the description rather than before, and there is a certification field
+# with no academic equivalent.
+# ---------------------------------------------------------------------
+
+HEADER_CTE = re.compile(
+    r"(?P<name>[A-Z][^\n(]{2,120}?)\s*\*?\s*"
+    r"\((?P<codes>[A-Z0-9][A-Z0-9/, ]{2,40})\)\s*"
+    r"Grades?\s*(?P<grade>\d{1,2}(?:\s*[-–]\s*\d{1,2})?)"
+)
+
+CTE_CREDIT = re.compile(r"(?P<v>[\d.]+)\s*credits?", re.I)
+CTE_GPA = re.compile(
+    r"(?:Level\s*\d+\s*,\s*)?(?P<v>Honors|On-?Level|AP/DC|Advanced|Regular)\s*"
+    r"(?:weighted\s*)?GPA", re.I
+)
+CTE_PREREQ = re.compile(
+    r"Pre-?requisites?\s*:?\s*(?P<v>.*?)(?=\s*Certification\s*:|\s*Co-?requisite\s*:|$)",
+    re.I | re.S,
+)
+CTE_CERT = re.compile(r"Certifications?\s*:?\s*(?P<v>.*?)(?=\s*Pre-?requisite\s*:|$)", re.I | re.S)
+
+
+def parse_cte_records(full: str, page_for):
+    """Parse the CTE section, which the academic pattern does not match."""
+    matches = list(HEADER_CTE.finditer(full))
+    records = []
+    for i, m in enumerate(matches):
+        end = matches[i + 1].start() if i + 1 < len(matches) else len(full)
+        tail = full[m.end():end]
+
+        name = re.sub(r"\s+", " ", m.group("name")).strip(" :-*")
+        # In the CTE layout the prerequisite and certification of the PREVIOUS
+        # course sit between it and this one's header, so the name group picks
+        # them up. Cut at the last field label before the real course name.
+        trailing = None
+        for lbl in re.finditer(r"(?:Pre-?requisites?|Certifications?|Co-?requisites?)\s*:", name, re.I):
+            trailing = lbl
+        if trailing:
+            name = name[trailing.end():].strip(" :-*")
+            # Drop the previous course's field VALUE too: it runs until the
+            # real course name, which starts at the last capitalised run.
+            parts = re.split(r"\s{2,}|(?<=[a-z])\s+(?=[A-Z][a-z]+\s+[A-Z])", name)
+            if len(parts) > 1:
+                name = parts[-1].strip()
+        if not looks_like_course(name) or len(name) < 3:
+            continue
+
+        codes = [c.strip() for c in re.split(r"[,/\s]+", m.group("codes")) if c.strip()]
+        if len(codes) > 1 and all(len(c) <= 3 for c in codes[1:]):
+            codes = ["/".join(codes)]
+
+        credit = CTE_CREDIT.search(tail)
+        gpa = CTE_GPA.search(tail)
+        prereq = CTE_PREREQ.search(tail)
+        cert = CTE_CERT.search(tail)
+
+        body = tail
+        for pattern in (CTE_PREREQ, CTE_CERT):
+            bm = pattern.search(body)
+            if bm:
+                body = body[:bm.start()] + " " + body[bm.end():]
+        body = re.sub(r"^[^A-Za-z]*", "", body)
+        body = re.sub(r"(?:[\d.]+\s*credits?|Level\s*\d+|,|Honors|On-?Level|weighted\s*GPA)\s*",
+                      " ", body, count=6)
+
+        records.append({
+            "name": name,
+            "codes": codes,
+            "grade": re.sub(r"\s*", "", m.group("grade")),
+            "page": page_for(m.start()),
+            "credit": credit.group("v") if credit else "",
+            "gpa": gpa.group("v").strip() if gpa else "",
+            "prerequisite": cut_at_description(prereq.group("v")) if prereq else "",
+            "corequisite": "",
+            "certification": cut_at_description(cert.group("v")) if cert else "",
+            "description": re.sub(r"\s+", " ", body).strip()[:1500],
+            "track": "CTE",
+        })
+    return records
+
+
 def parse_catalog(pdf_path: str):
     pages = PyPDFLoader(pdf_path).load()
     page_starts = []
@@ -264,6 +365,15 @@ def parse_catalog(pdf_path: str):
             records.append(rec)
 
     records = inherit_grouped_fields(records)
+
+    # Second pass for the CTE section, then merge on course code.
+    seen_codes = {c for r in records for c in r["codes"]}
+    for rec in parse_cte_records(full, page_for):
+        if not any(c in seen_codes for c in rec["codes"]):
+            records.append(rec)
+            seen_codes.update(rec["codes"])
+
+    records.sort(key=lambda r: r["page"])
     return records, full
 
 
@@ -284,6 +394,8 @@ def main():
     print(f"  very short/absent description: {no_desc}")
     grouped = sum(1 for r in records if r.get("grouped_with"))
     print(f"  fields inherited from a group : {grouped}")
+    cte = sum(1 for r in records if r.get("track") == "CTE")
+    print(f"  CTE records                  : {cte}")
 
     print("\n" + "=" * 70)
     print("SAMPLE RECORDS")
