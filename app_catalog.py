@@ -104,7 +104,9 @@ st.markdown(
 st.warning(
     "**Verify before you register.** This is a search tool for the catalog, not "
     "an official source. Confirm anything that affects your schedule with your "
-    "counselor. It cannot see your transcript, credits, or graduation plan.",
+    "counselor. It cannot see your transcript, credits, or graduation plan.\n\n"
+    "A small number of CTE course titles may display incorrectly due to the "
+    "catalog's PDF layout — double-check prerequisites in that section.",
     icon="⚠️",
 )
 
