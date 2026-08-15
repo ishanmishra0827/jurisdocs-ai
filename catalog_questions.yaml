@@ -215,3 +215,40 @@
   # VERIFY: the catalog may not compare them directly. If it doesn't, this
   # should decline rather than reason from outside knowledge.
   question: "What's the difference between dual credit and AP for English?"
+
+# --- CTE regression tests -------------------------------------------
+# The CTE section uses a different layout from academic courses and was
+# missing entirely from an earlier version of the parser — 110 courses
+# silently absent. These four are hand-verified against the catalog and
+# exist to catch that section breaking again.
+
+- id: cte_veterinary_science
+  question: "What are the prerequisites for Veterinary Science?"
+  expect_courses: ["Veterinary Science"]
+  require_answer_regex:
+    - "Small Animal Management"
+  note: VERIFIED against catalog p. 111.
+
+- id: cte_architectural_design_ii
+  question: "What do I need before Architectural Design II?"
+  expect_courses: ["Architectural Design II"]
+  require_answer_regex:
+    - "Architectural Design I"
+  note: VERIFIED against catalog p. 114.
+
+- id: cte_interior_design_ii
+  # Compound prerequisite with three items — the case truncation breaks first.
+  question: "What are the prerequisites for Interior Design II?"
+  expect_courses: ["Interior Design II"]
+  require_answer_regex:
+    - "English II"
+    - "Geometry"
+    - "Interior Design I"
+  note: VERIFIED against catalog p. 115.
+
+- id: cte_animation_ii
+  question: "What's required to take Animation II?"
+  expect_courses: ["Animation II"]
+  require_answer_regex:
+    - "Animation I"
+  note: VERIFIED against catalog p. 117.
