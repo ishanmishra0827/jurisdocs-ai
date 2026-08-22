@@ -457,7 +457,7 @@ def detect_provider():
 # "model not found", check the provider's current model list rather than
 # assuming the code is broken.
 DEFAULT_MODELS = {
-    "groq": "llama-3.3-70b-versatile",
+    "groq": "openai/gpt-oss-120b",
     "google": "gemini-2.0-flash",
     "ollama": "qwen2.5:7b",
     "huggingface": "Qwen/Qwen2.5-7B-Instruct",

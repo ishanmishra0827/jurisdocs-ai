@@ -26,3 +26,4 @@ debug*.py
 show_*.py
 inspect_records.py
 spot_check.py
+find_missing.py
