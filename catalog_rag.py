@@ -308,10 +308,16 @@ def category_matches(records, query):
     # again in a cross-reference section ("CTE courses for Fine Arts credit").
     # Both parse into records, so a listing would name the same course twice
     # and overstate how many options a student has.
+    # Dedupe on the course CODE, which is the real identifier. The catalog
+    # cross-lists courses under several pathways and does not always reuse the
+    # same title: ANPDEA/B appears as "Anatomy & Physiology I" on p56 and as
+    # "Dual Anatomy and Physiology*" on p136. Keying on the title leaves both
+    # in, telling a student there are two courses when there is one. Earliest
+    # page wins, which is the home department's listing.
     seen, deduped = set(), []
     for _, r in chosen:
-        key = (r.get("name", "").strip().lower(),
-               tuple(c.upper() for c in r.get("codes", [])))
+        codes = tuple(sorted(c.strip().upper() for c in r.get("codes", []) if c.strip()))
+        key = codes if codes else (r.get("name", "").strip().lower(),)
         if key in seen:
             continue
         seen.add(key)
