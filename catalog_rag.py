@@ -198,7 +198,8 @@ SYSTEM_PROMPT = (
     "it and lose a semester.\n\n"
     "CASE D — The context begins with MATCHING COURSES. This is a browse "
     "question, and the list is COMPLETE for the catalog.\n"
-    "  Say how many courses matched, then list every one with its code and "
+    "  Your FIRST line states the number of courses found. Then list every "
+    "one with its code and "
     "page. Keep each to one line: name, code, page, grade levels, credit, "
     "weight, prerequisite. Do not drop any, do not add any, and do not expand "
     "into full descriptions. End by offering to go into detail on any of "
@@ -328,18 +329,23 @@ def format_listing(records, terms):
         codes = ", ".join(r.get("codes", [])) or "-"
         parts = [
             r["name"],
-            f"({codes}, p. {r.get('page', '?')})",
-            f"grades {r.get('grade', '?')}",
-            f"{r.get('credit', '?')} credit",
-            r.get("gpa", "") or "weight not listed",
-            f"prereq: {r.get('prerequisite') or 'not listed in the catalog'}",
+            f"{codes} p{r.get('page', '?')}",
+            f"gr{r.get('grade', '?')}",
+            f"{r.get('credit', '?')}cr",
+            r.get("gpa", "") or "weight?",
+            f"pre: {r.get('prerequisite') or 'none listed'}",
         ]
         lines.append("- " + " | ".join(parts))
     return "\n".join(lines)
 
 
 def build_chain():
-    llm = rag_core.build_llm()
+    # A browse answer lists every matching course on its own line. With 28 Dual
+    # Credit courses that is ~1,000 tokens of output, and the 1,024 default cut
+    # the list off mid-sentence on the third entry. gpt-oss models also spend
+    # part of the budget reasoning before any text appears. Only generated
+    # tokens are billed, so a higher cap costs nothing on short answers.
+    llm = rag_core.build_llm(max_new_tokens=3000)
     prompt = ChatPromptTemplate.from_messages([
         ("system", SYSTEM_PROMPT),
         ("human", "{input}"),
