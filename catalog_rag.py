@@ -196,6 +196,13 @@ SYSTEM_PROMPT = (
     "involves. A student who is told a course exists when it does not, or given a "
     "prerequisite that was inferred rather than listed, may plan a schedule around "
     "it and lose a semester.\n\n"
+    "CASE D — The context begins with MATCHING COURSES. This is a browse "
+    "question, and the list is COMPLETE for the catalog.\n"
+    "  Say how many courses matched, then list every one with its code and "
+    "page. Keep each to one line: name, code, page, grade levels, credit, "
+    "weight, prerequisite. Do not drop any, do not add any, and do not expand "
+    "into full descriptions. End by offering to go into detail on any of "
+    "them.\n\n"
     "CASE C — The student asks what they personally should take, whether a course "
     "is right for them, or how to plan their schedule.\n"
     "  You may lay out what the catalog says about the relevant courses, but do "
@@ -210,6 +217,127 @@ SYSTEM_PROMPT = (
 )
 
 
+
+# ---------------------------------------------------------------------
+# Category listing
+#
+# Two different questions need two different retrieval strategies:
+#   "What are the prerequisites for Animation I?"  -> one course, full detail
+#   "What dual credit courses are offered?"        -> every match, compactly
+#
+# Top-k retrieval cannot answer the second. With 24 Dual Credit courses and 8
+# context slots, the model listed four it inferred from the AP/DC/DE weight and
+# named none of the 24 — while phrasing the answer as though it were complete.
+# An incomplete list that reads as complete is worse than a refusal.
+# ---------------------------------------------------------------------
+
+STOPWORDS = {
+    "what", "which", "are", "is", "the", "a", "an", "do", "does", "you", "i",
+    "offer", "offered", "offers", "have", "has", "there", "any", "all", "list",
+    "show", "me", "can", "take", "about", "tell", "for", "of", "in", "at", "to",
+    "my", "school", "prosper", "isd", "high", "district", "classes", "class",
+    "courses", "course", "available", "options", "option", "please", "get",
+    "related", "like", "kind", "kinds", "type", "types", "some", "and", "or",
+}
+
+LISTING_SIGNALS = re.compile(
+    r"\b(what|which|list|show|any|all|offered?|offers|available|are there|"
+    r"classes|courses)\b", re.I
+)
+LOOKUP_SIGNALS = re.compile(r"\bprerequisite|what do i need|required|before\b", re.I)
+
+
+def content_terms(query: str):
+    words = re.findall(r"[A-Za-z][A-Za-z0-9&'\-]*", query.lower())
+    return [w for w in words if w not in STOPWORDS and len(w) > 2]
+
+
+def looks_like_listing(query: str) -> bool:
+    if not LISTING_SIGNALS.search(query):
+        return False
+    if LOOKUP_SIGNALS.search(query):
+        return False
+    return True
+
+
+MAX_LISTING = 40
+
+
+def category_matches(records, query):
+    """
+    Matching courses, strongest tier first.
+
+    Tier 0 is a title match, 1 is the phrase anywhere, 2 is all terms anywhere.
+    A broad term needs the tiers: "art" matches 84 records once Language Arts,
+    Culinary Arts and every description mentioning art are counted, and a list
+    of 84 is no more useful than the truncation this path exists to fix. When
+    titles alone give a usable answer, that is what the student meant.
+    """
+    terms = content_terms(query)
+    if not terms:
+        return [], []
+    phrase = " ".join(terms)
+    tiers = {0: [], 1: [], 2: []}
+    for r in records:
+        name_lo = r.get("name", "").lower()
+        hay = " ".join([
+            r.get("name", ""), r.get("gpa", ""), (r.get("description") or "")[:400],
+        ]).lower()
+        # Anchor at a word boundary, or "art" matches "Earth Systems Science".
+        # Start-only, so "art" still finds "Theatre Arts" and "Culinary Arts".
+        anchored = rf"\b{re.escape(phrase)}"
+        if re.search(anchored, name_lo):
+            rank = 0
+        elif re.search(anchored, hay):
+            rank = 1
+        elif all(re.search(rf"\b{re.escape(t)}", hay) for t in terms):
+            rank = 2
+        else:
+            continue
+        tiers[rank].append((r.get("page", 0), r))
+
+    total = sum(len(v) for v in tiers.values())
+    if len(tiers[0]) >= 3 and total > MAX_LISTING:
+        chosen = tiers[0]
+    else:
+        chosen = tiers[0] + tiers[1] + tiers[2]
+    chosen.sort(key=lambda x: x[0])
+
+    # The catalog lists some courses twice — once under their department and
+    # again in a cross-reference section ("CTE courses for Fine Arts credit").
+    # Both parse into records, so a listing would name the same course twice
+    # and overstate how many options a student has.
+    seen, deduped = set(), []
+    for _, r in chosen:
+        key = (r.get("name", "").strip().lower(),
+               tuple(c.upper() for c in r.get("codes", [])))
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append(r)
+    return deduped[:MAX_LISTING], terms
+
+
+def format_listing(records, terms):
+    header = f"MATCHING COURSES: {len(records)} found for '{' '.join(terms)}'"
+    if len(records) >= MAX_LISTING:
+        header += (" (list capped; tell the reader there may be more and to"
+                   " narrow the search)")
+    lines = [header, ""]
+    for r in records:
+        codes = ", ".join(r.get("codes", [])) or "-"
+        parts = [
+            r["name"],
+            f"({codes}, p. {r.get('page', '?')})",
+            f"grades {r.get('grade', '?')}",
+            f"{r.get('credit', '?')} credit",
+            r.get("gpa", "") or "weight not listed",
+            f"prereq: {r.get('prerequisite') or 'not listed in the catalog'}",
+        ]
+        lines.append("- " + " | ".join(parts))
+    return "\n".join(lines)
+
+
 def build_chain():
     llm = rag_core.build_llm()
     prompt = ChatPromptTemplate.from_messages([
@@ -220,12 +348,28 @@ def build_chain():
 
 
 def answer(index, chain, question: str, top_k: int = 8):
-    docs = retrieve(index, question, top_k=top_k)
-    response = chain.invoke({"input": question, "context": format_context(docs)})
+    listing = None
+    if looks_like_listing(question):
+        matches, terms = category_matches(index["records"], question)
+        if len(matches) > 3:
+            listing = (matches, terms)
+
+    if listing:
+        matches, terms = listing
+        context = format_listing(matches, terms)
+        names = [r["name"] for r in matches]
+        docs = []
+    else:
+        docs = retrieve(index, question, top_k=top_k)
+        context = format_context(docs)
+        names = [d.metadata["name"] for d in docs]
+
+    response = chain.invoke({"input": question, "context": context})
     return {
         "answer": response.content.strip(),
         "docs": docs,
-        "courses": [d.metadata["name"] for d in docs],
+        "courses": names,
+        "listing": bool(listing),
     }
 
 
