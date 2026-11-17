@@ -37,12 +37,21 @@ HEADER = re.compile(
 )
 
 FIELD_CREDIT = re.compile(r"Credits?\s*:?\s*(?P<v>[\d.]+(?:\s*/\s*[\d.]+)?)", re.I)
-FIELD_GPA = re.compile(r"GPA\s*:?\s*(?P<v>[A-Za-z/\-+ ]{2,20}?)(?=\s+(?:Prereq|Coreq|Grade|Credit)|\s*$)", re.I)
+# The 2026-27 catalog used "GPA: On-Level". The 2027-28 catalog replaced that
+# with "Course Type: On-Level" (values: On-Level, Honors, AP/DC/DE). Match both,
+# or every record in the new catalog comes back with no weight at all.
+FIELD_GPA = re.compile(
+    r"(?:GPA|Course\s*Type)\s*:?\s*(?P<v>AP/DC/DE|AP/DC|On-?Level|Honors|[A-Za-z/\-+ ]{2,20}?)"
+    r"(?=\s+(?:Prereq|Coreq|Grade|Credit|Level)|\s*$|\s)",
+    re.I,
+)
 # Field labels vary across the catalog: "Credit : 1", "Credits: 2",
 # "Pre-requisite or Corequisite:". Match all of them.
 _STOP = (
     r"(?=\s+Co-?requisites?\s*:|\s+Pre-?requisites?\s*:|\s+Recommended\s*:|"
-    r"\s+Grade\s*:|\s+Credits?\s*:|\s+GPA\s*:|$)"
+    r"\s+Grade\s*:|\s+Credits?\s*:|\s+GPA\s*:|"
+    # 2027-28 catalog added a Certification field and renamed GPA to Course Type.
+    r"\s+Certifications?\s*:|\s+Course\s*Type\s*:|$)"
 )
 FIELD_PREREQ = re.compile(
     r"Pre-?requisites?(?:\s+or\s+Co-?requisites?)?\s*:?\s*(?P<v>.*?)" + _STOP,
