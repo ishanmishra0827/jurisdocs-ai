@@ -51,7 +51,7 @@ def load_chain(model_key: str):
 
 with st.sidebar:
     st.title("🎓 Course Catalog Assistant")
-    st.caption("Prosper ISD · 2026–2027 Academic Course Guide")
+    st.caption("Prosper ISD · 2027–2028 Academic Course Guide")
     st.write("---")
 
     try:
@@ -98,7 +98,7 @@ with st.sidebar:
 st.title("Prosper ISD Course Catalog Assistant")
 st.markdown(
     "Ask about prerequisites, course offerings, credits, or GPA weight. "
-    "Answers come only from the 2026–2027 course catalog, with the page cited."
+    "Answers come only from the 2027–2028 course catalog, with the page cited."
 )
 
 st.warning(
@@ -114,7 +114,7 @@ with st.spinner("Loading course catalog…"):
     index = load_index()
 chain = load_chain(active_model)
 
-st.caption(f"{len(index['docs'])} courses indexed from the 2026–2027 catalog.")
+st.caption(f"{len(index['docs'])} courses indexed from the 2027–2028 catalog.")
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = []
