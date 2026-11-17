@@ -345,7 +345,7 @@ def build_chain():
     # the list off mid-sentence on the third entry. gpt-oss models also spend
     # part of the budget reasoning before any text appears. Only generated
     # tokens are billed, so a higher cap costs nothing on short answers.
-    llm = rag_core.build_llm(max_new_tokens=3000)
+    llm = rag_core.build_llm(max_new_tokens=4000, reasoning_effort="low")
     prompt = ChatPromptTemplate.from_messages([
         ("system", SYSTEM_PROMPT),
         ("human", "{input}"),

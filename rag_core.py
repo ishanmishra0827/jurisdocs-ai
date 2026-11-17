@@ -464,7 +464,8 @@ DEFAULT_MODELS = {
 }
 
 
-def build_llm(provider=None, temperature: float = 0.1, max_new_tokens: int = 1024):
+def build_llm(provider=None, temperature: float = 0.1, max_new_tokens: int = 1024,
+              reasoning_effort: str = None):
     provider = provider or detect_provider()
     if provider is None:
         raise RuntimeError(
@@ -476,7 +477,18 @@ def build_llm(provider=None, temperature: float = 0.1, max_new_tokens: int = 102
 
     if provider == "groq":
         from langchain_groq import ChatGroq
-        return ChatGroq(model=model, temperature=temperature, max_tokens=max_new_tokens)
+        extra = {}
+        # gpt-oss and qwen3 reason before answering, and those reasoning tokens
+        # are billed against max_tokens. On a 28-course listing, reasoning took
+        # 1,835 of 3,000 and the answer was cut off mid-line; at the old 1,024
+        # cap it consumed the whole budget and the reply came back empty.
+        # Listing catalog records needs no deliberation, so low effort leaves
+        # the budget for the answer. Only models that support the parameter get
+        # it — passing it to Llama is rejected by the API.
+        if reasoning_effort and re.search(r"gpt-oss|qwen3", (model or ""), re.I):
+            extra["reasoning_effort"] = reasoning_effort
+        return ChatGroq(model=model, temperature=temperature,
+                        max_tokens=max_new_tokens, **extra)
 
     if provider == "google":
         from langchain_google_genai import ChatGoogleGenerativeAI
