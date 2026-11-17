@@ -120,6 +120,25 @@ def find_named_courses(index, query: str):
         if len(name) >= 5 and name in lowered and doc not in hits:
             hits.append(doc)
 
+    # Reverse match: the student typed a family name shorter than any record
+    # title. "What do I need for Theatre Arts?" names no course exactly, so the
+    # checks above find nothing and ranking decides — which surfaced Theatre
+    # Arts IV and three Musical Theatre courses while missing Theatre Arts I,
+    # the actual entry point. A student asking about a family needs the whole
+    # ladder, lowest level first.
+    if not hits:
+        terms = content_terms(query)
+        phrase = " ".join(terms)
+        if phrase:
+            family = [
+                d for d in index["docs"]
+                if re.search(rf"\b{re.escape(phrase)}", d.metadata["name"].lower())
+            ]
+            if 1 < len(family) <= 14:
+                family.sort(key=lambda d: (d.metadata.get("page", 0),
+                                           d.metadata["name"]))
+                hits.extend(family)
+
     return hits
 
 
@@ -239,6 +258,10 @@ STOPWORDS = {
     "my", "school", "prosper", "isd", "high", "district", "classes", "class",
     "courses", "course", "available", "options", "option", "please", "get",
     "related", "like", "kind", "kinds", "type", "types", "some", "and", "or",
+    # Prerequisite-question words, so "what are the prerequisites for Theatre
+    # Arts" reduces to the family name rather than to "prerequisites theatre".
+    "prerequisite", "prerequisites", "prereq", "need", "needed", "needs",
+    "required", "requirement", "requirements", "before", "must", "enroll",
 }
 
 LISTING_SIGNALS = re.compile(
